@@ -1,0 +1,4 @@
+../Core/Src/motor_driver.c:11:6:enable_mot	3
+../Core/Src/motor_driver.c:22:6:disable_mot	3
+../Core/Src/motor_driver.c:33:6:set_PWM_percent	1
+../Core/Src/motor_driver.c:38:6:set_PWM	7

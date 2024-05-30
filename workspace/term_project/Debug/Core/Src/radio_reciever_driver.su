@@ -1,0 +1,4 @@
+../Core/Src/radio_reciever_driver.c:10:6:enable_rad	16	static
+../Core/Src/radio_reciever_driver.c:17:6:disable_rad	16	static
+../Core/Src/radio_reciever_driver.c:24:10:get_pulse	16	static
+../Core/Src/radio_reciever_driver.c:43:6:read_pulse	16	static
