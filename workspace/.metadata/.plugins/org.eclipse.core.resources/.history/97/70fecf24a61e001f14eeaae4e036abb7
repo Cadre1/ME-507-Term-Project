@@ -176,7 +176,9 @@ int main(void)
 		  HAL_UART_Transmit(&huart6, (uint8_t*) my_message, strlen(my_message), 10);
 
 		  //sprintf(my_message,"Duty Cycle 1 is: %ld (%ld percent).\r\n", duty_count1, duty_percent1);
-		  //HAL_UART_Transmit(&huart6, (uint8_t*) my_message, strlen(my_message), 10);
+		  //HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 10);
+		  //sprintf(my_message,"Duty Cycle 2 is: %ld (%ld percent).\r\n", duty_count2, duty_percent2);
+		  //HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 10);
 		  sprintf(my_message,"\r\n");
 		  HAL_UART_Transmit(&huart6, (uint8_t*) my_message, strlen(my_message), 10);
 		  prev_time = curr_time;

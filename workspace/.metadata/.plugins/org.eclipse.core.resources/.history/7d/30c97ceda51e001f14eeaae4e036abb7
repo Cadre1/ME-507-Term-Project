@@ -165,20 +165,30 @@ int main(void)
 
 	  // Calculating duty count 1 and setting motor 1 PWM
 	  mot_num = 1;
-	  duty_count1 = pulse_to_PWM(&rad);
+	  duty_count1 = pulse_to_PWM(&rad1);
 	  duty_percent1 = (duty_count1*100)/pulse;
 	  set_PWM(&mot, mot_num, duty_count1);
+
+	  // Calculating duty count 2 and setting motor 2 PWM
+	  mot_num = 2;
+	  duty_count2 = pulse_to_PWM(&rad2);
+	  duty_percent2 = (duty_count2*100)/pulse;
+	  set_PWM(&mot, mot_num, duty_count2);
 
 	  //Printing out values
 	  curr_time = HAL_GetTick();
 	  if (curr_time - prev_time >= 2000){
-		  sprintf(my_message,"The pulse width of channel 1 is: %ld (us).\r\n", get_pulse(&rad));
-		  HAL_UART_Transmit(&huart6, (uint8_t*) my_message, strlen(my_message), 10);
+		  sprintf(my_message,"The pulse width of channel 1 is: %ld (us).\r\n", get_pulse(&rad1));
+		  HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 10);
+		  sprintf(my_message,"The pulse width of channel 2 is: %ld (us).\r\n", get_pulse(&rad2));
+		  HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 10);
 
 		  //sprintf(my_message,"Duty Cycle 1 is: %ld (%ld percent).\r\n", duty_count1, duty_percent1);
-		  //HAL_UART_Transmit(&huart6, (uint8_t*) my_message, strlen(my_message), 10);
+		  //HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 10);
+		  //sprintf(my_message,"Duty Cycle 2 is: %ld (%ld percent).\r\n", duty_count2, duty_percent2);
+		  //HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 10);
 		  sprintf(my_message,"\r\n");
-		  HAL_UART_Transmit(&huart6, (uint8_t*) my_message, strlen(my_message), 10);
+		  HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 10);
 		  prev_time = curr_time;
 	  }
     /* USER CODE END WHILE */

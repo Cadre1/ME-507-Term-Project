@@ -130,15 +130,18 @@ int main(void)
   Motor_DriverTypeDef mot = { .tim_handle = &htim2,
   	  	 	  	  	  	  	  .tim_channel1 = TIM_CHANNEL_1,
 							  .tim_channel2 = TIM_CHANNEL_2,
-  	  	 	  	  	  	  	  .tim_channel3 = TIM_CHANNEL_3,	// Unused
-							  .tim_channel4 = TIM_CHANNEL_4,	// Unused
+  	  	 	  	  	  	  	  .tim_channel3 = TIM_CHANNEL_3,
+							  .tim_channel4 = TIM_CHANNEL_4,
 							  .pulse = pulse				 };
   enable_mot(&mot,1);
+  enable_mot(&mot,2);
   // Initially setting the PWM to 0 in case they had been previously been set
   mot_num = 1;
   set_PWM_percent(&mot, mot_num, 0);
+  mot_num = 2;
+  set_PWM_percent(&mot, mot_num, 0);
 
-  RadioReciever_DriverTypeDef rad = { .tim_handle = &htim1,
+  RadioReciever_DriverTypeDef rad1 = { .tim_handle = &htim3,
 	  	  	  	  	  	  	     	   .tim_channel1 = TIM_CHANNEL_1,
 									   .tim_channel2 = TIM_CHANNEL_2,
 									   .IC_Rise = 0,
@@ -148,7 +151,18 @@ int main(void)
 									   .tol = 0.1,
 									   .pulse_recieve_flag = 0,
 									   .rise_flag = 0					};
-  enable_rad(&rad);
+  RadioReciever_DriverTypeDef rad2 = { .tim_handle = &htim4,
+	  	  	  	  	  	  	     	   .tim_channel1 = TIM_CHANNEL_1,
+									   .tim_channel2 = TIM_CHANNEL_2,
+									   .IC_Rise = 0,
+									   .IC_Fall = 0,
+									   .IC_Diff = 0,
+									   .pulse_width = 0,
+									   .tol = 0.1,
+									   .pulse_recieve_flag = 0,
+									   .rise_flag = 0					};
+  enable_rad(&rad1);
+  enable_rad(&rad2);
 
   prev_time = HAL_GetTick();
   /* USER CODE END 2 */
@@ -159,26 +173,37 @@ int main(void)
   {
 	  // Reading the pulse
 	  if (edge_flag){
-		  read_pulse(&rad, &htim_cb);
+		  read_pulse(&rad1, &htim_cb);
+		  read_pulse(&rad2, &htim_cb);
 		  edge_flag = 0;
 	  }
 
 	  // Calculating duty count 1 and setting motor 1 PWM
 	  mot_num = 1;
-	  duty_count1 = pulse_to_PWM(&rad);
+	  duty_count1 = pulse_to_PWM(&rad1);
 	  duty_percent1 = (duty_count1*100)/pulse;
 	  set_PWM(&mot, mot_num, duty_count1);
+
+	  // Calculating duty count 2 and setting motor 2 PWM
+	  mot_num = 2;
+	  duty_count2 = pulse_to_PWM(&rad2);
+	  duty_percent2 = (duty_count2*100)/pulse;
+	  set_PWM(&mot, mot_num, duty_count2);
 
 	  //Printing out values
 	  curr_time = HAL_GetTick();
 	  if (curr_time - prev_time >= 2000){
-		  sprintf(my_message,"The pulse width of channel 1 is: %ld (us).\r\n", get_pulse(&rad));
-		  HAL_UART_Transmit(&huart6, (uint8_t*) my_message, strlen(my_message), 10);
+		  sprintf(my_message,"The pulse width of channel 1 is: %ld (us).\r\n", get_pulse(&rad1));
+		  HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 10);
+		  sprintf(my_message,"The pulse width of channel 2 is: %ld (us).\r\n", get_pulse(&rad2));
+		  HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 10);
 
 		  //sprintf(my_message,"Duty Cycle 1 is: %ld (%ld percent).\r\n", duty_count1, duty_percent1);
-		  //HAL_UART_Transmit(&huart6, (uint8_t*) my_message, strlen(my_message), 10);
+		  //HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 10);
+		  //sprintf(my_message,"Duty Cycle 2 is: %ld (%ld percent).\r\n", duty_count2, duty_percent2);
+		  //HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 10);
 		  sprintf(my_message,"\r\n");
-		  HAL_UART_Transmit(&huart6, (uint8_t*) my_message, strlen(my_message), 10);
+		  HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 10);
 		  prev_time = curr_time;
 	  }
     /* USER CODE END WHILE */
