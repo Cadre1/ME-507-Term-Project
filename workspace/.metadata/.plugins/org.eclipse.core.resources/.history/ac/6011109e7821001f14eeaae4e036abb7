@@ -1,0 +1,32 @@
+/*
+ * photoresistor_driver.c
+ *
+ *  Created on: Jun 2, 2024
+ *      Author: cadre
+ */
+
+#include <stdio.h>
+#include <stdint.h>
+
+void enable_photo(Photoresistor_DriverTypeDef* photo)
+{
+	HAL_ADC_Stop(photo->adc_handle);
+}
+
+void disable_photo(Photoresistor_DriverTypeDef* photo)
+{
+	HAL_ADC_Stop(photo->adc_handle);
+}
+
+void start_get_adc_values(Photoresistor_DriverTypeDef* photo)
+{
+	HAL_ADC_Start_DMA(adc, (uint32_t*)(photo->adc_results),4); // EDIT: make sure the buffer works as an address input
+}
+
+uint32_t get_adc_values(Photoresistor_DriverTypeDef* photo)
+{
+	HAL_ADC_PollForConversion(adc,HAL_MAX_DELAY);
+	uint32_t adc_val = HAL_ADC_GetValue(adc);
+	HAL_ADC_Stop(adc);
+	return adc_val;
+}

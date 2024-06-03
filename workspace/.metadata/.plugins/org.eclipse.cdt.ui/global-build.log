@@ -1,40 +1,1281 @@
-09:42:43 **** Build of configuration Debug for project term_project ****
+20:27:23 **** Incremental Build of configuration Debug for project term_project ****
 make -j12 all 
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o"
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f411retx.d" -MT"Core/Startup/startup_stm32f411retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f411retx.o" "../Core/Startup/startup_stm32f411retx.s"
+arm-none-eabi-gcc "../Core/Src/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/controller.d" -MT"Core/Src/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/controller.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc "../Core/Src/motor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/motor_driver.d" -MT"Core/Src/motor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/motor_driver.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
 arm-none-eabi-gcc "../Core/Src/radio_reciever_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/radio_reciever_driver.d" -MT"Core/Src/radio_reciever_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/radio_reciever_driver.o"
 arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
 arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
 arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
 arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
 arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc "../Core/Src/vector.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/vector.d" -MT"Core/Src/vector.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/vector.o"
+../Core/Src/photoresistor_driver.c:8:19: error: unknown type name 'PhotoresistorTypeDef'
+    8 | void enable_photo(PhotoresistorTypeDef* photo)
+      |                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:13:20: error: unknown type name 'PhotoresistorTypeDef'
+   13 | void disable_photo(PhotoresistorTypeDef* photo)
+      |                    ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:18:1: error: unknown type name 'uint32_t'
+   18 | uint32_t get_adc_values(PhotoresistorTypeDef* photo)
+      | ^~~~~~~~
+../Core/Src/photoresistor_driver.c:1:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+  +++ |+#include <stdint.h>
+    1 | /*
+../Core/Src/photoresistor_driver.c:18:25: error: unknown type name 'PhotoresistorTypeDef'
+   18 | uint32_t get_adc_values(PhotoresistorTypeDef* photo)
+      |                         ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:28:1: error: unknown type name 'uint32_t'
+   28 | uint32_t get_adc_diff(PhotoresistorTypeDef* photo, uint8_t num1, uint8_t num2)
+      | ^~~~~~~~
+../Core/Src/photoresistor_driver.c:28:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/photoresistor_driver.c:28:23: error: unknown type name 'PhotoresistorTypeDef'
+   28 | uint32_t get_adc_diff(PhotoresistorTypeDef* photo, uint8_t num1, uint8_t num2)
+      |                       ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:28:52: error: unknown type name 'uint8_t'
+   28 | uint32_t get_adc_diff(PhotoresistorTypeDef* photo, uint8_t num1, uint8_t num2)
+      |                                                    ^~~~~~~
+../Core/Src/photoresistor_driver.c:28:52: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/photoresistor_driver.c:28:66: error: unknown type name 'uint8_t'
+   28 | uint32_t get_adc_diff(PhotoresistorTypeDef* photo, uint8_t num1, uint8_t num2)
+      |                                                                  ^~~~~~~
+../Core/Src/photoresistor_driver.c:28:66: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/controller.c: In function 'get_output':
+../Core/Src/controller.c:44:30: warning: implicit declaration of function 'HAL_GetTick' [-Wimplicit-function-declaration]
+   44 |         uint32_t curr_time = HAL_GetTick();
+      |                              ^~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:3: error: unknown type name 'Photoresistor_DriverTypeDef'; did you mean 'RadioReciever_DriverTypeDef'?
+  160 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   RadioReciever_DriverTypeDef
+../Core/Src/main.c:160:41: error: field name not in record or union initializer
+  160 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |                                         ^
+../Core/Src/main.c:160:41: note: (near initialization for 'photo')
+../Core/Src/main.c:160:55: warning: initialization of 'int' from 'ADC_HandleTypeDef *' makes integer from pointer without a cast [-Wint-conversion]
+  160 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |                                                       ^
+../Core/Src/main.c:160:55: note: (near initialization for 'photo')
+../Core/Src/main.c:161:81: error: field name not in record or union initializer
+  161 |                                                                                 .dma_handle = &hdma_adc1,
+      |                                                                                 ^
+../Core/Src/main.c:161:81: note: (near initialization for 'photo')
+../Core/Src/main.c:161:95: warning: excess elements in scalar initializer
+  161 |                                                                                 .dma_handle = &hdma_adc1,
+      |                                                                                               ^
+../Core/Src/main.c:161:95: note: (near initialization for 'photo')
+../Core/Src/main.c:162:81: error: field name not in record or union initializer
+  162 |                                                                                 .adc_conversion_flag = 0,
+      |                                                                                 ^
+../Core/Src/main.c:162:81: note: (near initialization for 'photo')
+../Core/Src/main.c:162:104: warning: excess elements in scalar initializer
+  162 |                                                                                 .adc_conversion_flag = 0,
+      |                                                                                                        ^
+../Core/Src/main.c:162:104: note: (near initialization for 'photo')
+../Core/Src/main.c:163:77: error: field name not in record or union initializer
+  163 |                                                                             .adc_result_buff = [0,0,0,0] };
+      |                                                                             ^
+../Core/Src/main.c:163:77: note: (near initialization for 'photo')
+../Core/Src/main.c:163:96: error: expected expression before '[' token
+  163 |                                                                             .adc_result_buff = [0,0,0,0] };
+      |                                                                                                ^
+../Core/Src/main.c:163:98: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  163 |                                                                             .adc_result_buff = [0,0,0,0] };
+      |                                                                                                  ^
+../Core/Src/main.c:163:100: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  163 |                                                                             .adc_result_buff = [0,0,0,0] };
+      |                                                                                                    ^
+../Core/Src/main.c:163:102: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  163 |                                                                             .adc_result_buff = [0,0,0,0] };
+      |                                                                                                      ^
+../Core/Src/main.c:163:96: warning: excess elements in scalar initializer
+  163 |                                                                             .adc_result_buff = [0,0,0,0] };
+      |                                                                                                ^
+../Core/Src/main.c:163:96: note: (near initialization for 'photo')
+../Core/Src/main.c:160:31: warning: unused variable 'photo' [-Wunused-variable]
+  160 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |                               ^~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:32:12 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+../Core/Src/photoresistor_driver.c:8:19: error: unknown type name 'Photoresistor_DriverTypeDef'
+    8 | void enable_photo(Photoresistor_DriverTypeDef* photo)
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:13:20: error: unknown type name 'Photoresistor_DriverTypeDef'
+   13 | void disable_photo(Photoresistor_DriverTypeDef* photo)
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:18:1: error: unknown type name 'uint32_t'
+   18 | uint32_t get_adc_values(Photoresistor_DriverTypeDef* photo)
+      | ^~~~~~~~
+../Core/Src/photoresistor_driver.c:1:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+  +++ |+#include <stdint.h>
+    1 | /*
+../Core/Src/photoresistor_driver.c:18:25: error: unknown type name 'Photoresistor_DriverTypeDef'
+   18 | uint32_t get_adc_values(Photoresistor_DriverTypeDef* photo)
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:28:1: error: unknown type name 'uint32_t'
+   28 | uint32_t get_adc_diff(Photoresistor_DriverTypeDef* photo, uint8_t num1, uint8_t num2)
+      | ^~~~~~~~
+../Core/Src/photoresistor_driver.c:28:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/photoresistor_driver.c:28:23: error: unknown type name 'Photoresistor_DriverTypeDef'
+   28 | uint32_t get_adc_diff(Photoresistor_DriverTypeDef* photo, uint8_t num1, uint8_t num2)
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:28:59: error: unknown type name 'uint8_t'
+   28 | uint32_t get_adc_diff(Photoresistor_DriverTypeDef* photo, uint8_t num1, uint8_t num2)
+      |                                                           ^~~~~~~
+../Core/Src/photoresistor_driver.c:28:59: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Core/Src/photoresistor_driver.c:28:73: error: unknown type name 'uint8_t'
+   28 | uint32_t get_adc_diff(Photoresistor_DriverTypeDef* photo, uint8_t num1, uint8_t num2)
+      |                                                                         ^~~~~~~
+../Core/Src/photoresistor_driver.c:28:73: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:3: error: unknown type name 'Photoresistor_DriverTypeDef'; did you mean 'RadioReciever_DriverTypeDef'?
+  160 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   RadioReciever_DriverTypeDef
+../Core/Src/main.c:160:41: error: field name not in record or union initializer
+  160 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |                                         ^
+../Core/Src/main.c:160:41: note: (near initialization for 'photo')
+../Core/Src/main.c:160:55: warning: initialization of 'int' from 'ADC_HandleTypeDef *' makes integer from pointer without a cast [-Wint-conversion]
+  160 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |                                                       ^
+../Core/Src/main.c:160:55: note: (near initialization for 'photo')
+../Core/Src/main.c:161:81: error: field name not in record or union initializer
+  161 |                                                                                 .dma_handle = &hdma_adc1,
+      |                                                                                 ^
+../Core/Src/main.c:161:81: note: (near initialization for 'photo')
+../Core/Src/main.c:161:95: warning: excess elements in scalar initializer
+  161 |                                                                                 .dma_handle = &hdma_adc1,
+      |                                                                                               ^
+../Core/Src/main.c:161:95: note: (near initialization for 'photo')
+../Core/Src/main.c:162:81: error: field name not in record or union initializer
+  162 |                                                                                 .adc_conversion_flag = 0,
+      |                                                                                 ^
+../Core/Src/main.c:162:81: note: (near initialization for 'photo')
+../Core/Src/main.c:162:104: warning: excess elements in scalar initializer
+  162 |                                                                                 .adc_conversion_flag = 0,
+      |                                                                                                        ^
+../Core/Src/main.c:162:104: note: (near initialization for 'photo')
+../Core/Src/main.c:163:77: error: field name not in record or union initializer
+  163 |                                                                             .adc_result_buff[4] = {0,0,0,0} };
+      |                                                                             ^
+../Core/Src/main.c:163:77: note: (near initialization for 'photo')
+../Core/Src/main.c:163:77: warning: braces around scalar initializer
+../Core/Src/main.c:163:77: note: (near initialization for 'photo')
+../Core/Src/main.c:163:102: warning: excess elements in scalar initializer
+  163 |                                                                             .adc_result_buff[4] = {0,0,0,0} };
+      |                                                                                                      ^
+../Core/Src/main.c:163:102: note: (near initialization for 'photo')
+../Core/Src/main.c:163:104: warning: excess elements in scalar initializer
+  163 |                                                                             .adc_result_buff[4] = {0,0,0,0} };
+      |                                                                                                        ^
+../Core/Src/main.c:163:104: note: (near initialization for 'photo')
+../Core/Src/main.c:163:106: warning: excess elements in scalar initializer
+  163 |                                                                             .adc_result_buff[4] = {0,0,0,0} };
+      |                                                                                                          ^
+../Core/Src/main.c:163:106: note: (near initialization for 'photo')
+../Core/Src/main.c:163:99: warning: excess elements in scalar initializer
+  163 |                                                                             .adc_result_buff[4] = {0,0,0,0} };
+      |                                                                                                   ^
+../Core/Src/main.c:163:99: note: (near initialization for 'photo')
+../Core/Src/main.c:160:31: warning: unused variable 'photo' [-Wunused-variable]
+  160 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |                               ^~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:32:28 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+../Core/Src/photoresistor_driver.c:11:19: error: unknown type name 'Photoresistor_DriverTypeDef'
+   11 | void enable_photo(Photoresistor_DriverTypeDef* photo)
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:16:20: error: unknown type name 'Photoresistor_DriverTypeDef'
+   16 | void disable_photo(Photoresistor_DriverTypeDef* photo)
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:21:25: error: unknown type name 'Photoresistor_DriverTypeDef'
+   21 | uint32_t get_adc_values(Photoresistor_DriverTypeDef* photo)
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:31:23: error: unknown type name 'Photoresistor_DriverTypeDef'
+   31 | uint32_t get_adc_diff(Photoresistor_DriverTypeDef* photo, uint8_t num1, uint8_t num2)
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:3: error: unknown type name 'Photoresistor_DriverTypeDef'; did you mean 'RadioReciever_DriverTypeDef'?
+  160 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   RadioReciever_DriverTypeDef
+../Core/Src/main.c:160:41: error: field name not in record or union initializer
+  160 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |                                         ^
+../Core/Src/main.c:160:41: note: (near initialization for 'photo')
+../Core/Src/main.c:160:55: warning: initialization of 'int' from 'ADC_HandleTypeDef *' makes integer from pointer without a cast [-Wint-conversion]
+  160 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |                                                       ^
+../Core/Src/main.c:160:55: note: (near initialization for 'photo')
+../Core/Src/main.c:161:81: error: field name not in record or union initializer
+  161 |                                                                                 .dma_handle = &hdma_adc1,
+      |                                                                                 ^
+../Core/Src/main.c:161:81: note: (near initialization for 'photo')
+../Core/Src/main.c:161:95: warning: excess elements in scalar initializer
+  161 |                                                                                 .dma_handle = &hdma_adc1,
+      |                                                                                               ^
+../Core/Src/main.c:161:95: note: (near initialization for 'photo')
+../Core/Src/main.c:162:81: error: field name not in record or union initializer
+  162 |                                                                                 .adc_conversion_flag = 0,
+      |                                                                                 ^
+../Core/Src/main.c:162:81: note: (near initialization for 'photo')
+../Core/Src/main.c:162:104: warning: excess elements in scalar initializer
+  162 |                                                                                 .adc_conversion_flag = 0,
+      |                                                                                                        ^
+../Core/Src/main.c:162:104: note: (near initialization for 'photo')
+../Core/Src/main.c:163:77: error: field name not in record or union initializer
+  163 |                                                                             .adc_result_buff[4] = {0,0,0,0} };
+      |                                                                             ^
+../Core/Src/main.c:163:77: note: (near initialization for 'photo')
+../Core/Src/main.c:163:77: warning: braces around scalar initializer
+../Core/Src/main.c:163:77: note: (near initialization for 'photo')
+../Core/Src/main.c:163:102: warning: excess elements in scalar initializer
+  163 |                                                                             .adc_result_buff[4] = {0,0,0,0} };
+      |                                                                                                      ^
+../Core/Src/main.c:163:102: note: (near initialization for 'photo')
+../Core/Src/main.c:163:104: warning: excess elements in scalar initializer
+  163 |                                                                             .adc_result_buff[4] = {0,0,0,0} };
+      |                                                                                                        ^
+../Core/Src/main.c:163:104: note: (near initialization for 'photo')
+../Core/Src/main.c:163:106: warning: excess elements in scalar initializer
+  163 |                                                                             .adc_result_buff[4] = {0,0,0,0} };
+      |                                                                                                          ^
+../Core/Src/main.c:163:106: note: (near initialization for 'photo')
+../Core/Src/main.c:163:99: warning: excess elements in scalar initializer
+  163 |                                                                             .adc_result_buff[4] = {0,0,0,0} };
+      |                                                                                                   ^
+../Core/Src/main.c:163:99: note: (near initialization for 'photo')
+../Core/Src/main.c:160:31: warning: unused variable 'photo' [-Wunused-variable]
+  160 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |                               ^~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:12:20 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+../Core/Src/photoresistor_driver.c:11:19: error: unknown type name 'Photoresistor_DriverTypeDef'
+   11 | void enable_photo(Photoresistor_DriverTypeDef* photo)
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:16:20: error: unknown type name 'Photoresistor_DriverTypeDef'
+   16 | void disable_photo(Photoresistor_DriverTypeDef* photo)
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:21:27: error: unknown type name 'Photoresistor_DriverTypeDef'
+   21 | void start_get_adc_values(Photoresistor_DriverTypeDef* photo)
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:26:26: error: unknown type name 'Photoresistor_DriverTypeDef'
+   26 | uint32_t* get_adc_values(Photoresistor_DriverTypeDef* photo)
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:164:3: error: 'result_buff' undeclared (first use in this function)
+  164 |   result_buff[4];
+      |   ^~~~~~~~~~~
+../Core/Src/main.c:164:3: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:166:3: error: unknown type name 'Photoresistor_DriverTypeDef'; did you mean 'RadioReciever_DriverTypeDef'?
+  166 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   RadioReciever_DriverTypeDef
+../Core/Src/main.c:166:41: error: field name not in record or union initializer
+  166 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |                                         ^
+../Core/Src/main.c:166:41: note: (near initialization for 'photo')
+../Core/Src/main.c:166:55: warning: initialization of 'int' from 'ADC_HandleTypeDef *' makes integer from pointer without a cast [-Wint-conversion]
+  166 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |                                                       ^
+../Core/Src/main.c:166:55: note: (near initialization for 'photo')
+../Core/Src/main.c:167:81: error: field name not in record or union initializer
+  167 |                                                                                 .dma_handle = &hdma_adc1,
+      |                                                                                 ^
+../Core/Src/main.c:167:81: note: (near initialization for 'photo')
+../Core/Src/main.c:167:95: warning: excess elements in scalar initializer
+  167 |                                                                                 .dma_handle = &hdma_adc1,
+      |                                                                                               ^
+../Core/Src/main.c:167:95: note: (near initialization for 'photo')
+../Core/Src/main.c:168:77: error: field name not in record or union initializer
+  168 |                                                                             .adc_result_buff = &result_buff };
+      |                                                                             ^
+../Core/Src/main.c:168:77: note: (near initialization for 'photo')
+../Core/Src/main.c:168:96: warning: excess elements in scalar initializer
+  168 |                                                                             .adc_result_buff = &result_buff };
+      |                                                                                                ^
+../Core/Src/main.c:168:96: note: (near initialization for 'photo')
+../Core/Src/main.c:205:19: warning: implicit declaration of function 'start_get_adc_values' [-Wimplicit-function-declaration]
+  205 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:210:43: warning: implicit declaration of function 'get_adc_values' [-Wimplicit-function-declaration]
+  210 |                   uint32_t* adc_results = get_adc_values(&photo);
+      |                                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:210:43: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+../Core/Src/main.c:214:28: warning: unused variable 'photo4' [-Wunused-variable]
+  214 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo3' [-Wunused-variable]
+  213 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo2' [-Wunused-variable]
+  212 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:211:28: warning: unused variable 'photo1' [-Wunused-variable]
+  211 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:12:28 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+../Core/Src/photoresistor_driver.c:11:19: error: unknown type name 'Photoresistor_DriverTypeDef'
+   11 | void enable_photo(Photoresistor_DriverTypeDef* photo)
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:16:20: error: unknown type name 'Photoresistor_DriverTypeDef'
+   16 | void disable_photo(Photoresistor_DriverTypeDef* photo)
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:21:27: error: unknown type name 'Photoresistor_DriverTypeDef'
+   21 | void start_get_adc_values(Photoresistor_DriverTypeDef* photo)
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:26:26: error: unknown type name 'Photoresistor_DriverTypeDef'
+   26 | uint32_t* get_adc_values(Photoresistor_DriverTypeDef* photo)
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:166:3: error: unknown type name 'Photoresistor_DriverTypeDef'; did you mean 'RadioReciever_DriverTypeDef'?
+  166 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   RadioReciever_DriverTypeDef
+../Core/Src/main.c:166:41: error: field name not in record or union initializer
+  166 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |                                         ^
+../Core/Src/main.c:166:41: note: (near initialization for 'photo')
+../Core/Src/main.c:166:55: warning: initialization of 'int' from 'ADC_HandleTypeDef *' makes integer from pointer without a cast [-Wint-conversion]
+  166 |   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+      |                                                       ^
+../Core/Src/main.c:166:55: note: (near initialization for 'photo')
+../Core/Src/main.c:167:81: error: field name not in record or union initializer
+  167 |                                                                                 .dma_handle = &hdma_adc1,
+      |                                                                                 ^
+../Core/Src/main.c:167:81: note: (near initialization for 'photo')
+../Core/Src/main.c:167:95: warning: excess elements in scalar initializer
+  167 |                                                                                 .dma_handle = &hdma_adc1,
+      |                                                                                               ^
+../Core/Src/main.c:167:95: note: (near initialization for 'photo')
+../Core/Src/main.c:168:77: error: field name not in record or union initializer
+  168 |                                                                             .adc_result_buff = &result_buff };
+      |                                                                             ^
+../Core/Src/main.c:168:77: note: (near initialization for 'photo')
+../Core/Src/main.c:168:96: warning: excess elements in scalar initializer
+  168 |                                                                             .adc_result_buff = &result_buff };
+      |                                                                                                ^
+../Core/Src/main.c:168:96: note: (near initialization for 'photo')
+../Core/Src/main.c:205:19: warning: implicit declaration of function 'start_get_adc_values' [-Wimplicit-function-declaration]
+  205 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:210:43: warning: implicit declaration of function 'get_adc_values' [-Wimplicit-function-declaration]
+  210 |                   uint32_t* adc_results = get_adc_values(&photo);
+      |                                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:210:43: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+../Core/Src/main.c:214:28: warning: unused variable 'photo4' [-Wunused-variable]
+  214 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo3' [-Wunused-variable]
+  213 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo2' [-Wunused-variable]
+  212 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:211:28: warning: unused variable 'photo1' [-Wunused-variable]
+  211 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:12:55 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+../Core/Src/photoresistor_driver.c:11:19: error: unknown type name 'Photoresistor_DriverTypeDef'
+   11 | void enable_photo(Photoresistor_DriverTypeDef* photo)
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:16:20: error: unknown type name 'Photoresistor_DriverTypeDef'
+   16 | void disable_photo(Photoresistor_DriverTypeDef* photo)
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:21:27: error: unknown type name 'Photoresistor_DriverTypeDef'
+   21 | void start_get_adc_values(Photoresistor_DriverTypeDef* photo)
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:26:26: error: unknown type name 'Photoresistor_DriverTypeDef'
+   26 | uint32_t* get_adc_values(Photoresistor_DriverTypeDef* photo)
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/photoresistor_driver.h:21:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   21 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:22:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:169:78: error: 'Photoresistor_DriverTypeDef' has no member named 'adc_result_buff'; did you mean 'adc_results'?
+  169 |                                                                             .adc_result_buff = &result_buff };
+      |                                                                              ^~~~~~~~~~~~~~~
+      |                                                                              adc_results
+../Core/Src/main.c:169:96: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'uint32_t (*)[4]' {aka 'long unsigned int (*)[4]'} [-Wincompatible-pointer-types]
+  169 |                                                                             .adc_result_buff = &result_buff };
+      |                                                                                                ^
+../Core/Src/main.c:169:96: note: (near initialization for 'photo.adc_results')
+../Core/Src/main.c:206:19: warning: implicit declaration of function 'start_get_adc_values' [-Wimplicit-function-declaration]
+  206 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: implicit declaration of function 'get_adc_values' [-Wimplicit-function-declaration]
+  211 |                   uint32_t* adc_results = get_adc_values(&photo);
+      |                                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:13:30 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+../Core/Src/photoresistor_driver.c:11:19: error: unknown type name 'Photoresistor_DriverTypeDef'
+   11 | void enable_photo(Photoresistor_DriverTypeDef* photo)
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:16:20: error: unknown type name 'Photoresistor_DriverTypeDef'
+   16 | void disable_photo(Photoresistor_DriverTypeDef* photo)
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:21:27: error: unknown type name 'Photoresistor_DriverTypeDef'
+   21 | void start_get_adc_values(Photoresistor_DriverTypeDef* photo)
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:26:26: error: unknown type name 'Photoresistor_DriverTypeDef'
+   26 | uint32_t* get_adc_values(Photoresistor_DriverTypeDef* photo)
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/photoresistor_driver.h:21:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   21 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:22:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:169:92: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'uint32_t (*)[4]' {aka 'long unsigned int (*)[4]'} [-Wincompatible-pointer-types]
+  169 |                                                                             .adc_results = &adc_results };
+      |                                                                                            ^
+../Core/Src/main.c:169:92: note: (near initialization for 'photo.adc_results')
+../Core/Src/main.c:206:19: warning: implicit declaration of function 'start_get_adc_values' [-Wimplicit-function-declaration]
+  206 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: implicit declaration of function 'get_adc_values' [-Wimplicit-function-declaration]
+  211 |                   uint32_t* adc_results = get_adc_values(&photo);
+      |                                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:14:51 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+In file included from ../Core/Src/photoresistor_driver.c:10:
+../Core/Inc/photoresistor_driver.h:16:9: error: unknown type name 'ADC_HandleTypeDef'
+   16 |         ADC_HandleTypeDef* adc_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:17:9: error: unknown type name 'DMA_HandleTypeDef'
+   17 |         DMA_HandleTypeDef* dma_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:21:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   21 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:22:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | uint16_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/photoresistor_driver.c: In function 'enable_photo':
+../Core/Src/photoresistor_driver.c:14:9: warning: implicit declaration of function 'HAL_ADC_Stop' [-Wimplicit-function-declaration]
+   14 |         HAL_ADC_Stop(photo->adc_handle);
+      |         ^~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: In function 'start_get_adc_values':
+../Core/Src/photoresistor_driver.c:24:9: warning: implicit declaration of function 'HAL_ADC_Start_DMA' [-Wimplicit-function-declaration]
+   24 |         HAL_ADC_Start_DMA(adc, (uint32_t*)(photo->adc_results),4); // EDIT: make sure the buffer works as an address input
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c:24:27: error: 'adc' undeclared (first use in this function)
+   24 |         HAL_ADC_Start_DMA(adc, (uint32_t*)(photo->adc_results),4); // EDIT: make sure the buffer works as an address input
+      |                           ^~~
+../Core/Src/photoresistor_driver.c:24:27: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/photoresistor_driver.h:21:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   21 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:22:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | uint16_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:169:92: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from incompatible pointer type 'uint16_t (*)[4]' {aka 'short unsigned int (*)[4]'} [-Wincompatible-pointer-types]
+  169 |                                                                             .adc_results = &adc_results };
+      |                                                                                            ^
+../Core/Src/main.c:169:92: note: (near initialization for 'photo.adc_results')
+../Core/Src/main.c:206:19: warning: implicit declaration of function 'start_get_adc_values' [-Wimplicit-function-declaration]
+  206 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: implicit declaration of function 'get_adc_values' [-Wimplicit-function-declaration]
+  211 |                   uint32_t* adc_results = get_adc_values(&photo);
+      |                                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:15:12 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+In file included from ../Core/Src/photoresistor_driver.c:10:
+../Core/Inc/photoresistor_driver.h:16:9: error: unknown type name 'ADC_HandleTypeDef'
+   16 |         ADC_HandleTypeDef* adc_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:17:9: error: unknown type name 'DMA_HandleTypeDef'
+   17 |         DMA_HandleTypeDef* dma_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:21:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   21 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:22:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | uint16_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/photoresistor_driver.c: In function 'enable_photo':
+../Core/Src/photoresistor_driver.c:14:9: warning: implicit declaration of function 'HAL_ADC_Stop' [-Wimplicit-function-declaration]
+   14 |         HAL_ADC_Stop(photo->adc_handle);
+      |         ^~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: In function 'start_get_adc_values':
+../Core/Src/photoresistor_driver.c:24:9: warning: implicit declaration of function 'HAL_ADC_Start_DMA' [-Wimplicit-function-declaration]
+   24 |         HAL_ADC_Start_DMA(photo->adc_handle, (uint32_t*)(photo->adc_results),4); // EDIT: make sure the buffer works as an address input
+      |         ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/photoresistor_driver.h:21:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   21 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:22:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | uint16_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:169:92: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from incompatible pointer type 'uint16_t (*)[4]' {aka 'short unsigned int (*)[4]'} [-Wincompatible-pointer-types]
+  169 |                                                                             .adc_results = &adc_results };
+      |                                                                                            ^
+../Core/Src/main.c:169:92: note: (near initialization for 'photo.adc_results')
+../Core/Src/main.c:206:19: warning: implicit declaration of function 'start_get_adc_values' [-Wimplicit-function-declaration]
+  206 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: implicit declaration of function 'get_adc_values' [-Wimplicit-function-declaration]
+  211 |                   uint32_t* adc_results = get_adc_values(&photo);
+      |                                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:15:35 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+In file included from ../Core/Src/photoresistor_driver.c:10:
+../Core/Inc/photoresistor_driver.h:16:9: error: unknown type name 'ADC_HandleTypeDef'
+   16 |         ADC_HandleTypeDef* adc_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:17:9: error: unknown type name 'DMA_HandleTypeDef'
+   17 |         DMA_HandleTypeDef* dma_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:21:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   21 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:22:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/photoresistor_driver.c: In function 'enable_photo':
+../Core/Src/photoresistor_driver.c:14:9: warning: implicit declaration of function 'HAL_ADC_Stop' [-Wimplicit-function-declaration]
+   14 |         HAL_ADC_Stop(photo->adc_handle);
+      |         ^~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: In function 'start_get_adc_values':
+../Core/Src/photoresistor_driver.c:24:9: warning: implicit declaration of function 'HAL_ADC_Start_DMA' [-Wimplicit-function-declaration]
+   24 |         HAL_ADC_Start_DMA(photo->adc_handle, (uint32_t*)(photo->adc_results),4); // EDIT: make sure the buffer works as an address input
+      |         ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/photoresistor_driver.h:21:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   21 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:22:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:169:92: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'uint16_t (*)[4]' {aka 'short unsigned int (*)[4]'} [-Wincompatible-pointer-types]
+  169 |                                                                             .adc_results = &adc_results };
+      |                                                                                            ^
+../Core/Src/main.c:169:92: note: (near initialization for 'photo.adc_results')
+../Core/Src/main.c:206:19: warning: implicit declaration of function 'start_get_adc_values' [-Wimplicit-function-declaration]
+  206 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: implicit declaration of function 'get_adc_values' [-Wimplicit-function-declaration]
+  211 |                   uint32_t* adc_results = get_adc_values(&photo);
+      |                                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:16:20 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+In file included from ../Core/Src/photoresistor_driver.c:11:
+../Core/Inc/photoresistor_driver.h:17:9: error: unknown type name 'ADC_HandleTypeDef'
+   17 |         ADC_HandleTypeDef* adc_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:18:9: error: unknown type name 'DMA_HandleTypeDef'
+   18 |         DMA_HandleTypeDef* dma_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:22:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:24:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   24 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/photoresistor_driver.c: In function 'enable_photo':
+../Core/Src/photoresistor_driver.c:15:9: warning: implicit declaration of function 'HAL_ADC_Stop' [-Wimplicit-function-declaration]
+   15 |         HAL_ADC_Stop(photo->adc_handle);
+      |         ^~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: In function 'start_get_adc_values':
+../Core/Src/photoresistor_driver.c:25:9: warning: implicit declaration of function 'HAL_ADC_Start_DMA' [-Wimplicit-function-declaration]
+   25 |         HAL_ADC_Start_DMA(photo->adc_handle, (uint32_t*)(photo->adc_results),4); // EDIT: make sure the buffer works as an address input
+      |         ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/photoresistor_driver.h:22:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:24:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   24 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:169:92: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'uint16_t (*)[4]' {aka 'short unsigned int (*)[4]'} [-Wincompatible-pointer-types]
+  169 |                                                                             .adc_results = &adc_results };
+      |                                                                                            ^
+../Core/Src/main.c:169:92: note: (near initialization for 'photo.adc_results')
+../Core/Src/main.c:206:19: warning: implicit declaration of function 'start_get_adc_values' [-Wimplicit-function-declaration]
+  206 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: implicit declaration of function 'get_adc_values' [-Wimplicit-function-declaration]
+  211 |                   uint32_t* adc_results = get_adc_values(&photo);
+      |                                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:16:24 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+In file included from ../Core/Src/photoresistor_driver.c:11:
+../Core/Inc/photoresistor_driver.h:17:9: error: unknown type name 'ADC_HandleTypeDef'
+   17 |         ADC_HandleTypeDef* adc_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:18:9: error: unknown type name 'DMA_HandleTypeDef'
+   18 |         DMA_HandleTypeDef* dma_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:22:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:24:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   24 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/photoresistor_driver.c: In function 'enable_photo':
+../Core/Src/photoresistor_driver.c:15:9: warning: implicit declaration of function 'HAL_ADC_Stop' [-Wimplicit-function-declaration]
+   15 |         HAL_ADC_Stop(photo->adc_handle);
+      |         ^~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: In function 'start_get_adc_values':
+../Core/Src/photoresistor_driver.c:25:9: warning: implicit declaration of function 'HAL_ADC_Start_DMA' [-Wimplicit-function-declaration]
+   25 |         HAL_ADC_Start_DMA(photo->adc_handle, (uint32_t*)(photo->adc_results),4); // EDIT: make sure the buffer works as an address input
+      |         ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/photoresistor_driver.h:22:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:24:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   24 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:169:92: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'uint16_t (*)[4]' {aka 'short unsigned int (*)[4]'} [-Wincompatible-pointer-types]
+  169 |                                                                             .adc_results = &adc_results };
+      |                                                                                            ^
+../Core/Src/main.c:169:92: note: (near initialization for 'photo.adc_results')
+../Core/Src/main.c:206:19: warning: implicit declaration of function 'start_get_adc_values' [-Wimplicit-function-declaration]
+  206 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: implicit declaration of function 'get_adc_values' [-Wimplicit-function-declaration]
+  211 |                   uint32_t* adc_results = get_adc_values(&photo);
+      |                                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:17:03 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/controller.d" -MT"Core/Src/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/controller.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+../Core/Src/controller.c: In function 'get_output':
+../Core/Src/controller.c:42:30: warning: implicit declaration of function 'HAL_GetTick' [-Wimplicit-function-declaration]
+   42 |         uint32_t curr_time = HAL_GetTick();
+      |                              ^~~~~~~~~~~
+In file included from ../Core/Src/photoresistor_driver.c:8:
+../Core/Inc/photoresistor_driver.h:17:9: error: unknown type name 'ADC_HandleTypeDef'
+   17 |         ADC_HandleTypeDef* adc_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:18:9: error: unknown type name 'DMA_HandleTypeDef'
+   18 |         DMA_HandleTypeDef* dma_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:22:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:24:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   24 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/photoresistor_driver.c: In function 'enable_photo':
+../Core/Src/photoresistor_driver.c:12:9: warning: implicit declaration of function 'HAL_ADC_Stop' [-Wimplicit-function-declaration]
+   12 |         HAL_ADC_Stop(photo->adc_handle);
+      |         ^~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: In function 'start_get_adc_values':
+../Core/Src/photoresistor_driver.c:22:9: warning: implicit declaration of function 'HAL_ADC_Start_DMA' [-Wimplicit-function-declaration]
+   22 |         HAL_ADC_Start_DMA(photo->adc_handle, (uint32_t*)(photo->adc_results),4); // EDIT: make sure the buffer works as an address input
+      |         ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/photoresistor_driver.h:22:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:24:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   24 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:169:92: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'uint16_t (*)[4]' {aka 'short unsigned int (*)[4]'} [-Wincompatible-pointer-types]
+  169 |                                                                             .adc_results = &adc_results };
+      |                                                                                            ^
+../Core/Src/main.c:169:92: note: (near initialization for 'photo.adc_results')
+../Core/Src/main.c:206:19: warning: implicit declaration of function 'start_get_adc_values' [-Wimplicit-function-declaration]
+  206 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: implicit declaration of function 'get_adc_values' [-Wimplicit-function-declaration]
+  211 |                   uint32_t* adc_results = get_adc_values(&photo);
+      |                                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:17:40 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+In file included from ../Core/Src/photoresistor_driver.c:8:
+../Core/Inc/photoresistor_driver.h:17:9: error: unknown type name 'ADC_HandleTypeDef'
+   17 |         ADC_HandleTypeDef* adc_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:18:9: error: unknown type name 'DMA_HandleTypeDef'
+   18 |         DMA_HandleTypeDef* dma_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:22:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:24:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   24 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/photoresistor_driver.c: In function 'enable_photo':
+../Core/Src/photoresistor_driver.c:12:9: warning: implicit declaration of function 'HAL_ADC_Stop' [-Wimplicit-function-declaration]
+   12 |         HAL_ADC_Stop(photo->adc_handle);
+      |         ^~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: In function 'start_get_adc_values':
+../Core/Src/photoresistor_driver.c:22:9: warning: implicit declaration of function 'HAL_ADC_Start_DMA' [-Wimplicit-function-declaration]
+   22 |         HAL_ADC_Start_DMA(photo->adc_handle, (uint32_t*)(photo->adc_results),4); // EDIT: make sure the buffer works as an address input
+      |         ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/photoresistor_driver.h:22:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:24:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   24 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:169:92: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'uint32_t (*)[4]' {aka 'long unsigned int (*)[4]'} [-Wincompatible-pointer-types]
+  169 |                                                                             .adc_results = &adc_results };
+      |                                                                                            ^
+../Core/Src/main.c:169:92: note: (near initialization for 'photo.adc_results')
+../Core/Src/main.c:206:19: warning: implicit declaration of function 'start_get_adc_values' [-Wimplicit-function-declaration]
+  206 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: implicit declaration of function 'get_adc_values' [-Wimplicit-function-declaration]
+  211 |                   uint32_t* adc_results = get_adc_values(&photo);
+      |                                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:18:02 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+In file included from ../Core/Src/photoresistor_driver.c:8:
+../Core/Inc/photoresistor_driver.h:17:9: error: unknown type name 'ADC_HandleTypeDef'
+   17 |         ADC_HandleTypeDef* adc_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:18:9: error: unknown type name 'DMA_HandleTypeDef'
+   18 |         DMA_HandleTypeDef* dma_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:22:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:24:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   24 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/photoresistor_driver.c: In function 'enable_photo':
+../Core/Src/photoresistor_driver.c:12:9: warning: implicit declaration of function 'HAL_ADC_Stop' [-Wimplicit-function-declaration]
+   12 |         HAL_ADC_Stop(photo->adc_handle);
+      |         ^~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: In function 'start_get_adc_values':
+../Core/Src/photoresistor_driver.c:22:9: warning: implicit declaration of function 'HAL_ADC_Start_DMA' [-Wimplicit-function-declaration]
+   22 |         HAL_ADC_Start_DMA(photo->adc_handle, (uint32_t*)(photo->adc_results),4); // EDIT: make sure the buffer works as an address input
+      |         ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/photoresistor_driver.h:22:19: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   22 | void enable_photo(PhotoresistorTypeDef* photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:23:20: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   23 | void disable_photo(PhotoresistorTypeDef* photo);
+      |                    ^~~~~~~~~~~~~~~~~~~~
+      |                    Photoresistor_DriverTypeDef
+../Core/Inc/photoresistor_driver.h:24:25: error: unknown type name 'PhotoresistorTypeDef'; did you mean 'Photoresistor_DriverTypeDef'?
+   24 | uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+      |                         Photoresistor_DriverTypeDef
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:206:19: warning: implicit declaration of function 'start_get_adc_values' [-Wimplicit-function-declaration]
+  206 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: implicit declaration of function 'get_adc_values' [-Wimplicit-function-declaration]
+  211 |                   uint32_t* adc_results = get_adc_values(&photo);
+      |                                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:211:43: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:18:42 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+In file included from ../Core/Src/photoresistor_driver.c:8:
+../Core/Inc/photoresistor_driver.h:17:9: error: unknown type name 'ADC_HandleTypeDef'
+   17 |         ADC_HandleTypeDef* adc_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:18:9: error: unknown type name 'DMA_HandleTypeDef'
+   18 |         DMA_HandleTypeDef* dma_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: In function 'enable_photo':
+../Core/Src/photoresistor_driver.c:12:9: warning: implicit declaration of function 'HAL_ADC_Stop' [-Wimplicit-function-declaration]
+   12 |         HAL_ADC_Stop(photo->adc_handle);
+      |         ^~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: In function 'start_get_adc_values':
+../Core/Src/photoresistor_driver.c:22:9: warning: implicit declaration of function 'HAL_ADC_Start_DMA' [-Wimplicit-function-declaration]
+   22 |         HAL_ADC_Start_DMA(photo->adc_handle, (uint32_t*)(photo->adc_results),4); // EDIT: make sure the buffer works as an address input
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: At top level:
+../Core/Src/photoresistor_driver.c:25:11: error: conflicting types for 'get_adc_values'; have 'uint32_t *(Photoresistor_DriverTypeDef *)' {aka 'long unsigned int *(Photoresistor_DriverTypeDef *)'}
+   25 | uint32_t* get_adc_values(Photoresistor_DriverTypeDef* photo)
+      |           ^~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:24:10: note: previous declaration of 'get_adc_values' with type 'uint32_t(Photoresistor_DriverTypeDef *)' {aka 'long unsigned int(Photoresistor_DriverTypeDef *)'}
+   24 | uint32_t get_adc_values(Photoresistor_DriverTypeDef* photo);
+      |          ^~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:206:19: warning: implicit declaration of function 'start_get_adc_values'; did you mean 'get_adc_values'? [-Wimplicit-function-declaration]
+  206 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   get_adc_values
+../Core/Src/main.c:211:43: warning: initialization of 'uint32_t *' {aka 'long unsigned int *'} from 'uint32_t' {aka 'long unsigned int'} makes pointer from integer without a cast [-Wint-conversion]
+  211 |                   uint32_t* adc_results = get_adc_values(&photo);
+      |                                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:18:50 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+In file included from ../Core/Src/photoresistor_driver.c:8:
+../Core/Inc/photoresistor_driver.h:17:9: error: unknown type name 'ADC_HandleTypeDef'
+   17 |         ADC_HandleTypeDef* adc_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:18:9: error: unknown type name 'DMA_HandleTypeDef'
+   18 |         DMA_HandleTypeDef* dma_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: In function 'enable_photo':
+../Core/Src/photoresistor_driver.c:12:9: warning: implicit declaration of function 'HAL_ADC_Stop' [-Wimplicit-function-declaration]
+   12 |         HAL_ADC_Stop(photo->adc_handle);
+      |         ^~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: In function 'start_get_adc_values':
+../Core/Src/photoresistor_driver.c:22:9: warning: implicit declaration of function 'HAL_ADC_Start_DMA' [-Wimplicit-function-declaration]
+   22 |         HAL_ADC_Start_DMA(photo->adc_handle, (uint32_t*)(photo->adc_results),4); // EDIT: make sure the buffer works as an address input
+      |         ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:206:19: warning: implicit declaration of function 'start_get_adc_values'; did you mean 'get_adc_values'? [-Wimplicit-function-declaration]
+  206 |                   start_get_adc_values(&photo);
+      |                   ^~~~~~~~~~~~~~~~~~~~
+      |                   get_adc_values
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:20:01 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+In file included from ../Core/Src/photoresistor_driver.c:8:
+../Core/Inc/photoresistor_driver.h:17:9: error: unknown type name 'ADC_HandleTypeDef'
+   17 |         ADC_HandleTypeDef* adc_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Inc/photoresistor_driver.h:18:9: error: unknown type name 'DMA_HandleTypeDef'
+   18 |         DMA_HandleTypeDef* dma_handle;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/photoresistor_driver.c: In function 'start_get_adc_values':
+../Core/Src/photoresistor_driver.c:12:9: warning: implicit declaration of function 'HAL_ADC_Start_DMA' [-Wimplicit-function-declaration]
+   12 |         HAL_ADC_Start_DMA(photo->adc_handle, (uint32_t*)(photo->adc_results),4); // EDIT: make sure the buffer works as an address input
+      |         ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/photoresistor_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:20:28 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:215:28: warning: unused variable 'photo4' [-Wunused-variable]
+  215 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo3' [-Wunused-variable]
+  214 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:213:28: warning: unused variable 'photo2' [-Wunused-variable]
+  213 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:212:28: warning: unused variable 'photo1' [-Wunused-variable]
+  212 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
 arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: term_project.elf
  
 arm-none-eabi-size  term_project.elf 
 arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
    text	   data	    bss	    dec	    hex	filename
-  15648	     12	   2004	  17664	   4500	term_project.elf
+  20872	     16	   2192	  23080	   5a28	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+00:23:32 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:217:28: warning: unused variable 'photo4' [-Wunused-variable]
+  217 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:216:28: warning: unused variable 'photo3' [-Wunused-variable]
+  216 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:215:28: warning: unused variable 'photo2' [-Wunused-variable]
+  215 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:214:28: warning: unused variable 'photo1' [-Wunused-variable]
+  214 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  20872	     16	   2192	  23080	   5a28	term_project.elf
 Finished building: default.size.stdout
  
 Finished building: term_project.list

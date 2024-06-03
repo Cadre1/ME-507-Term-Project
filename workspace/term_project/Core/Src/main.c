@@ -23,9 +23,12 @@
 /* USER CODE BEGIN Includes */
 #include "motor_driver.h"
 #include "radio_reciever_driver.h"
+#include "photoresistor_driver.h"
+#include "vector.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,6 +48,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
+DMA_HandleTypeDef hdma_adc1;
 
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
@@ -69,12 +73,16 @@ uint32_t curr_time;
 char my_message[200];
 
 TIM_HandleTypeDef htim_cb;
+
+// Interrupt Flags
 uint8_t edge_flag = 0;
+uint8_t adc_conversion_flag = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM2_Init(void);
@@ -83,6 +91,7 @@ static void MX_TIM5_Init(void);
 static void MX_USART6_UART_Init(void);
 /* USER CODE BEGIN PFP */
 int32_t pulse_to_PWM(RadioReciever_DriverTypeDef* rad);
+VectorTypeDef get_reflect_angle(VectorTypeDef* light_source_angle, VectorTypeDef* target_position, VectorTypeDef* heliostat_position);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -119,6 +128,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_ADC1_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
@@ -126,7 +136,7 @@ int main(void)
   MX_TIM5_Init();
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
-  // Initializing the motor driver structure and enabling the motors
+  // Initializing the motor driver structure and enabling the motor
   Motor_DriverTypeDef mot = { .tim_handle = &htim2,
   	  	 	  	  	  	  	  .tim_channel1 = TIM_CHANNEL_1,
 							  .tim_channel2 = TIM_CHANNEL_2,
@@ -138,6 +148,8 @@ int main(void)
   mot_num = 1;
   set_PWM_percent(&mot, mot_num, 0);
 
+
+  // Initializing the Radio Receiver structure and enabling the channel for inputs
   RadioReciever_DriverTypeDef rad = { .tim_handle = &htim1,
 	  	  	  	  	  	  	     	   .tim_channel1 = TIM_CHANNEL_1,
 									   .tim_channel2 = TIM_CHANNEL_2,
@@ -150,11 +162,18 @@ int main(void)
 									   .rise_flag = 0					};
   enable_rad(&rad);
 
-  prev_time = HAL_GetTick();
+
+  // Initializing the Photoresistors' structure
+  uint32_t adc_buff[4];
+
+  Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
+  	  	  	  	  	  	  	  	  	  	.dma_handle = &hdma_adc1,
+  	  	  	  	  	  	  	  	  	    .adc_results = adc_buff };
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  prev_time = HAL_GetTick();
   while (1)
   {
 	  // Reading the pulse
@@ -165,11 +184,12 @@ int main(void)
 
 	  // Calculating duty count 1 and setting motor 1 PWM
 	  mot_num = 1;
-	  duty_count1 = pulse_to_PWM(&rad);
-	  duty_percent1 = (duty_count1*100)/pulse;
-	  set_PWM(&mot, mot_num, duty_count1);
+	  duty_count = pulse_to_PWM(&rad);
+	  duty_percent = (duty_count*100)/pulse;
+	  set_PWM(&mot, mot_num, duty_count);
 
 	  //Printing out values
+	  /*
 	  curr_time = HAL_GetTick();
 	  if (curr_time - prev_time >= 2000){
 		  sprintf(my_message,"The pulse width of channel 1 is: %ld (us).\r\n", get_pulse(&rad));
@@ -181,6 +201,23 @@ int main(void)
 		  HAL_UART_Transmit(&huart6, (uint8_t*) my_message, strlen(my_message), 10);
 		  prev_time = curr_time;
 	  }
+	  */
+
+	  if (adc_conversion_flag == 0){
+		  // Starts the DMA to get ADC values
+		  start_get_adc_values(&photo);
+		  adc_conversion_flag = 1;
+	  }
+	  else if (adc_conversion_flag == 2){
+		  // Waits until the DMA has finished collecting values into the buffer after the interrupt is ran to return values
+		  uint32_t* adc_results = get_adc_values(&photo);
+		  uint32_t photo1 = adc_results[0];
+		  uint32_t photo2 = adc_results[1];
+		  uint32_t photo3 = adc_results[2];
+		  uint32_t photo4 = adc_results[3];
+		  adc_conversion_flag = 0;
+	  }
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -256,13 +293,13 @@ static void MX_ADC1_Init(void)
   hadc1.Instance = ADC1;
   hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
-  hadc1.Init.ScanConvMode = DISABLE;
+  hadc1.Init.ScanConvMode = ENABLE;
   hadc1.Init.ContinuousConvMode = DISABLE;
   hadc1.Init.DiscontinuousConvMode = DISABLE;
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.NbrOfConversion = 4;
   hadc1.Init.DMAContinuousRequests = DISABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
@@ -274,7 +311,32 @@ static void MX_ADC1_Init(void)
   */
   sConfig.Channel = ADC_CHANNEL_4;
   sConfig.Rank = 1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_15CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Rank = 2;
   sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Rank = 3;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Rank = 4;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -578,6 +640,22 @@ static void MX_USART6_UART_Init(void)
 }
 
 /**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA2_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA2_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -612,21 +690,65 @@ int32_t pulse_to_PWM(RadioReciever_DriverTypeDef* rad)
 	  pulse_rad = get_pulse(rad);
 	  duty_percent = ((pulse_rad-1509)*100)/513;
 	  duty_count = ((pulse_rad-1509)*pulse)/513;
-	  if (duty_percent > 100){
+	  if (duty_percent > 100 || duty_count > 4799){
 		  duty_percent = 100;
 		  duty_count = 4799;
 	  }
-	  else if (duty_percent < -100){
+	  else if (duty_percent < -100 || duty_count < -4799){
 		  duty_percent = -100;
 		  duty_count = -4799;
 	  }
 	  return duty_count;
 }
 
+VectorTypeDef get_reflect_angle(VectorTypeDef* light_source_angle, VectorTypeDef* target_position, VectorTypeDef* heliostat_position)
+{
+    // Generating a unit vector from the light source angles
+    VectorTypeDef light_source_vector = {.x = cos(light_source_angle->z)*sin(light_source_angle->x),
+                                         .y = sin(light_source_angle->z)*sin(light_source_angle->x),
+                                         .z = cos(light_source_angle->x)                                   };
+    // Generating a unit vector from the target-to-heliostat positions
+    VectorTypeDef target_dif = {.x = (target_position->x)-(heliostat_position->x),
+                                .y = (target_position->y)-(heliostat_position->y),
+                                .z = (target_position->z)-(heliostat_position->z) };
+    float target_vector_mag = get_mag(&target_dif);
+    VectorTypeDef target_vector = {.x = target_dif.x/target_vector_mag,
+                                   .y = target_dif.y/target_vector_mag,
+                                   .z = target_dif.z/target_vector_mag };
+
+    // Calculating the normal vector of the mirror to reflect the light source to the target
+    VectorTypeDef reflect_vector_dir = {.x = light_source_vector.x+target_vector.x,
+                                        .y = light_source_vector.y+target_vector.y,
+                                        .z = light_source_vector.z+target_vector.z };
+    float reflect_vector_dir_mag = get_mag(&reflect_vector_dir);
+    VectorTypeDef reflect_vector = {.x = reflect_vector_dir.x/reflect_vector_dir_mag,
+                                    .y = reflect_vector_dir.y/reflect_vector_dir_mag,
+                                    .z = reflect_vector_dir.z/reflect_vector_dir_mag };
+
+    // Calculating the pitch and yaw angles to produce the mirror normal vector
+    float theta = acos(reflect_vector.z);
+    float phi1 = acos(reflect_vector.x/sin(theta));
+    float phi2 = asin(reflect_vector.y/sin(theta));
+
+    // Generating an angle vector to store phi and theta (phi1 and phi2, with no rounding error, should be the same)
+    VectorTypeDef reflect_angle = {.x = theta,
+                                   .y = phi1,
+                                   .z = phi2  };
+
+    return reflect_angle;
+}
+
+// Callback Functions
+
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
 	edge_flag = 1;
 	htim_cb = *htim;
+}
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
+{
+	adc_conversion_flag = 2;
 }
 /* USER CODE END 4 */
 

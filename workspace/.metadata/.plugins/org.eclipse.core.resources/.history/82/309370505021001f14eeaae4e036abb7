@@ -1,0 +1,18 @@
+/*
+ * photoresistor_driver.c
+ *
+ *  Created on: Jun 2, 2024
+ *      Author: cadre
+ */
+
+void enable_photoresistor(PhotoresistorTypeDef* photo)
+{
+	HAL_ADC_Start(photo->adc1);
+	HAL_ADC_Start(photo->adc2);
+	HAL_ADC_Start(photo->adc3);
+	HAL_ADC_Start(photo->adc4);
+}
+
+void disable_photoresistor(PhotoresistorTypeDef* photo);
+uint32_t get_adc_value(PhotoresistorTypeDef* photo, uint8_t num);
+uint32_t get_adc_diff(PhotoresistorTypeDef* con, uint8_t num1, uint8_t num2);

@@ -1,0 +1,26 @@
+/*
+ * photoresistor_driver.h
+ *
+ *  Created on: Jun 2, 2024
+ *      Author: cadre
+ */
+
+#ifndef INC_PHOTORESISTOR_DRIVER_H_
+#define INC_PHOTORESISTOR_DRIVER_H_
+
+#include <stdio.h>
+#include <stdint.h>
+
+// Vector object data structure
+struct{
+	ADC_HandleTypeDef* adc_handle;
+	DMA_HandleTypeDef* dma_handle;
+	uint8_t adc_conversion_flag;
+	uint32_t* adc_results;
+} typedef Photoresistor_DriverTypeDef;
+
+void enable_photo(PhotoresistorTypeDef* photo);
+void disable_photo(PhotoresistorTypeDef* photo);
+uint32_t get_adc_values(PhotoresistorTypeDef* photo);
+
+#endif /* INC_PHOTORESISTOR_DRIVER_H_ */

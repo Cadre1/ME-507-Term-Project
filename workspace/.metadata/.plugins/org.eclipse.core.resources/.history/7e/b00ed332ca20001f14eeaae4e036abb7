@@ -1,0 +1,59 @@
+/*
+ * controller.c
+ *
+ *  Created on: May 30, 2024
+ *      Author: cadre
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "controller.h"
+
+void enable_controller(ControllerTypeDef* con, float kp, float kd, float ki)
+{
+	con->kp = kp;
+	con->kd = kd;
+	con->ki = ki;
+	con->des_val = 0;
+}
+
+void disable_controller(ControllerTypeDef* con)
+{
+	con->kp = 0;
+	con->kd = 0;
+	con->ki = 0;
+	con->des_val = 0;
+}
+
+void set_gains(ControllerTypeDef* con, float kp, float kd, float ki)
+{
+	con->kp = kp;
+	con->kd = kd;
+	con->ki = ki;
+}
+
+void set_target(ControllerTypeDef* con, float des_val)
+{
+	con->des_val = des_val;
+}
+
+float get_output(ControllerTypeDef* con, float curr_val)
+{
+	curr_time = HAL_GetTick();
+	if (con->first_time){
+
+	}
+	else{
+
+	}
+	diff_time = curr_time-con->prev_time;
+
+	prop_err = (con->des_val)-curr_val;
+	der_err = prop_val/diff_time;
+	int_err =
+
+	p_output = kp*prop_err;
+	d_output = kd*der_err;
+	i_output = ki*int_err;
+	return output;
+}

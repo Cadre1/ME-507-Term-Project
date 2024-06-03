@@ -1,0 +1,2 @@
+../Core/Src/photoresistor_driver.c:10:6:start_get_adc_values	1
+../Core/Src/photoresistor_driver.c:15:11:get_adc_values	1

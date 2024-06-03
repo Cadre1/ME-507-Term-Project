@@ -1,0 +1,41 @@
+/*
+ * photoresistor_driver.c
+ *
+ *  Created on: Jun 2, 2024
+ *      Author: cadre
+ */
+
+#include <stdio.h>
+#include <stdint.h>
+
+void enable_photo(Photoresistor_DriverTypeDef* photo)
+{
+	HAL_ADC_Stop(photo->adc_handle);
+}
+
+void disable_photo(Photoresistor_DriverTypeDef* photo)
+{
+	HAL_ADC_Stop(photo->adc_handle);
+}
+
+uint32_t get_adc_values(Photoresistor_DriverTypeDef* photo)
+{
+	uint32_t result_buff [4];
+	HAL_ADC_Start_DMA(adc, (uint32_t*)result_buff,4);
+	HAL_ADC_PollForConversion(adc,HAL_MAX_DELAY);
+	uint32_t adc_val = HAL_ADC_GetValue(adc);
+	HAL_ADC_Stop(adc);
+	return adc_val;
+}
+
+uint32_t get_adc_diff(Photoresistor_DriverTypeDef* photo, uint8_t num1, uint8_t num2)
+{
+	// NOTE: may need to record time difference between taking the first and
+	// 		 second adc values in case they are significantly spaced out.
+	//		 But this should only be around a few useconds. If it were longer,
+	//		 look into DMA usage.
+	uint32_t adc_val1 = get_adc_value(photo, num1);
+	uint32_t adc_val2 = get_adc_value(photo,num2);
+	uint32_t diff = adc_val1-adc_val2;
+	return diff;
+}

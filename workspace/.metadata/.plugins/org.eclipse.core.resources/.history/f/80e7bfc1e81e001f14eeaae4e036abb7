@@ -1,0 +1,27 @@
+/*
+ * controller.h
+ *
+ *  Created on: May 30, 2024
+ *      Author: cadre
+ */
+
+#ifndef INC_CONTROLLER_H_
+#define INC_CONTROLLER_H_
+
+#include <stdio.h>
+#include <stdint.h>
+
+// Vector object data structure
+struct{
+	float des_val;
+	float kp;
+	float kd;
+	float ki;
+	float int_val;
+	float der_val;
+
+} typedef ControllerTypeDef;
+
+float get_mag(VectorTypeDef* vect);
+
+#endif /* INC_CONTROLLER_H_ */
