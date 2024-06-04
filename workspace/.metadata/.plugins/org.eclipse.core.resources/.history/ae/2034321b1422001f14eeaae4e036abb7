@@ -1,0 +1,34 @@
+/*
+ * encoder.h
+ *
+ *  Created on: Jun 3, 2024
+ *      Author: cadre
+ */
+
+#ifndef INC_ENCODER_H_
+#define INC_ENCODER_H_
+
+#include <stdio.h>
+#include <stdint.h>
+#include "stm32f4xx_hal.h"
+
+struct{
+	TIM_Encoder_InitTypeDef* tim_handle;
+	uint32_t tim_channel1;
+	uint32_t tim_channel2;
+	uint16_t IC_Rise;
+	uint16_t IC_Fall;
+	uint16_t IC_Diff;
+	uint16_t pulse_width;
+	uint16_t tol;
+	int pulse_recieve_flag;
+	int rise_flag;
+} typedef EncoderTypeDef;
+
+
+void enable_enc(EncoderTypeDef* enc);
+void disable_enc(EncoderTypeDef* enc);
+void set_zero(EncoderTypeDef* enc);
+uint32_t read_position(EncoderTypeDef* enc, TIM_HandleTypeDef* htim);
+
+#endif /* INC_ENCODER_H_ */

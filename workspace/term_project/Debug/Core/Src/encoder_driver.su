@@ -1,0 +1,5 @@
+../Core/Src/encoder_driver.c:10:6:enable_enc	16	static
+../Core/Src/encoder_driver.c:15:6:disable_enc	16	static
+../Core/Src/encoder_driver.c:20:6:set_zero	16	static
+../Core/Src/encoder_driver.c:26:9:read_count	24	static
+../Core/Src/encoder_driver.c:46:9:read_position	16	static

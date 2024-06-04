@@ -1280,3 +1280,1426 @@ Finished building: default.size.stdout
  
 Finished building: term_project.list
  
+20:33:36 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/controller.d" -MT"Core/Src/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/controller.o"
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/motor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/motor_driver.d" -MT"Core/Src/motor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/motor_driver.o"
+arm-none-eabi-gcc "../Core/Src/photoresistor_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/photoresistor_driver.d" -MT"Core/Src/photoresistor_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/photoresistor_driver.o"
+arm-none-eabi-gcc "../Core/Src/radio_reciever_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/radio_reciever_driver.d" -MT"Core/Src/radio_reciever_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/radio_reciever_driver.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc "../Core/Src/vector.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/vector.d" -MT"Core/Src/vector.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/vector.o"
+../Core/Src/controller.c: In function 'get_output':
+../Core/Src/controller.c:42:30: warning: implicit declaration of function 'HAL_GetTick' [-Wimplicit-function-declaration]
+   42 |         uint32_t curr_time = HAL_GetTick();
+      |                              ^~~~~~~~~~~
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:12:34: warning: passing argument 1 of 'HAL_TIM_Encoder_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+   12 |         HAL_TIM_Encoder_Start(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                               ~~~^~~~~~~~~~~~
+      |                                  |
+      |                                  TIM_Encoder_InitTypeDef *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/encoder_driver.h:13,
+                 from ../Core/Src/encoder_driver.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2004:60: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2004 | HAL_StatusTypeDef HAL_TIM_Encoder_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                         ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'disable_enc':
+../Core/Src/encoder_driver.c:16:33: warning: passing argument 1 of 'HAL_TIM_Encoder_Stop' from incompatible pointer type [-Wincompatible-pointer-types]
+   16 |         HAL_TIM_Encoder_Stop(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                              ~~~^~~~~~~~~~~~
+      |                                 |
+      |                                 TIM_Encoder_InitTypeDef *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2005:59: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2005 | HAL_StatusTypeDef HAL_TIM_Encoder_Stop(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'read_count':
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: 'Encoder_DriverTypeDef' has no member named 'Instance'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/encoder_driver.c:27:27: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   27 |         enc->curr_count = __HAL_TIM_GET_COUNTER(enc);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/encoder_driver.c:37:12: warning: statement with no effect [-Wunused-value]
+   37 |         enc->prev_count;
+      |         ~~~^~~~~~~~~~~~
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:44:1: error: expected declaration or statement at end of input
+   44 | }
+      | ^
+../Core/Src/encoder_driver.c: At top level:
+../Core/Src/encoder_driver.c:41:9: warning: 'read_position' defined but not used [-Wunused-function]
+   41 | int32_t read_position(Encoder_DriverTypeDef* enc)
+      |         ^~~~~~~~~~~~~
+../Core/Src/encoder_driver.c:25:9: warning: 'read_count' defined but not used [-Wunused-function]
+   25 | int32_t read_count(Encoder_DriverTypeDef* enc)
+      |         ^~~~~~~~~~
+../Core/Src/encoder_driver.c:19:6: warning: 'set_zero' defined but not used [-Wunused-function]
+   19 | void set_zero(Encoder_DriverTypeDef* enc)
+      |      ^~~~~~~~
+../Core/Src/encoder_driver.c:14:6: warning: 'disable_enc' defined but not used [-Wunused-function]
+   14 | void disable_enc(Encoder_DriverTypeDef* enc)
+      |      ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/encoder_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:176:47: warning: initialization of 'TIM_Encoder_InitTypeDef *' from incompatible pointer type 'TIM_HandleTypeDef *' [-Wincompatible-pointer-types]
+  176 |   Encoder_DriverTypeDef enc = { .tim_handle = &htim3,
+      |                                               ^
+../Core/Src/main.c:176:47: note: (near initialization for 'enc.tim_handle')
+../Core/Src/main.c:235:28: warning: unused variable 'photo4' [-Wunused-variable]
+  235 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:234:28: warning: unused variable 'photo3' [-Wunused-variable]
+  234 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:233:28: warning: unused variable 'photo2' [-Wunused-variable]
+  233 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:232:28: warning: unused variable 'photo1' [-Wunused-variable]
+  232 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:38:20 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:12:34: warning: passing argument 1 of 'HAL_TIM_Encoder_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+   12 |         HAL_TIM_Encoder_Start(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                               ~~~^~~~~~~~~~~~
+      |                                  |
+      |                                  TIM_Encoder_InitTypeDef *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/encoder_driver.h:13,
+                 from ../Core/Src/encoder_driver.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2004:60: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2004 | HAL_StatusTypeDef HAL_TIM_Encoder_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                         ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'disable_enc':
+../Core/Src/encoder_driver.c:16:33: warning: passing argument 1 of 'HAL_TIM_Encoder_Stop' from incompatible pointer type [-Wincompatible-pointer-types]
+   16 |         HAL_TIM_Encoder_Stop(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                              ~~~^~~~~~~~~~~~
+      |                                 |
+      |                                 TIM_Encoder_InitTypeDef *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2005:59: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2005 | HAL_StatusTypeDef HAL_TIM_Encoder_Stop(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'read_count':
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: 'Encoder_DriverTypeDef' has no member named 'Instance'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/encoder_driver.c:27:27: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   27 |         enc->curr_count = __HAL_TIM_GET_COUNTER(enc);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/encoder_driver.c:37:12: warning: statement with no effect [-Wunused-value]
+   37 |         enc->prev_count;
+      |         ~~~^~~~~~~~~~~~
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:44:1: error: expected declaration or statement at end of input
+   44 | }
+      | ^
+../Core/Src/encoder_driver.c: At top level:
+../Core/Src/encoder_driver.c:41:9: warning: 'read_position' defined but not used [-Wunused-function]
+   41 | int32_t read_position(Encoder_DriverTypeDef* enc)
+      |         ^~~~~~~~~~~~~
+../Core/Src/encoder_driver.c:25:9: warning: 'read_count' defined but not used [-Wunused-function]
+   25 | int32_t read_count(Encoder_DriverTypeDef* enc)
+      |         ^~~~~~~~~~
+../Core/Src/encoder_driver.c:19:6: warning: 'set_zero' defined but not used [-Wunused-function]
+   19 | void set_zero(Encoder_DriverTypeDef* enc)
+      |      ^~~~~~~~
+../Core/Src/encoder_driver.c:14:6: warning: 'disable_enc' defined but not used [-Wunused-function]
+   14 | void disable_enc(Encoder_DriverTypeDef* enc)
+      |      ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/encoder_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:176:47: warning: initialization of 'TIM_Encoder_InitTypeDef *' from incompatible pointer type 'TIM_HandleTypeDef *' [-Wincompatible-pointer-types]
+  176 |   Encoder_DriverTypeDef enc = { .tim_handle = &htim3,
+      |                                               ^
+../Core/Src/main.c:176:47: note: (near initialization for 'enc.tim_handle')
+../Core/Src/main.c:235:28: warning: unused variable 'photo4' [-Wunused-variable]
+  235 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:234:28: warning: unused variable 'photo3' [-Wunused-variable]
+  234 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:233:28: warning: unused variable 'photo2' [-Wunused-variable]
+  233 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:232:28: warning: unused variable 'photo1' [-Wunused-variable]
+  232 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:240:19: warning: unused variable 'count' [-Wunused-variable]
+  240 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:39:07 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:12:34: warning: passing argument 1 of 'HAL_TIM_Encoder_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+   12 |         HAL_TIM_Encoder_Start(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                               ~~~^~~~~~~~~~~~
+      |                                  |
+      |                                  TIM_Encoder_InitTypeDef *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/encoder_driver.h:13,
+                 from ../Core/Src/encoder_driver.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2004:60: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2004 | HAL_StatusTypeDef HAL_TIM_Encoder_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                         ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'disable_enc':
+../Core/Src/encoder_driver.c:16:33: warning: passing argument 1 of 'HAL_TIM_Encoder_Stop' from incompatible pointer type [-Wincompatible-pointer-types]
+   16 |         HAL_TIM_Encoder_Stop(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                              ~~~^~~~~~~~~~~~
+      |                                 |
+      |                                 TIM_Encoder_InitTypeDef *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2005:59: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2005 | HAL_StatusTypeDef HAL_TIM_Encoder_Stop(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'read_count':
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: 'Encoder_DriverTypeDef' has no member named 'Instance'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/encoder_driver.c:27:27: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   27 |         enc->curr_count = __HAL_TIM_GET_COUNTER(enc);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/encoder_driver.c:37:12: warning: statement with no effect [-Wunused-value]
+   37 |         enc->prev_count;
+      |         ~~~^~~~~~~~~~~~
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:44:1: error: expected declaration or statement at end of input
+   44 | }
+      | ^
+../Core/Src/encoder_driver.c: At top level:
+../Core/Src/encoder_driver.c:41:9: warning: 'read_position' defined but not used [-Wunused-function]
+   41 | int32_t read_position(Encoder_DriverTypeDef* enc)
+      |         ^~~~~~~~~~~~~
+../Core/Src/encoder_driver.c:25:9: warning: 'read_count' defined but not used [-Wunused-function]
+   25 | int32_t read_count(Encoder_DriverTypeDef* enc)
+      |         ^~~~~~~~~~
+../Core/Src/encoder_driver.c:19:6: warning: 'set_zero' defined but not used [-Wunused-function]
+   19 | void set_zero(Encoder_DriverTypeDef* enc)
+      |      ^~~~~~~~
+../Core/Src/encoder_driver.c:14:6: warning: 'disable_enc' defined but not used [-Wunused-function]
+   14 | void disable_enc(Encoder_DriverTypeDef* enc)
+      |      ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/encoder_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:39:57 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:12:34: warning: passing argument 1 of 'HAL_TIM_Encoder_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+   12 |         HAL_TIM_Encoder_Start(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                               ~~~^~~~~~~~~~~~
+      |                                  |
+      |                                  TIM_Encoder_InitTypeDef *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/encoder_driver.h:13,
+                 from ../Core/Src/encoder_driver.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2004:60: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2004 | HAL_StatusTypeDef HAL_TIM_Encoder_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                         ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'disable_enc':
+../Core/Src/encoder_driver.c:16:33: warning: passing argument 1 of 'HAL_TIM_Encoder_Stop' from incompatible pointer type [-Wincompatible-pointer-types]
+   16 |         HAL_TIM_Encoder_Stop(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                              ~~~^~~~~~~~~~~~
+      |                                 |
+      |                                 TIM_Encoder_InitTypeDef *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2005:59: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2005 | HAL_StatusTypeDef HAL_TIM_Encoder_Stop(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'read_count':
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: 'Encoder_DriverTypeDef' has no member named 'Instance'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/encoder_driver.c:27:27: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   27 |         enc->curr_count = __HAL_TIM_GET_COUNTER(enc);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/encoder_driver.c:37:12: warning: statement with no effect [-Wunused-value]
+   37 |         enc->prev_count;
+      |         ~~~^~~~~~~~~~~~
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:44:1: error: expected declaration or statement at end of input
+   44 | }
+      | ^
+../Core/Src/encoder_driver.c: At top level:
+../Core/Src/encoder_driver.c:41:9: warning: 'read_position' defined but not used [-Wunused-function]
+   41 | int32_t read_position(Encoder_DriverTypeDef* enc)
+      |         ^~~~~~~~~~~~~
+../Core/Src/encoder_driver.c:25:9: warning: 'read_count' defined but not used [-Wunused-function]
+   25 | int32_t read_count(Encoder_DriverTypeDef* enc)
+      |         ^~~~~~~~~~
+../Core/Src/encoder_driver.c:19:6: warning: 'set_zero' defined but not used [-Wunused-function]
+   19 | void set_zero(Encoder_DriverTypeDef* enc)
+      |      ^~~~~~~~
+../Core/Src/encoder_driver.c:14:6: warning: 'disable_enc' defined but not used [-Wunused-function]
+   14 | void disable_enc(Encoder_DriverTypeDef* enc)
+      |      ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/encoder_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:40:17 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:12:34: warning: passing argument 1 of 'HAL_TIM_Encoder_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+   12 |         HAL_TIM_Encoder_Start(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                               ~~~^~~~~~~~~~~~
+      |                                  |
+      |                                  TIM_Encoder_InitTypeDef *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/encoder_driver.h:13,
+                 from ../Core/Src/encoder_driver.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2004:60: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2004 | HAL_StatusTypeDef HAL_TIM_Encoder_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                         ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'disable_enc':
+../Core/Src/encoder_driver.c:16:33: warning: passing argument 1 of 'HAL_TIM_Encoder_Stop' from incompatible pointer type [-Wincompatible-pointer-types]
+   16 |         HAL_TIM_Encoder_Stop(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                              ~~~^~~~~~~~~~~~
+      |                                 |
+      |                                 TIM_Encoder_InitTypeDef *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2005:59: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2005 | HAL_StatusTypeDef HAL_TIM_Encoder_Stop(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'read_count':
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: 'Encoder_DriverTypeDef' has no member named 'Instance'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/encoder_driver.c:27:27: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   27 |         enc->curr_count = __HAL_TIM_GET_COUNTER(enc);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/encoder_driver.c:37:12: warning: statement with no effect [-Wunused-value]
+   37 |         enc->prev_count;
+      |         ~~~^~~~~~~~~~~~
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:44:1: error: expected declaration or statement at end of input
+   44 | }
+      | ^
+../Core/Src/encoder_driver.c: At top level:
+../Core/Src/encoder_driver.c:41:9: warning: 'read_position' defined but not used [-Wunused-function]
+   41 | int32_t read_position(Encoder_DriverTypeDef* enc)
+      |         ^~~~~~~~~~~~~
+../Core/Src/encoder_driver.c:25:9: warning: 'read_count' defined but not used [-Wunused-function]
+   25 | int32_t read_count(Encoder_DriverTypeDef* enc)
+      |         ^~~~~~~~~~
+../Core/Src/encoder_driver.c:19:6: warning: 'set_zero' defined but not used [-Wunused-function]
+   19 | void set_zero(Encoder_DriverTypeDef* enc)
+      |      ^~~~~~~~
+../Core/Src/encoder_driver.c:14:6: warning: 'disable_enc' defined but not used [-Wunused-function]
+   14 | void disable_enc(Encoder_DriverTypeDef* enc)
+      |      ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/encoder_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:40:35 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:12:34: warning: passing argument 1 of 'HAL_TIM_Encoder_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+   12 |         HAL_TIM_Encoder_Start(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                               ~~~^~~~~~~~~~~~
+      |                                  |
+      |                                  TIM_Encoder_InitTypeDef *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/encoder_driver.h:13,
+                 from ../Core/Src/encoder_driver.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2004:60: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2004 | HAL_StatusTypeDef HAL_TIM_Encoder_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                         ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'disable_enc':
+../Core/Src/encoder_driver.c:17:33: warning: passing argument 1 of 'HAL_TIM_Encoder_Stop' from incompatible pointer type [-Wincompatible-pointer-types]
+   17 |         HAL_TIM_Encoder_Stop(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                              ~~~^~~~~~~~~~~~
+      |                                 |
+      |                                 TIM_Encoder_InitTypeDef *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2005:59: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2005 | HAL_StatusTypeDef HAL_TIM_Encoder_Stop(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'read_count':
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: 'Encoder_DriverTypeDef' has no member named 'Instance'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/encoder_driver.c:28:27: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   28 |         enc->curr_count = __HAL_TIM_GET_COUNTER(enc);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/encoder_driver.c:38:12: warning: statement with no effect [-Wunused-value]
+   38 |         enc->prev_count;
+      |         ~~~^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/encoder_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:40:53 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:12:34: warning: passing argument 1 of 'HAL_TIM_Encoder_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+   12 |         HAL_TIM_Encoder_Start(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                               ~~~^~~~~~~~~~~~
+      |                                  |
+      |                                  TIM_Encoder_InitTypeDef *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/encoder_driver.h:13,
+                 from ../Core/Src/encoder_driver.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2004:60: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2004 | HAL_StatusTypeDef HAL_TIM_Encoder_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                         ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'disable_enc':
+../Core/Src/encoder_driver.c:17:33: warning: passing argument 1 of 'HAL_TIM_Encoder_Stop' from incompatible pointer type [-Wincompatible-pointer-types]
+   17 |         HAL_TIM_Encoder_Stop(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                              ~~~^~~~~~~~~~~~
+      |                                 |
+      |                                 TIM_Encoder_InitTypeDef *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2005:59: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2005 | HAL_StatusTypeDef HAL_TIM_Encoder_Stop(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'read_count':
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: 'Encoder_DriverTypeDef' has no member named 'Instance'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/encoder_driver.c:28:27: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   28 |         enc->curr_count = __HAL_TIM_GET_COUNTER(enc);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/encoder_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:46:27 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:12:34: warning: passing argument 1 of 'HAL_TIM_Encoder_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+   12 |         HAL_TIM_Encoder_Start(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                               ~~~^~~~~~~~~~~~
+      |                                  |
+      |                                  TIM_Encoder_InitTypeDef *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/encoder_driver.h:13,
+                 from ../Core/Src/encoder_driver.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2004:60: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2004 | HAL_StatusTypeDef HAL_TIM_Encoder_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                         ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'disable_enc':
+../Core/Src/encoder_driver.c:17:33: warning: passing argument 1 of 'HAL_TIM_Encoder_Stop' from incompatible pointer type [-Wincompatible-pointer-types]
+   17 |         HAL_TIM_Encoder_Stop(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                              ~~~^~~~~~~~~~~~
+      |                                 |
+      |                                 TIM_Encoder_InitTypeDef *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2005:59: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2005 | HAL_StatusTypeDef HAL_TIM_Encoder_Stop(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'read_count':
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: 'TIM_Encoder_InitTypeDef' has no member named 'Instance'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/encoder_driver.c:28:27: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   28 |         enc->curr_count = __HAL_TIM_GET_COUNTER(enc->tim_handle);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/encoder_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:47:59 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:12:34: warning: passing argument 1 of 'HAL_TIM_Encoder_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+   12 |         HAL_TIM_Encoder_Start(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                               ~~~^~~~~~~~~~~~
+      |                                  |
+      |                                  TIM_Encoder_InitTypeDef *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/encoder_driver.h:13,
+                 from ../Core/Src/encoder_driver.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2004:60: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2004 | HAL_StatusTypeDef HAL_TIM_Encoder_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                         ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'disable_enc':
+../Core/Src/encoder_driver.c:17:33: warning: passing argument 1 of 'HAL_TIM_Encoder_Stop' from incompatible pointer type [-Wincompatible-pointer-types]
+   17 |         HAL_TIM_Encoder_Stop(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                              ~~~^~~~~~~~~~~~
+      |                                 |
+      |                                 TIM_Encoder_InitTypeDef *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2005:59: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2005 | HAL_StatusTypeDef HAL_TIM_Encoder_Stop(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'read_count':
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: 'TIM_Encoder_InitTypeDef' has no member named 'Instance'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/encoder_driver.c:28:27: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   28 |         enc->curr_count = __HAL_TIM_GET_COUNTER(enc->tim_handle);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/encoder_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:50:44 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:12:34: warning: passing argument 1 of 'HAL_TIM_Encoder_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+   12 |         HAL_TIM_Encoder_Start(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                               ~~~^~~~~~~~~~~~
+      |                                  |
+      |                                  TIM_Encoder_InitTypeDef *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/encoder_driver.h:13,
+                 from ../Core/Src/encoder_driver.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2004:60: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2004 | HAL_StatusTypeDef HAL_TIM_Encoder_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                         ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'disable_enc':
+../Core/Src/encoder_driver.c:17:33: warning: passing argument 1 of 'HAL_TIM_Encoder_Stop' from incompatible pointer type [-Wincompatible-pointer-types]
+   17 |         HAL_TIM_Encoder_Stop(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                              ~~~^~~~~~~~~~~~
+      |                                 |
+      |                                 TIM_Encoder_InitTypeDef *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2005:59: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2005 | HAL_StatusTypeDef HAL_TIM_Encoder_Stop(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'read_count':
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: 'TIM_Encoder_InitTypeDef' has no member named 'Instance'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/encoder_driver.c:28:27: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   28 |         enc->curr_count = __HAL_TIM_GET_COUNTER(enc->tim_handle);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/encoder_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:176:47: warning: initialization of 'TIM_Encoder_InitTypeDef *' from incompatible pointer type 'TIM_HandleTypeDef *' [-Wincompatible-pointer-types]
+  176 |   Encoder_DriverTypeDef enc = { .tim_handle = &htim3,
+      |                                               ^
+../Core/Src/main.c:176:47: note: (near initialization for 'enc.tim_handle')
+../Core/Src/main.c:235:28: warning: unused variable 'photo4' [-Wunused-variable]
+  235 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:234:28: warning: unused variable 'photo3' [-Wunused-variable]
+  234 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:233:28: warning: unused variable 'photo2' [-Wunused-variable]
+  233 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:232:28: warning: unused variable 'photo1' [-Wunused-variable]
+  232 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:240:19: warning: unused variable 'count' [-Wunused-variable]
+  240 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:57:22 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+../Core/Src/encoder_driver.c: In function 'enable_enc':
+../Core/Src/encoder_driver.c:12:31: warning: passing argument 1 of 'HAL_TIM_Encoder_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+   12 |         HAL_TIM_Encoder_Start(&(enc->tim_handle), TIM_CHANNEL_ALL);
+      |                               ^~~~~~~~~~~~~~~~~~
+      |                               |
+      |                               TIM_Encoder_InitTypeDef **
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/encoder_driver.h:13,
+                 from ../Core/Src/encoder_driver.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2004:60: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef **'
+ 2004 | HAL_StatusTypeDef HAL_TIM_Encoder_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                         ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'disable_enc':
+../Core/Src/encoder_driver.c:17:33: warning: passing argument 1 of 'HAL_TIM_Encoder_Stop' from incompatible pointer type [-Wincompatible-pointer-types]
+   17 |         HAL_TIM_Encoder_Stop(enc->tim_handle, TIM_CHANNEL_ALL);
+      |                              ~~~^~~~~~~~~~~~
+      |                                 |
+      |                                 TIM_Encoder_InitTypeDef *
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:2005:59: note: expected 'TIM_HandleTypeDef *' but argument is of type 'TIM_Encoder_InitTypeDef *'
+ 2005 | HAL_StatusTypeDef HAL_TIM_Encoder_Stop(TIM_HandleTypeDef *htim, uint32_t Channel);
+      |                                        ~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/encoder_driver.c: In function 'read_count':
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:57: error: 'TIM_Encoder_InitTypeDef' has no member named 'Instance'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                                         ^~
+../Core/Src/encoder_driver.c:28:27: note: in expansion of macro '__HAL_TIM_GET_COUNTER'
+   28 |         enc->curr_count = __HAL_TIM_GET_COUNTER(enc->tim_handle);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/encoder_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:00:05 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:235:28: warning: unused variable 'photo4' [-Wunused-variable]
+  235 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:234:28: warning: unused variable 'photo3' [-Wunused-variable]
+  234 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:233:28: warning: unused variable 'photo2' [-Wunused-variable]
+  233 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:232:28: warning: unused variable 'photo1' [-Wunused-variable]
+  232 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:240:19: warning: unused variable 'count' [-Wunused-variable]
+  240 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21876	     16	   2192	  24084	   5e14	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:00:20 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21876	     16	   2192	  24084	   5e14	term_project.elf
+Finished building: default.size.stdout
+ 
+21:00:52 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21876	     16	   2192	  24084	   5e14	term_project.elf
+Finished building: default.size.stdout
+ 
+21:03:20 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21876	     16	   2192	  24084	   5e14	term_project.elf
+Finished building: default.size.stdout
+ 
+21:04:50 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:238:28: warning: unused variable 'photo4' [-Wunused-variable]
+  238 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo3' [-Wunused-variable]
+  237 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo2' [-Wunused-variable]
+  236 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:235:28: warning: unused variable 'photo1' [-Wunused-variable]
+  235 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:243:19: warning: unused variable 'count' [-Wunused-variable]
+  243 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21916	     16	   2200	  24132	   5e44	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:05:58 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:238:28: warning: unused variable 'photo4' [-Wunused-variable]
+  238 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo3' [-Wunused-variable]
+  237 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo2' [-Wunused-variable]
+  236 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:235:28: warning: unused variable 'photo1' [-Wunused-variable]
+  235 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:243:19: warning: unused variable 'count' [-Wunused-variable]
+  243 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21904	     16	   2200	  24120	   5e38	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:07:49 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21904	     16	   2200	  24120	   5e38	term_project.elf
+Finished building: default.size.stdout
+ 
+21:08:10 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21904	     16	   2200	  24120	   5e38	term_project.elf
+Finished building: default.size.stdout
+ 
+21:11:08 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21904	     16	   2200	  24120	   5e38	term_project.elf
+Finished building: default.size.stdout
+ 
+21:13:40 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:238:28: warning: unused variable 'photo4' [-Wunused-variable]
+  238 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo3' [-Wunused-variable]
+  237 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo2' [-Wunused-variable]
+  236 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:235:28: warning: unused variable 'photo1' [-Wunused-variable]
+  235 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:243:19: warning: unused variable 'count' [-Wunused-variable]
+  243 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21900	     16	   2200	  24116	   5e34	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:14:37 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21900	     16	   2200	  24116	   5e34	term_project.elf
+Finished building: default.size.stdout
+ 
+21:14:40 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21900	     16	   2200	  24116	   5e34	term_project.elf
+Finished building: default.size.stdout
+ 
+21:17:43 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:244:19: warning: unused variable 'count' [-Wunused-variable]
+  244 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21940	     16	   2200	  24156	   5e5c	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:19:47 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:407,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Core/Src/main.c:244:57: error: invalid type argument of '->' (have 'Encoder_DriverTypeDef')
+  244 |           int32_t count_test = __HAL_TIM_GET_COUNTER(enc->tim_handle);
+      |                                                         ^~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:1289:46: note: in definition of macro '__HAL_TIM_GET_COUNTER'
+ 1289 | #define __HAL_TIM_GET_COUNTER(__HANDLE__)  ((__HANDLE__)->Instance->CNT)
+      |                                              ^~~~~~~~~~
+../Core/Src/main.c:245:19: warning: unused variable 'count' [-Wunused-variable]
+  245 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:244:19: warning: unused variable 'count_test' [-Wunused-variable]
+  244 |           int32_t count_test = __HAL_TIM_GET_COUNTER(enc->tim_handle);
+      |                   ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:20:00 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:245:19: warning: unused variable 'count' [-Wunused-variable]
+  245 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:244:19: warning: unused variable 'count_test' [-Wunused-variable]
+  244 |           int32_t count_test = __HAL_TIM_GET_COUNTER(enc.tim_handle);
+      |                   ^~~~~~~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21948	     16	   2200	  24164	   5e64	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:20:04 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21948	     16	   2200	  24164	   5e64	term_project.elf
+Finished building: default.size.stdout
+ 
+21:21:01 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:245:19: warning: unused variable 'count' [-Wunused-variable]
+  245 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:244:28: warning: unused variable 'count_test' [-Wunused-variable]
+  244 |           volatile int32_t count_test = __HAL_TIM_GET_COUNTER(enc.tim_handle);
+      |                            ^~~~~~~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21948	     16	   2200	  24164	   5e64	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:23:01 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:245:19: warning: unused variable 'count' [-Wunused-variable]
+  245 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:244:28: warning: unused variable 'count_test' [-Wunused-variable]
+  244 |           volatile int32_t count_test = __HAL_TIM_GET_COUNTER(enc.tim_handle);
+      |                            ^~~~~~~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21956	     16	   2200	  24172	   5e6c	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:25:51 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21992	     16	   2200	  24208	   5e90	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:27:01 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/encoder_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/encoder_driver.d" -MT"Core/Src/encoder_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/encoder_driver.o"
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21976	     16	   2200	  24192	   5e80	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:31:54 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:245:19: warning: unused variable 'count' [-Wunused-variable]
+  245 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:244:28: warning: unused variable 'count_test' [-Wunused-variable]
+  244 |           volatile int32_t count_test = __HAL_TIM_GET_COUNTER(enc.tim_handle);
+      |                            ^~~~~~~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21976	     16	   2200	  24192	   5e80	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:32:59 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:245:19: warning: unused variable 'count' [-Wunused-variable]
+  245 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:244:29: warning: unused variable 'count_test' [-Wunused-variable]
+  244 |           volatile uint16_t count_test = __HAL_TIM_GET_COUNTER(enc.tim_handle);
+      |                             ^~~~~~~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21980	     16	   2200	  24196	   5e84	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:35:10 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:245:19: warning: unused variable 'count' [-Wunused-variable]
+  245 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:244:20: warning: unused variable 'count_test' [-Wunused-variable]
+  244 |           uint32_t count_test = __HAL_TIM_GET_COUNTER(&htim3);
+      |                    ^~~~~~~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21980	     16	   2200	  24196	   5e84	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:38:21 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:245:19: warning: unused variable 'count' [-Wunused-variable]
+  245 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:244:20: warning: unused variable 'count_test' [-Wunused-variable]
+  244 |           uint32_t count_test = __HAL_TIM_GET_COUNTER(&htim3);
+      |                    ^~~~~~~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  22072	     16	   2200	  24288	   5ee0	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:40:01 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:235:42: warning: initialization of 'uint32_t' {aka 'long unsigned int'} from 'uint32_t *' {aka 'long unsigned int *'} makes integer from pointer without a cast [-Wint-conversion]
+  235 |                   uint32_t adc_results = get_adc_values(&photo);
+      |                                          ^~~~~~~~~~~~~~
+../Core/Src/main.c:236:48: error: subscripted value is neither array nor pointer nor vector
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                                                ^
+../Core/Src/main.c:237:48: error: subscripted value is neither array nor pointer nor vector
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                                                ^
+../Core/Src/main.c:238:48: error: subscripted value is neither array nor pointer nor vector
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                                                ^
+../Core/Src/main.c:239:48: error: subscripted value is neither array nor pointer nor vector
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                                                ^
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:235:28: warning: variable 'adc_results' set but not used [-Wunused-but-set-variable]
+  235 |                   uint32_t adc_results = get_adc_values(&photo);
+      |                            ^~~~~~~~~~~
+../Core/Src/main.c:245:19: warning: unused variable 'count' [-Wunused-variable]
+  245 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:244:20: warning: unused variable 'count_test' [-Wunused-variable]
+  244 |           uint32_t count_test = __HAL_TIM_GET_COUNTER(&htim3);
+      |                    ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:40:17 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:235:45: error: invalid initializer
+  235 |                   uint32_t adc_results[4] = get_adc_values(&photo);
+      |                                             ^~~~~~~~~~~~~~
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:245:19: warning: unused variable 'count' [-Wunused-variable]
+  245 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:244:20: warning: unused variable 'count_test' [-Wunused-variable]
+  244 |           uint32_t count_test = __HAL_TIM_GET_COUNTER(&htim3);
+      |                    ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:40:22 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:235:42: warning: initialization of 'uint32_t' {aka 'long unsigned int'} from 'uint32_t *' {aka 'long unsigned int *'} makes integer from pointer without a cast [-Wint-conversion]
+  235 |                   uint32_t adc_results = get_adc_values(&photo);
+      |                                          ^~~~~~~~~~~~~~
+../Core/Src/main.c:236:48: error: subscripted value is neither array nor pointer nor vector
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                                                ^
+../Core/Src/main.c:237:48: error: subscripted value is neither array nor pointer nor vector
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                                                ^
+../Core/Src/main.c:238:48: error: subscripted value is neither array nor pointer nor vector
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                                                ^
+../Core/Src/main.c:239:48: error: subscripted value is neither array nor pointer nor vector
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                                                ^
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:235:28: warning: variable 'adc_results' set but not used [-Wunused-but-set-variable]
+  235 |                   uint32_t adc_results = get_adc_values(&photo);
+      |                            ^~~~~~~~~~~
+../Core/Src/main.c:245:19: warning: unused variable 'count' [-Wunused-variable]
+  245 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:244:20: warning: unused variable 'count_test' [-Wunused-variable]
+  244 |           uint32_t count_test = __HAL_TIM_GET_COUNTER(&htim3);
+      |                    ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:40:24 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:235:44: error: invalid initializer
+  235 |                   uint32_t adc_results[] = get_adc_values(&photo);
+      |                                            ^~~~~~~~~~~~~~
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:245:19: warning: unused variable 'count' [-Wunused-variable]
+  245 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:244:20: warning: unused variable 'count_test' [-Wunused-variable]
+  244 |           uint32_t count_test = __HAL_TIM_GET_COUNTER(&htim3);
+      |                    ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:40:33 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:245:19: warning: unused variable 'count' [-Wunused-variable]
+  245 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:244:20: warning: unused variable 'count_test' [-Wunused-variable]
+  244 |           uint32_t count_test = __HAL_TIM_GET_COUNTER(&htim3);
+      |                    ^~~~~~~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  22072	     16	   2200	  24288	   5ee0	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+21:40:41 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22072	     16	   2200	  24288	   5ee0	term_project.elf
+Finished building: default.size.stdout
+ 
+21:44:13 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22072	     16	   2200	  24288	   5ee0	term_project.elf
+Finished building: default.size.stdout
+ 
+22:02:37 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:240:28: warning: unused variable 'photo4' [-Wunused-variable]
+  240 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:239:28: warning: unused variable 'photo3' [-Wunused-variable]
+  239 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo2' [-Wunused-variable]
+  238 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo1' [-Wunused-variable]
+  237 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:246:19: warning: unused variable 'count' [-Wunused-variable]
+  246 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+../Core/Src/main.c:245:20: warning: unused variable 'count_test' [-Wunused-variable]
+  245 |           uint32_t count_test = __HAL_TIM_GET_COUNTER(&htim3);
+      |                    ^~~~~~~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21988	     16	   2200	  24204	   5e8c	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+22:43:12 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:244:19: warning: unused variable 'count' [-Wunused-variable]
+  244 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21908	     16	   2200	  24124	   5e3c	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+22:45:13 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21908	     16	   2200	  24124	   5e3c	term_project.elf
+Finished building: default.size.stdout
+ 
+22:45:22 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21908	     16	   2200	  24124	   5e3c	term_project.elf
+Finished building: default.size.stdout
+ 
+22:45:33 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21908	     16	   2200	  24124	   5e3c	term_project.elf
+Finished building: default.size.stdout
+ 
+11:27:12 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:244:19: warning: unused variable 'count' [-Wunused-variable]
+  244 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21924	     16	   2200	  24140	   5e4c	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+11:27:36 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21924	     16	   2200	  24140	   5e4c	term_project.elf
+Finished building: default.size.stdout
+ 
+11:37:47 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:239:28: warning: unused variable 'photo4' [-Wunused-variable]
+  239 |                   uint32_t photo4 = adc_results[3];
+      |                            ^~~~~~
+../Core/Src/main.c:238:28: warning: unused variable 'photo3' [-Wunused-variable]
+  238 |                   uint32_t photo3 = adc_results[2];
+      |                            ^~~~~~
+../Core/Src/main.c:237:28: warning: unused variable 'photo2' [-Wunused-variable]
+  237 |                   uint32_t photo2 = adc_results[1];
+      |                            ^~~~~~
+../Core/Src/main.c:236:28: warning: unused variable 'photo1' [-Wunused-variable]
+  236 |                   uint32_t photo1 = adc_results[0];
+      |                            ^~~~~~
+../Core/Src/main.c:244:19: warning: unused variable 'count' [-Wunused-variable]
+  244 |           int32_t count = read_count(&enc);
+      |                   ^~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
+arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
+   text	   data	    bss	    dec	    hex	filename
+  21920	     16	   2200	  24136	   5e48	term_project.elf
+Finished building: default.size.stdout
+ 
+Finished building: term_project.list
+ 
+11:45:47 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21920	     16	   2200	  24136	   5e48	term_project.elf
+Finished building: default.size.stdout
+ 
+12:03:17 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21920	     16	   2200	  24136	   5e48	term_project.elf
+Finished building: default.size.stdout
+ 
+12:08:43 **** Incremental Build of configuration Debug for project term_project ****
+make -j12 all 
+arm-none-eabi-size  term_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21920	     16	   2200	  24136	   5e48	term_project.elf
+Finished building: default.size.stdout
+ 

@@ -1,4 +1,5 @@
 "./Core/Src/controller.o"
+"./Core/Src/encoder_driver.o"
 "./Core/Src/main.o"
 "./Core/Src/motor_driver.o"
 "./Core/Src/photoresistor_driver.o"

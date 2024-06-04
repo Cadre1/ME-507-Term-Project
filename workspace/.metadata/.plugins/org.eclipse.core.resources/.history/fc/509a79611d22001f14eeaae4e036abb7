@@ -1,0 +1,36 @@
+/*
+ * encoder.c
+ *
+ *  Created on: Jun 3, 2024
+ *      Author: cadre
+ */
+
+#include <encoder.h>
+
+void enable_enc(EncoderTypeDef* enc)
+{
+	HAL_TIM_Encoder_Start(enc->tim_handle, TIM_CHANNEL_ALL);
+
+void disable_enc(EncoderTypeDef* enc)
+{
+	HAL_TIM_Encoder_Stop(enc->tim_handle, TIM_CHANNEL_ALL);
+}
+
+void set_zero(EncoderTypeDef* enc)
+{
+	enc->curr_count = 0;
+	enc->prev_count = 0;
+	enc->pos = 0;
+}
+
+uint32_t read_position(EncoderTypeDef* enc)
+{
+	enc->curr_count = __HAL_TIM_GET_COUNTER(enc);
+	uint32_t dcount = (enc->curr_count)-(enc->prev_count);
+	if(dcount <= -(AR+1)/2){
+
+	}
+	else if(dcount >= (AR+1)/2){
+
+	}
+}

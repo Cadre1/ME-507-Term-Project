@@ -1,0 +1,29 @@
+/*
+ * encoder.c
+ *
+ *  Created on: Jun 3, 2024
+ *      Author: cadre
+ */
+
+#include <encoder.h>
+
+void enable_enc(EncoderTypeDef* enc)
+{
+	HAL_TIM_Encoder_Init(enc->tim_handle, TIM_Encoder_InitTypeDef* sConfig);
+	HAL_TIM_Encoder_Start(enc->tim_handle, TIM_CHANNEL_ALL);
+
+void disable_enc(EncoderTypeDef* enc)
+{
+	HAL_TIM_Encoder_Stop(enc->tim_handle, TIM_CHANNEL_ALL);
+	HAL_TIM_Encoder_DeInit(enc->tim_handle);
+}
+
+void set_zero(EncoderTypeDef* enc)
+{
+
+}
+
+uint32_t read_position(EncoderTypeDef* enc, TIM_HandleTypeDef* htim)
+{
+
+}

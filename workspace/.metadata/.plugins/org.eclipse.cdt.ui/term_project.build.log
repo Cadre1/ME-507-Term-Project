@@ -1,30 +1,10 @@
-00:23:32 **** Incremental Build of configuration Debug for project term_project ****
+12:08:43 **** Incremental Build of configuration Debug for project term_project ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:217:28: warning: unused variable 'photo4' [-Wunused-variable]
-  217 |                   uint32_t photo4 = adc_results[3];
-      |                            ^~~~~~
-../Core/Src/main.c:216:28: warning: unused variable 'photo3' [-Wunused-variable]
-  216 |                   uint32_t photo3 = adc_results[2];
-      |                            ^~~~~~
-../Core/Src/main.c:215:28: warning: unused variable 'photo2' [-Wunused-variable]
-  215 |                   uint32_t photo2 = adc_results[1];
-      |                            ^~~~~~
-../Core/Src/main.c:214:28: warning: unused variable 'photo1' [-Wunused-variable]
-  214 |                   uint32_t photo1 = adc_results[0];
-      |                            ^~~~~~
-arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: term_project.elf
- 
 arm-none-eabi-size  term_project.elf 
-arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
    text	   data	    bss	    dec	    hex	filename
-  20872	     16	   2192	  23080	   5a28	term_project.elf
+  21920	     16	   2200	  24136	   5e48	term_project.elf
 Finished building: default.size.stdout
  
-Finished building: term_project.list
- 
 
-00:23:33 Build Finished. 0 errors, 4 warnings. (took 878ms)
+12:08:43 Build Finished. 0 errors, 0 warnings. (took 490ms)
 
