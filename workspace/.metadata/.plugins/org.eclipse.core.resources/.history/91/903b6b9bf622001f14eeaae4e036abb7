@@ -56,7 +56,7 @@ TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim4;
 TIM_HandleTypeDef htim5;
 
-UART_HandleTypeDef huart2;
+UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 int32_t pulse = 4799;
@@ -91,7 +91,7 @@ static void MX_TIM1_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM5_Init(void);
 static void MX_TIM4_Init(void);
-static void MX_USART2_UART_Init(void);
+static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 int32_t pulse_to_PWM(RadioReciever_DriverTypeDef* rad);
 VectorTypeDef get_reflect_angle(VectorTypeDef* light_source_angle, VectorTypeDef* target_position, VectorTypeDef* heliostat_position);
@@ -137,7 +137,7 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM5_Init();
   MX_TIM4_Init();
-  MX_USART2_UART_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   // Initializing the motor driver structure and enabling the motor
   Motor_DriverTypeDef mot = { .tim_handle = &htim2,
@@ -213,20 +213,20 @@ int main(void)
 	  curr_time = HAL_GetTick();
 	  if (curr_time - prev_time >= 1000){
 
-		  sprintf(my_message,"Photoresistor 1 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo1*3.3/4095), photo1);
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
-		  sprintf(my_message,"Photoresistor 2 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo2*3.3/4095), photo2);
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
-		  sprintf(my_message,"Photoresistor 3 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo3*3.3/4095), photo3);
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
-		  sprintf(my_message,"Photoresistor 4 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo4*3.3/4095), photo4);
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+		  sprintf(my_message,"Photoresistor 1 voltage: %ld (V).\r\n", (uint32_t) (photo1*3.3/4095));
+		  HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 100);
+		  sprintf(my_message,"Photoresistor 2 voltage: %ld (V).\r\n", (uint32_t) (photo2*3.3/4095));
+		  HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 100);
+		  sprintf(my_message,"Photoresistor 3 voltage: %ld (V).\r\n", (uint32_t) (photo3*3.3/4095));
+		  HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 100);
+		  sprintf(my_message,"Photoresistor 4 voltage: %ld (V).\r\n", (uint32_t) (photo4*3.3/4095));
+		  HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 100);
 
 		  //sprintf(my_message,"Duty Cycle 1 is: %ld (%ld percent).\r\n", duty_count1, duty_percent1);
 		  //HAL_UART_Transmit(&huart6, (uint8_t*) my_message, strlen(my_message), 10);
 
 		  sprintf(my_message,"\r\n");
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 10);
+		  HAL_UART_Transmit(&huart1, (uint8_t*) my_message, strlen(my_message), 10);
 
 		  prev_time = curr_time;
 	  }
@@ -587,7 +587,7 @@ static void MX_TIM5_Init(void)
   sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-  if (HAL_TIM_PWM_ConfigChannel(&htim5, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
+  if (HAL_TIM_PWM_ConfigChannel(&htim5, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
   {
     Error_Handler();
   }
@@ -599,35 +599,35 @@ static void MX_TIM5_Init(void)
 }
 
 /**
-  * @brief USART2 Initialization Function
+  * @brief USART1 Initialization Function
   * @param None
   * @retval None
   */
-static void MX_USART2_UART_Init(void)
+static void MX_USART1_UART_Init(void)
 {
 
-  /* USER CODE BEGIN USART2_Init 0 */
+  /* USER CODE BEGIN USART1_Init 0 */
 
-  /* USER CODE END USART2_Init 0 */
+  /* USER CODE END USART1_Init 0 */
 
-  /* USER CODE BEGIN USART2_Init 1 */
+  /* USER CODE BEGIN USART1_Init 1 */
 
-  /* USER CODE END USART2_Init 1 */
-  huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
-  huart2.Init.WordLength = UART_WORDLENGTH_8B;
-  huart2.Init.StopBits = UART_STOPBITS_1;
-  huart2.Init.Parity = UART_PARITY_NONE;
-  huart2.Init.Mode = UART_MODE_TX;
-  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
-  if (HAL_HalfDuplex_Init(&huart2) != HAL_OK)
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_HalfDuplex_Init(&huart1) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN USART2_Init 2 */
+  /* USER CODE BEGIN USART1_Init 2 */
 
-  /* USER CODE END USART2_Init 2 */
+  /* USER CODE END USART1_Init 2 */
 
 }
 
