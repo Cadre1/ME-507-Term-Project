@@ -1,21 +1,10 @@
-22:08:38 **** Incremental Build of configuration Debug for project term_project ****
+02:18:20 **** Incremental Build of configuration Debug for project term_project ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:252:19: warning: unused variable 'count' [-Wunused-variable]
-  252 |           int32_t count = read_count(&enc);
-      |                   ^~~~~
-arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: term_project.elf
- 
 arm-none-eabi-size  term_project.elf 
-arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
    text	   data	    bss	    dec	    hex	filename
-  26104	     96	   2744	  28944	   7110	term_project.elf
+  49632	    112	   2472	  52216	   cbf8	term_project.elf
 Finished building: default.size.stdout
  
-Finished building: term_project.list
- 
 
-22:08:39 Build Finished. 0 errors, 1 warnings. (took 809ms)
+02:18:21 Build Finished. 0 errors, 0 warnings. (took 297ms)
 

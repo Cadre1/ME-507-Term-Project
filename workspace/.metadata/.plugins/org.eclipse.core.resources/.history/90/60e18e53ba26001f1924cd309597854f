@@ -1,0 +1,21 @@
+/*
+ * interstate_vars.h
+ *
+ *  Created on: Jun 9, 2024
+ *      Author: cadre
+ */
+
+#ifndef INC_INTERSTATE_VARS_H_
+#define INC_INTERSTATE_VARS_H_
+
+#include <stdio.h>
+#include <stdint.h>
+
+// Insterstate Variable object data structure
+struct{
+	uint8_t rc_trigger_flag;
+	uint8_t rad_edge_flag;
+} typedef INTERSTATE_VARS;
+
+
+#endif /* INC_INTERSTATE_VARS_H_ */

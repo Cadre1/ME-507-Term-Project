@@ -1,0 +1,64 @@
+/*
+ * photoresistor_driver.c
+ *
+ *  Created on: Jun 2, 2024
+ *      Author: cadre
+ */
+
+#include "photoresistor_driver.h"
+
+void ADC_Select_CH(Photoresistor_DriverTypeDef* photo, uint8_t channel_num)
+{
+    ADC_ChannelConfTypeDef sConfig = {0};
+    if (channel_num == 1){
+        sConfig.Channel = photo->adc_channel1;
+    }
+    else if (channel_num == 2){
+        sConfig.Channel = photo->adc_channel2;
+    }
+    else if (channel_num == 3){
+        sConfig.Channel = photo->adc_channel3;
+    }
+    else if (channel_num == 4){
+        sConfig.Channel = photo->adc_channel4;
+    }
+    sConfig.Rank = 1;
+    sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+    if (HAL_ADC_ConfigChannel((photo->adc_handle), &sConfig) != HAL_OK){
+    	Error_Handler();
+    }
+}
+
+uint32_t* get_photo_values(Photoresistor_DriverTypeDef* photo)
+{
+	  ADC_Select_CH(photo,1);
+	  HAL_ADC_Start(photo->adc_handle);
+	  HAL_ADC_PollForConversion(photo->adc_handle, 1000);
+	  photo->photo_results[0] = HAL_ADC_GetValue(photo->adc_handle);
+	  HAL_ADC_Stop(photo->adc_handle);
+
+	  ADC_Select_CH(photo,2);
+	  HAL_ADC_Start(photo->adc_handle);
+	  HAL_ADC_PollForConversion(photo->adc_handle, 1000);
+	  photo->photo_results[1] = HAL_ADC_GetValue(photo->adc_handle);
+	  HAL_ADC_Stop(photo->adc_handle);
+
+	  ADC_Select_CH(photo,3);
+	  HAL_ADC_Start(photo->adc_handle);
+	  HAL_ADC_PollForConversion(photo->adc_handle, 1000);
+	  photo->photo_results[2] = HAL_ADC_GetValue(photo->adc_handle);
+	  HAL_ADC_Stop(photo->adc_handle);
+
+	  ADC_Select_CH(photo,4);
+	  HAL_ADC_Start(photo->adc_handle);
+	  HAL_ADC_PollForConversion(photo->adc_handle, 1000);
+	  photo->photo_results[3] = HAL_ADC_GetValue(photo->adc_handle);
+	  HAL_ADC_Stop(photo->adc_handle);
+
+	  return photo->photo_results;
+}
+
+uint32_t get_photo_diff(Photoresistor_DriverTypeDef* photo, uint8_t num1, uint8_t num2)
+{
+	return (photo->photo_results[(num1-1)])-(photo->photo_results[(num2-1)]);
+}

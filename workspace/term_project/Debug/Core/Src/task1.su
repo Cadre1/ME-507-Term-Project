@@ -1,0 +1,5 @@
+../Core/Src/task1.c:10:6:main_task1	16	static
+../Core/Src/task1.c:23:6:state0_task1	16	static
+../Core/Src/task1.c:30:6:state1_task1	16	static
+../Core/Src/task1.c:44:6:state2_task1	16	static
+../Core/Src/task1.c:58:9:get_pulse_percent	24	static

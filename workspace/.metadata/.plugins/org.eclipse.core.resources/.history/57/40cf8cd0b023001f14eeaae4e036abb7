@@ -1,0 +1,14 @@
+/*
+ * task1.c
+ *
+ *  Created on: Jun 5, 2024
+ *      Author: cadre
+ */
+
+#include <task1.h>
+
+void main_task1(TASK1* task, uint32_t* interstate_vars);
+void state1_task1(TASK1* task);
+void state2_task1(TASK1* task);
+void state3_task1(TASK1* task);
+uint32_t* get_interstate_vars_task1(TASK1* task);

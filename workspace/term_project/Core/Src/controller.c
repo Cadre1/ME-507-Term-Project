@@ -7,20 +7,13 @@
 
 #include "controller.h"
 
-void enable_controller(ControllerTypeDef* con, float kp, float kd, float ki)
-{
-	con->kp = kp;
-	con->kd = kd;
-	con->ki = ki;
-	con->des_val = 0;
-}
-
-void disable_controller(ControllerTypeDef* con)
+void reset_controller(ControllerTypeDef* con)
 {
 	con->kp = 0;
 	con->kd = 0;
 	con->ki = 0;
 	con->des_val = 0;
+	con->first_time = 1;
 }
 
 void set_gains(ControllerTypeDef* con, float kp, float kd, float ki)

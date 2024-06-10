@@ -1,0 +1,41 @@
+/*
+ * photoresistor_driver.c
+ *
+ *  Created on: Jun 2, 2024
+ *      Author: cadre
+ */
+
+#include "photoresistor_driver.h"
+
+void ADC_Select_CH1(void){
+     ADC_ChannelConfTypeDef sConfig = {0};
+     sConfig.Channel = ADC_CHANNEL_4;
+     sConfig.Rank = 1;
+     sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+     if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK){
+    	 Error_Handler();
+     }
+}
+void ADC_Select_CH(Photoresistor_DriverTypeDef* photo, uint8_t channel_num)
+{
+    ADC_ChannelConfTypeDef sConfig = {0};
+    if (channel_num == 1){
+        sConfig.Channel = ADC_CHANNEL_4;
+    }
+    else if (channel_num == 2){
+        sConfig.Channel = ADC_CHANNEL_5;
+    }
+    else if (channel_num == 3){
+        sConfig.Channel = ADC_CHANNEL_6;
+    }
+    else if (channel_num == 4){
+        sConfig.Channel = ADC_CHANNEL_7;
+    }
+    sConfig.Rank = 1;
+    sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+    if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK){
+   	 Error_Handler();
+    }
+}
+uint32_t get_photo_value(Photoresistor_DriverTypeDef* photo, uint8_t num);
+uint32_t get_photo_diff(Photoresistor_DriverTypeDef* photo, uint8_t num1, uint8_t num2);

@@ -1,0 +1,12 @@
+../Core/Src/task2.c:10:6:main_task2	11
+../Core/Src/task2.c:44:6:state0_task2	1
+../Core/Src/task2.c:69:6:state1_task2	2
+../Core/Src/task2.c:76:6:state2_task2	8
+../Core/Src/task2.c:135:6:state3_task2	4
+../Core/Src/task2.c:172:6:state4_task2	7
+../Core/Src/task2.c:220:6:state5_task2	7
+../Core/Src/task2.c:268:6:state6_task2	2
+../Core/Src/task2.c:299:6:state7_task2	7
+../Core/Src/task2.c:351:6:state8_task2	2
+../Core/Src/task2.c:359:6:state9_task2	7
+../Core/Src/task2.c:411:15:get_reflect_angle	1

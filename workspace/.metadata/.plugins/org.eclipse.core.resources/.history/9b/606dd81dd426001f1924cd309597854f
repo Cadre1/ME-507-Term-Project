@@ -1,0 +1,91 @@
+/*!
+ *  @file task1.c
+ *  @brief Runs the states associated with task 1 as described in its FSM.
+ *
+ *  Created on: Jun 9, 2024
+ */
+
+#include <task2.h>
+
+void main_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if(task->state == 0){
+		state0_task2(task, intertask_vars);
+	}
+	else if(task->state == 1){
+		state1_task2(task, intertask_vars);
+	}
+	else if(task->state == 2){
+		state2_task2(task, intertask_vars);
+	}
+	else if(task->state == 3){
+		state2_task2(task, intertask_vars);
+	}
+}
+
+void state0_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	// Initializing the motor
+	enable_mot(task->mot,1);
+	set_PWM_percent(task->mot, 1, 0);
+	// Initializng the servo
+	enable_servo(task->servo);
+	// Initializing the encoder
+	enable_enc(task->enc);
+	set_zero(task->enc);
+	// Initializing the photoresistors
+	// Initializing the IMU gyroscope
+	bno055_init(task->gyro);
+	HAL_Delay(100);
+	bno055_set_unit(task->gyro, BNO_TEMP_UNIT_C, BNO_GYR_UNIT_DPS, BNO_ACC_UNITSEL_M_S2, BNO_EUL_UNIT_DEG);
+	// Initializing
+}
+
+void state1_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	return 0;
+}
+
+void state2_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	return 0;
+}
+
+void state3_task1(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	return 0;
+}
+
+void state4_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	return 0;
+}
+
+void state5_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	return 0;
+}
+
+void state6_task1(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	return 0;
+}
+
+void state7_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	return 0;
+}
+
+void state8_task1(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	return 0;
+}
+
+void state9_task1(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	return 0;
+}
+
+
+
+

@@ -1,0 +1,45 @@
+/*
+ * task2.c
+ *
+ *  Created on: Jun 9, 2024
+ *      Author: cadre
+ */
+
+#include <task2.h>
+
+void main_task2(TASK2* task, uint32_t* interstate_vars)
+{
+	task->interstate_vars = interstate_vars;
+	if(task->state == 1){
+		state1_task1(task);
+	}
+	else if(task->state == 2){
+		state2_task1(task);
+	}
+	else if(task->state == 3){
+		state2_task1(task);
+	}
+}
+
+void state1_task2(TASK2* task)
+{
+	return 0;
+}
+
+void state2_task2(TASK2* task)
+{
+	return 0;
+}
+
+void state3_task1(TASK1* task)
+{
+	return 0;
+}
+
+uint32_t* get_interstate_vars_task2(TASK2* task)
+{
+	return task->interstate_vars;
+}
+
+
+

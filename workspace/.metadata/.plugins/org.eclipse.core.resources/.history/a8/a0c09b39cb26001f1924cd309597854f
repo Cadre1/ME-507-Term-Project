@@ -1,0 +1,42 @@
+/*!
+ *  @file task1.h
+ *  @brief Runs the states associated with task 1 as described in its FSM.
+ *
+ *  Created on: Jun 5, 2024
+ *      Author: cadre
+ */
+
+#ifndef INC_TASK1_H_
+#define INC_TASK1_H_
+
+#include <stdio.h>
+#include <stdint.h>
+#include "stm32f4xx_hal.h"
+#include "motor_driver.h"
+#include "servo_driver.h"
+#include "radio_reciever_driver.h"
+#include "photoresistor_driver.h"
+#include "encoder_driver.h"
+#include "bno055.h"
+#include "bno_config.h"
+#include "interstate_vars.h"
+#include "vector.h"
+
+// Task 1 object data structure
+struct{
+	uint8_t state;
+	Motor_DriverTypeDef* mot;
+	RadioReciever_DriverTypeDef* rad;
+	Photoresistor_DriverTypeDef* photo;
+	Encoder_DriverTypeDef* enc;
+	bno055_t* gyro;
+} typedef TASK1;
+
+void main_task1(TASK1* task, INTERSTATE_VARS* interstate_vars);
+void state0_task1(TASK1* task, INTERSTATE_VARS* interstate_vars);
+void state1_task1(TASK1* task, INTERSTATE_VARS* interstate_vars);
+void state2_task1(TASK1* task, INTERSTATE_VARS* interstate_vars);
+int32_t get_pulse_percent(RadioReciever_DriverTypeDef* rad);
+
+
+#endif /* INC_TASK1_H_ */

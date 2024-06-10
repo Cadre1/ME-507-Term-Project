@@ -1,0 +1,136 @@
+/*!
+ *  @file task1.c
+ *  @brief Runs the states associated with task 1 as described in its FSM.
+ *
+ *  Created on: Jun 9, 2024
+ */
+
+#include <task2.h>
+
+void main_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if(task->state == 0){
+		state0_task2(task, intertask_vars);
+	}
+	else if(task->state == 1){
+		state1_task2(task, intertask_vars);
+	}
+	else if(task->state == 2){
+		state2_task2(task, intertask_vars);
+	}
+	else if(task->state == 3){
+		state2_task2(task, intertask_vars);
+	}
+}
+
+void state0_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	// Initializing the motor
+	enable_mot(task->mot,1);
+	set_PWM_percent(task->mot, 1, 0);
+
+	// Initializng the servo
+	enable_servo(task->servo);
+
+	// Initializing the photoresistors
+
+	// Initializing the encoder
+	enable_enc(task->enc);
+	set_zero(task->enc);
+
+	// Initializing the IMU gyroscope
+	bno055_init(task->gyro);
+	HAL_Delay(100);
+	bno055_set_unit(task->gyro, BNO_TEMP_UNIT_C, BNO_GYR_UNIT_DPS, BNO_ACC_UNITSEL_M_S2, BNO_EUL_UNIT_DEG);
+	task->state = 1;
+
+	// Initializing the controller
+	reset_controller(task->con);
+}
+
+void state1_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (intertask_vars->rc_trigger_flag){
+		task->state = 2;
+	}
+}
+
+void state2_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+	else{
+		if (task->init_controller){
+			// Sets up the controller the first time for angle-motor control
+			reset_controller(task->con);
+			set_gains(task->con, 0.1, 0, 0);
+			set_target(task->con, 360);
+		}
+		else{
+			// Setting the servo position to vertical
+			servo_set_position(task->servo, 0);
+
+			// Setting the motor position using the angle-motor controller
+			// Read the gyroscope angle (yaw euler angle)
+			bno055_euler(task->gyro, task->euler);
+			float pitch_angle = task->euler->yaw;
+
+			float output = get_output(task->con, pitch_angle);
+
+		}
+	}
+}
+
+void state3_task1(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+}
+
+void state4_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+}
+
+void state5_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+}
+
+void state6_task1(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+}
+
+void state7_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+}
+
+void state8_task1(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+}
+
+void state9_task1(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+}
+
+
+
+

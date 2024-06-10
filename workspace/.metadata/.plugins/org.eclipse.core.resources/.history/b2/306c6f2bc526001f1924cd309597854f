@@ -1,0 +1,76 @@
+/*
+ * task2.c
+ *
+ *  Created on: Jun 9, 2024
+ *      Author: cadre
+ */
+
+#include <task2.h>
+
+void main_task2(TASK2* task, INTERSTATE_VARS* interstate_vars)
+{
+	task->interstate_vars = interstate_vars;
+	if(task->state == 1, interstate_vars){
+		state1_task1(task);
+	}
+	else if(task->state == 2, interstate_vars){
+		state2_task1(task);
+	}
+	else if(task->state == 3, interstate_vars){
+		state2_task1(task);
+	}
+}
+
+void state0_task2(TASK2* task, INTERSTATE_VARS* interstate_vars)
+{
+	return 0;
+}
+
+void state1_task2(TASK2* task, INTERSTATE_VARS* interstate_vars)
+{
+	return 0;
+}
+
+void state2_task2(TASK2* task, INTERSTATE_VARS* interstate_vars)
+{
+	return 0;
+}
+
+void state3_task1(TASK2* task, INTERSTATE_VARS* interstate_vars)
+{
+	return 0;
+}
+
+void state4_task2(TASK2* task, INTERSTATE_VARS* interstate_vars)
+{
+	return 0;
+}
+
+void state5_task2(TASK2* task, INTERSTATE_VARS* interstate_vars)
+{
+	return 0;
+}
+
+void state6_task1(TASK2* task, INTERSTATE_VARS* interstate_vars)
+{
+	return 0;
+}
+
+void state7_task2(TASK2* task, INTERSTATE_VARS* interstate_vars)
+{
+	return 0;
+}
+
+void state8_task1(TASK2* task, INTERSTATE_VARS* interstate_vars)
+{
+	return 0;
+}
+
+void state9_task1(TASK2* task, INTERSTATE_VARS* interstate_vars)
+{
+	return 0;
+}
+
+
+
+

@@ -23,7 +23,6 @@
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
-extern DMA_HandleTypeDef hdma_adc1;
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
@@ -109,25 +108,6 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-    /* ADC1 DMA Init */
-    /* ADC1 Init */
-    hdma_adc1.Instance = DMA2_Stream0;
-    hdma_adc1.Init.Channel = DMA_CHANNEL_0;
-    hdma_adc1.Init.Direction = DMA_PERIPH_TO_MEMORY;
-    hdma_adc1.Init.PeriphInc = DMA_PINC_DISABLE;
-    hdma_adc1.Init.MemInc = DMA_MINC_ENABLE;
-    hdma_adc1.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
-    hdma_adc1.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
-    hdma_adc1.Init.Mode = DMA_CIRCULAR;
-    hdma_adc1.Init.Priority = DMA_PRIORITY_LOW;
-    hdma_adc1.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
-    if (HAL_DMA_Init(&hdma_adc1) != HAL_OK)
-    {
-      Error_Handler();
-    }
-
-    __HAL_LINKDMA(hadc,DMA_Handle,hdma_adc1);
-
   /* USER CODE BEGIN ADC1_MspInit 1 */
 
   /* USER CODE END ADC1_MspInit 1 */
@@ -159,11 +139,76 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
     */
     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7);
 
-    /* ADC1 DMA DeInit */
-    HAL_DMA_DeInit(hadc->DMA_Handle);
   /* USER CODE BEGIN ADC1_MspDeInit 1 */
 
   /* USER CODE END ADC1_MspDeInit 1 */
+  }
+
+}
+
+/**
+* @brief I2C MSP Initialization
+* This function configures the hardware resources used in this example
+* @param hi2c: I2C handle pointer
+* @retval None
+*/
+void HAL_I2C_MspInit(I2C_HandleTypeDef* hi2c)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  if(hi2c->Instance==I2C1)
+  {
+  /* USER CODE BEGIN I2C1_MspInit 0 */
+
+  /* USER CODE END I2C1_MspInit 0 */
+
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+    /**I2C1 GPIO Configuration
+    PB8     ------> I2C1_SCL
+    PB9     ------> I2C1_SDA
+    */
+    GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+    GPIO_InitStruct.Alternate = GPIO_AF4_I2C1;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+    /* Peripheral clock enable */
+    __HAL_RCC_I2C1_CLK_ENABLE();
+  /* USER CODE BEGIN I2C1_MspInit 1 */
+
+  /* USER CODE END I2C1_MspInit 1 */
+  }
+
+}
+
+/**
+* @brief I2C MSP De-Initialization
+* This function freeze the hardware resources used in this example
+* @param hi2c: I2C handle pointer
+* @retval None
+*/
+void HAL_I2C_MspDeInit(I2C_HandleTypeDef* hi2c)
+{
+  if(hi2c->Instance==I2C1)
+  {
+  /* USER CODE BEGIN I2C1_MspDeInit 0 */
+
+  /* USER CODE END I2C1_MspDeInit 0 */
+    /* Peripheral clock disable */
+    __HAL_RCC_I2C1_CLK_DISABLE();
+
+    /**I2C1 GPIO Configuration
+    PB8     ------> I2C1_SCL
+    PB9     ------> I2C1_SDA
+    */
+    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_8);
+
+    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_9);
+
+  /* USER CODE BEGIN I2C1_MspDeInit 1 */
+
+  /* USER CODE END I2C1_MspDeInit 1 */
   }
 
 }
@@ -176,6 +221,7 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
 */
 void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
   if(htim_base->Instance==TIM1)
   {
   /* USER CODE BEGIN TIM1_MspInit 0 */
@@ -183,6 +229,18 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
   /* USER CODE END TIM1_MspInit 0 */
     /* Peripheral clock enable */
     __HAL_RCC_TIM1_CLK_ENABLE();
+
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+    /**TIM1 GPIO Configuration
+    PA8     ------> TIM1_CH1
+    */
+    GPIO_InitStruct.Pin = GPIO_PIN_8;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF1_TIM1;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
     /* TIM1 interrupt Init */
     HAL_NVIC_SetPriority(TIM1_CC_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(TIM1_CC_IRQn);
@@ -244,6 +302,9 @@ void HAL_TIM_Encoder_MspInit(TIM_HandleTypeDef* htim_encoder)
     GPIO_InitStruct.Alternate = GPIO_AF2_TIM4;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
+    /* TIM4 interrupt Init */
+    HAL_NVIC_SetPriority(TIM4_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(TIM4_IRQn);
   /* USER CODE BEGIN TIM4_MspInit 1 */
 
   /* USER CODE END TIM4_MspInit 1 */
@@ -314,6 +375,11 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
     /* Peripheral clock disable */
     __HAL_RCC_TIM1_CLK_DISABLE();
 
+    /**TIM1 GPIO Configuration
+    PA8     ------> TIM1_CH1
+    */
+    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_8);
+
     /* TIM1 interrupt DeInit */
     HAL_NVIC_DisableIRQ(TIM1_CC_IRQn);
   /* USER CODE BEGIN TIM1_MspDeInit 1 */
@@ -367,6 +433,8 @@ void HAL_TIM_Encoder_MspDeInit(TIM_HandleTypeDef* htim_encoder)
     */
     HAL_GPIO_DeInit(GPIOB, GPIO_PIN_6|GPIO_PIN_7);
 
+    /* TIM4 interrupt DeInit */
+    HAL_NVIC_DisableIRQ(TIM4_IRQn);
   /* USER CODE BEGIN TIM4_MspDeInit 1 */
 
   /* USER CODE END TIM4_MspDeInit 1 */

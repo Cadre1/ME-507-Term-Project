@@ -1,0 +1,48 @@
+/*
+ * task2.h
+ *
+ *  Created on: Jun 9, 2024
+ *      Author: cadre
+ */
+
+#ifndef INC_TASK2_H_
+#define INC_TASK2_H_
+
+#include <stdio.h>
+#include <stdint.h>
+#include "stm32f4xx_hal.h"
+#include "motor_driver.h"
+#include "servo_driver.h"
+#include "radio_reciever_driver.h"
+#include "photoresistor_driver.h"
+#include "encoder_driver.h"
+#include "bno055.h"
+#include "bno_config.h"
+#include "interstate_vars.h"
+#include "vector.h"
+
+// Task 2 object data structure
+struct{
+	uint8_t state;
+	uint32_t* interstate_vars;
+	Motor_DriverTypeDef* mot;
+	RadioReciever_DriverTypeDef* rad;
+	Photoresistor_DriverTypeDef* photo;
+	Encoder_DriverTypeDef* enc;
+	bno055_t* gyro;
+} typedef TASK2;
+
+void main_task2(TASK2* task, uint32_t* interstate_vars);
+uint32_t* get_interstate_vars_task2(TASK2* task);
+void state0_task2(TASK2* task);
+void state1_task2(TASK2* task);
+void state2_task2(TASK2* task);
+void state3_task2(TASK2* task);
+void state4_task2(TASK2* task);
+void state5_task2(TASK2* task);
+void state6_task2(TASK2* task);
+void state7_task2(TASK2* task);
+void state8_task2(TASK2* task);
+void state9_task2(TASK2* task);
+
+#endif /* INC_TASK2_H_ */

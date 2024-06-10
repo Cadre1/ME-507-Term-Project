@@ -1,0 +1,15 @@
+/*
+ * photoresistor_driver.c
+ *
+ *  Created on: Jun 2, 2024
+ *      Author: cadre
+ */
+
+#include "photoresistor_driver.h"
+
+void ADC_Select_CH(Photoresistor_DriverTypeDef* photo)
+{
+
+}
+uint32_t get_photo_value(Photoresistor_DriverTypeDef* photo, uint8_t num);
+uint32_t get_photo_diff(Photoresistor_DriverTypeDef* photo, uint8_t num1, uint8_t num2);

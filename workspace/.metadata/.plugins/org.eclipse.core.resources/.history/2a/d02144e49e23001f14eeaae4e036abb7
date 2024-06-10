@@ -1,0 +1,31 @@
+/*
+ * task1.h
+ *
+ *  Created on: Jun 5, 2024
+ *      Author: cadre
+ */
+
+#ifndef INC_TASK1_H_
+#define INC_TASK1_H_
+
+#include <stdio.h>
+#include <stdint.h>
+#include "stm32f4xx_hal.h"
+
+// Photoresistor_Driver object data structure
+struct{
+	uint8_t state;
+	uint32_t* interstate_vars;
+	Motor_DriverTypeDef* mot;
+	RadioReciever_DriverTypeDef* rad;
+	Photoresistor_DriverTypeDef* photo;
+	Encoder_DriverTypeDef* enc;
+} typedef TASK1;
+
+void main(TASK1* task, uint32_t* interstate_vars);
+void state1(TASK1* task);
+void state2(TASK1* task);
+void state3(TASK1* task);
+
+
+#endif /* INC_TASK1_H_ */

@@ -1,2 +1,6 @@
-../Core/Src/photoresistor_driver.c:10:6:start_get_adc_values	16	static
-../Core/Src/photoresistor_driver.c:15:11:get_adc_values	16	static
+../Core/Src/photoresistor_driver.c:10:6:ADC_Select_CH1	32	static
+../Core/Src/photoresistor_driver.c:20:6:ADC_Select_CH2	32	static
+../Core/Src/photoresistor_driver.c:30:6:ADC_Select_CH3	32	static
+../Core/Src/photoresistor_driver.c:40:6:ADC_Select_CH4	32	static
+../Core/Src/photoresistor_driver.c:50:10:get_photo_value	24	static
+../Core/Src/photoresistor_driver.c:71:10:get_photo_diff	24	static

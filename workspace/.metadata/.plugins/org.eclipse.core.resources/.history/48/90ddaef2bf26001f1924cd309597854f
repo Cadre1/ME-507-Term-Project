@@ -1,0 +1,68 @@
+/*
+ * task1.c
+ *
+ *  Created on: Jun 5, 2024
+ *      Author: cadre
+ */
+
+#include <task1.h>
+
+void main_task1(TASK1* task, uint32_t* interstate_vars)
+{
+	task->interstate_vars = interstate_vars;
+	if(task->state == 0){
+		state0_task1(task);
+	}
+	else if(task->state == 1){
+		state1_task1(task);
+	}
+	else if(task->state == 2){
+		state2_task1(task);
+	}
+}
+
+uint32_t* get_interstate_vars_task1(TASK1* task)
+{
+	return task->interstate_vars;
+}
+
+void state0_task1(TASK1* task)
+{
+	return 0;
+}
+
+void state1_task1(TASK1* task)
+{
+	if (*((task->interstate_vars)->rad_edge_flag)){
+		// Checking the value of the Radio Receiver
+		read_pulse(task->rad, (task->interstate_vars)->htim_cb); // EDIT: This should work bc the address is stored in htim_cb within the interstae_vars struct, not the value. So when the value is changed in the interrupt in main, it should read the value at the register
+		*((task->interstate_vars)->rad_edge_flag) = 0;
+	}
+	return 0;
+}
+
+void state2_task1(TASK1* task)
+{
+	return 0;
+}
+
+int32_t get_PWM_from_pulse(RadioReciever_DriverTypeDef* rad)
+{
+	  // Getting radio pulse and setting motor
+	  int32_t pulse = 4799;
+	  uint32_t pulse_rad = get_pulse(rad);
+	  if (abs(pulse_rad) < 10){
+		  pulse_rad = 1509;
+	  }
+	  int32_t duty_percent = (int32_t)((pulse_rad-1509)*100)/513;
+	  int32_t duty_count = (int32_t)((pulse_rad-1509)*pulse)/513;
+	  if (duty_percent > 100 || duty_count > 4799){
+		  duty_percent = 100;
+		  duty_count = 4799;
+	  }
+	  else if (duty_percent < -100 || duty_count < -4799){
+		  duty_percent = -100;
+		  duty_count = -4799;
+	  }
+	  return duty_count;
+}

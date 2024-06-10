@@ -23,8 +23,7 @@ struct{
 	uint8_t first_time;
 } typedef ControllerTypeDef;
 
-void enable_controller(ControllerTypeDef* con, float kp, float kd, float ki);
-void disable_controller(ControllerTypeDef* con);
+void reset_controller(ControllerTypeDef* con);
 void set_gains(ControllerTypeDef* con, float kp, float kd, float ki);
 void set_target(ControllerTypeDef* con, float des_val);
 float get_output(ControllerTypeDef* con, float curr_val);

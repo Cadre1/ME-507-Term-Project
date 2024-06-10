@@ -22,10 +22,17 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "motor_driver.h"
+#include "servo_driver.h"
 #include "radio_reciever_driver.h"
 #include "photoresistor_driver.h"
 #include "encoder_driver.h"
+#include "bno055.h"
+#include "bno_config.h"
 #include "vector.h"
+#include "controller.h"
+#include "task1.h"
+#include "task2.h"
+#include "intertask_vars.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -49,7 +56,8 @@
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
-DMA_HandleTypeDef hdma_adc1;
+
+I2C_HandleTypeDef hi2c1;
 
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
@@ -59,23 +67,10 @@ TIM_HandleTypeDef htim5;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-int32_t pulse = 4799;
-uint16_t pulse_rad = 0;
-int32_t duty_percent;
-int32_t duty_percent1;
-int32_t duty_percent2;
-int32_t duty_count;
-int32_t duty_count1;
-int32_t duty_count2;
-uint8_t mot_num;
-
-uint32_t photo1, photo2, photo3, photo4;
-
-uint32_t prev_time;
-uint32_t curr_time;
-char my_message[200];
-
 TIM_HandleTypeDef htim_cb;
+volatile float gyro_angle_x = 0;
+volatile float gyro_angle_y = 0;
+volatile float gyro_angle_z = 0;
 
 // Interrupt Flags
 uint8_t rad_edge_flag = 0;
@@ -85,13 +80,13 @@ uint8_t adc_conversion_flag = 0;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_DMA_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM5_Init(void);
-static void MX_TIM4_Init(void);
 static void MX_USART2_UART_Init(void);
+static void MX_I2C1_Init(void);
+static void MX_TIM4_Init(void);
 /* USER CODE BEGIN PFP */
 int32_t pulse_to_PWM(RadioReciever_DriverTypeDef* rad);
 VectorTypeDef get_reflect_angle(VectorTypeDef* light_source_angle, VectorTypeDef* target_position, VectorTypeDef* heliostat_position);
@@ -99,6 +94,7 @@ VectorTypeDef get_reflect_angle(VectorTypeDef* light_source_angle, VectorTypeDef
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
 
 /* USER CODE END 0 */
 
@@ -131,25 +127,41 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_DMA_Init();
   MX_ADC1_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
   MX_TIM5_Init();
-  MX_TIM4_Init();
   MX_USART2_UART_Init();
+  MX_I2C1_Init();
+  MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
+
+  // Driver Initializations
+
   // Initializing the motor driver structure and enabling the motor
+  volatile int32_t duty_percent;
+  volatile int32_t duty_count;
+  const int32_t pulse = 4799;
   Motor_DriverTypeDef mot = { .tim_handle = &htim2,
   	  	 	  	  	  	  	  .tim_channel1 = TIM_CHANNEL_1,
 							  .tim_channel2 = TIM_CHANNEL_2,
   	  	 	  	  	  	  	  .tim_channel3 = TIM_CHANNEL_3,	// Unused
 							  .tim_channel4 = TIM_CHANNEL_4,	// Unused
 							  .pulse = pulse				 };
-  enable_mot(&mot,1);
+  //enable_mot(&mot,1);
   // Initially setting the PWM to 0 in case they had been previously been set
-  mot_num = 1;
-  set_PWM_percent(&mot, mot_num, 0);
+  //set_PWM_percent(&mot, 1, 0);
+
+
+  // Initializing the servo motor driver structure and enabling the servo
+  float servo_current_position;
+  uint32_t CCR;
+  float servo_angle;
+  Servo_DriverTypeDef servo = { .pwmHandle = &htim5,
+		  	  	  	  	 	 	.timer_ch = TIM_CHANNEL_4,
+								.current_CCR = 0,
+								.timer_ARR = 1919999       };
+  //enable_servo(&servo);
 
 
   // Initializing the Radio Receiver structure and enabling the channel for inputs
@@ -163,18 +175,24 @@ int main(void)
 									   .tol = 0.1,
 									   .pulse_recieve_flag = 0,
 									   .rise_flag = 0					};
-  enable_rad(&rad);
+  //enable_rad(task->rad);
 
 
   // Initializing the Photoresistors' structure
-  uint32_t adc_buff[4];
+  uint32_t photo1, photo2, photo3, photo4;
+  uint32_t photo_buff[4];
 
   Photoresistor_DriverTypeDef photo = { .adc_handle = &hadc1,
-  	  	  	  	  	  	  	  	  	  	.dma_handle = &hdma_adc1,
-  	  	  	  	  	  	  	  	  	    .adc_results = adc_buff   };
+		  	  	  	  	  	  	  	  	.adc_channel1 = ADC_CHANNEL_4,
+										.adc_channel2 = ADC_CHANNEL_5,
+		  	  	  	  	  	  	  	  	.adc_channel1 = ADC_CHANNEL_6,
+										.adc_channel2 = ADC_CHANNEL_7,
+  	  	  	  	  	  	  	  	  	    .photo_results = photo_buff   };
 
 
   // Initializing the Encoder structure
+  // NOTE: The purchased Encoder for this project has one non-functional output, meaning it can only read one direction and not as a quadrature
+  int32_t count;
   Encoder_DriverTypeDef enc = { .tim_handle = &htim4,
 		  	  	  	  	  	    .tim_channel1 = TIM_CHANNEL_1,
 								.tim_channel2 = TIM_CHANNEL_2,
@@ -183,8 +201,118 @@ int main(void)
 								.tot_count = 0,
 								.pos = 0,
 								.AR = 65535					   };
-  enable_enc(&enc);
-  set_zero(&enc);
+  //enable_enc(&enc);
+  //set_zero(&enc);
+
+
+  // UART Communication
+  volatile uint32_t prev_time;
+  volatile uint32_t curr_time;
+  volatile char my_message[200];
+
+
+  // Initializing Gyroscope I2C structure
+  // Source: https://github.com/d-mironov/Bosch-BNO055-STM32/blob/main/examples/simple/Src/main.c
+  bno055_euler_t euler = {0, 0, 0};
+  error_bno err;
+  volatile float gyro_angle_x = 0;
+  volatile float gyro_angle_y = 0;
+  volatile float gyro_angle_z = 0;
+
+  bno055_t bno = (bno055_t){ .i2c = &hi2c1,
+	  	  	  	  	  	  	 .addr = 0x28,
+							 .mode = BNO_MODE_IMU };
+
+  // EDIT: uncomment this and the next section to debug the IMU/connections
+  /*
+  HAL_Delay(1000);
+
+  if ((err = bno055_init(&bno)) == BNO_OK) {
+	  sprintf(my_message,"[+] BNO055 init success\r\n");
+	  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      HAL_Delay(100);
+  } else {
+	  sprintf(my_message,"[!] BNO055 init failed: %s \r\n", bno055_err_str(err));
+	  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      Error_Handler();
+  }
+
+  HAL_Delay(100);
+  err = bno055_set_unit(&bno, BNO_TEMP_UNIT_C, BNO_GYR_UNIT_DPS,
+                        BNO_ACC_UNITSEL_M_S2, BNO_EUL_UNIT_DEG);
+  if (err != BNO_OK) {
+	  sprintf(my_message,"[BNO] Failed to set units. Err: %d\r\n", err);
+	  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+  } else {
+	  sprintf(my_message,"[BNO] Unit selection success\r\n");
+	  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+  }
+  */
+
+  /*
+  HAL_StatusTypeDef ret;
+  uint8_t Buffer[25] = {0};
+  uint8_t Space[] = " - ";
+  uint8_t StartMSG[] = "Starting I2C Scanning: \r\n";
+  uint8_t EndMSG[] = "Done! \r\n\r\n";
+
+  HAL_UART_Transmit(&huart2, StartMSG, sizeof(StartMSG), 10000);
+  for(uint16_t i=1; i<128; i++)
+  {
+      ret = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(i<<1), 3, 5);
+      if (ret != HAL_OK)
+      {
+          HAL_UART_Transmit(&huart2, Space, sizeof(Space), 10000);
+      }
+      else if(ret == HAL_OK)
+      {
+          sprintf(Buffer, "0x%X", i);
+          HAL_UART_Transmit(&huart2, Buffer, sizeof(Buffer), 10000);
+      }
+  }
+  HAL_UART_Transmit(&huart2, EndMSG, sizeof(EndMSG), 10000);
+  */
+
+
+  // Controller Initialization
+  ControllerTypeDef con = { .des_val = 0,
+		  	  	  	  	  	.kp = 0,
+							.kd = 0,
+							.ki = 0,
+							.int_err = 0,
+							.prev_err = 0,
+							.prev_time = 0,
+							.first_time = 1, };
+
+  // Task Initializations
+
+  INTERTASK_VARS intertask_vars = { .rc_trigger_flag = 0,
+  	  	  	  	  	  	  	  	  	  .rad_edge_flag = &rad_edge_flag,	// EDIT: This should be an address bc its set outside of the tasks by an interrupt. The interrupt does not actually update the value in this struct, so we need to read the value at the address that it's stored in
+  	  	  	  	  	  	  	  	  	  .htim_cb = &htim_cb			   };
+
+  TASK1 task1 = { .state = 0,
+				  .mot = &mot,
+				  .servo = &servo,
+				  .rad = &rad,
+				  .photo = &photo,
+				  .enc = &enc,
+  	  	  	  	  .gyro = &bno	   };
+
+  TASK2 task2 = { .state = 0,
+				  .mot = &mot,
+				  .servo = &servo,
+				  .rad = &rad,
+				  .photo = &photo,
+				  .enc = &enc,
+  	  	  	  	  .gyro = &bno,
+  	  	  	  	  .con = &con,
+  	  	  	  	  .init_controller = 1,
+				  .euler = &euler,
+				  .within_range = 0,
+				  .end_time = 0,
+				  .high_light = 0,
+				  .high_angle = 0,
+				  .reflect_angle = 0    };
 
   /* USER CODE END 2 */
 
@@ -193,26 +321,45 @@ int main(void)
   prev_time = HAL_GetTick();
   while (1)
   {
+	  // FSM
+	  main_task1(&task1, &intertask_vars);
+	  main_task2(&task2, &intertask_vars);
+
+	  /*
+	  // Testing Motor
+	  int32_t duty_count = pulse_to_PWM(&rad);
+	  set_PWM(&mot, 1, duty_count);
+
+	  // Testing Servo
+	  servo_set_position(&servo, servo_angle);
+	  CCR = servo.current_CCR;
+	  servo_current_position = servo_get_position(&servo);
+
 	  // Testing Radio Receiver
-	  // Reading the pulse
 	  if (rad_edge_flag){
 		  read_pulse(&rad, &htim_cb);
 		  rad_edge_flag = 0;
 	  }
 
+	  // Testing Photoresistor ADC values
 
-	  // Testing Motor
-	  // Calculating duty count 1 and setting motor 1 PWM
-	  mot_num = 1;
-	  duty_count = pulse_to_PWM(&rad);
-	  duty_percent = (duty_count*100)/pulse;
-	  set_PWM(&mot, mot_num, duty_count);
+	  uint32_t photo1 = get_photo_value(&photo, 1);
+	  uint32_t photo2 = get_photo_value(&photo, 2);
+	  uint32_t photo3 = get_photo_value(&photo, 3);
+	  uint32_t photo4 = get_photo_value(&photo, 4);
 
-	  //Printing out values
+	  // Testing Encoder Outputs
+	  count = read_count(&enc);
 
+	  // Testing I2C Gyroscope
+	  bno055_euler(&bno, &euler);
+	  gyro_angle_x = euler.yaw;
+	  gyro_angle_y = euler.pitch;
+	  gyro_angle_z = euler.roll;
+
+	  //Printing out values through UART at set times
 	  curr_time = HAL_GetTick();
 	  if (curr_time - prev_time >= 1000){
-
 		  sprintf(my_message,"Photoresistor 1 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo1*3.3/4095), photo1);
 		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
 		  sprintf(my_message,"Photoresistor 2 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo2*3.3/4095), photo2);
@@ -222,34 +369,22 @@ int main(void)
 		  sprintf(my_message,"Photoresistor 4 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo4*3.3/4095), photo4);
 		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
 
-		  //sprintf(my_message,"Duty Cycle 1 is: %ld (%ld percent).\r\n", duty_count1, duty_percent1);
-		  //HAL_UART_Transmit(&huart6, (uint8_t*) my_message, strlen(my_message), 10);
+		  sprintf(my_message,"Encoder position is: %ld.\r\n", count);
+		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+
+		  sprintf(my_message,"Gyro X is: %d.\r\n", (int32_t)gyro_angle_x);
+		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+		  sprintf(my_message,"Gyro Y is: %d.\r\n", (int32_t)gyro_angle_y);
+		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+		  sprintf(my_message,"Gyro Z is: %d.\r\n", (int32_t)gyro_angle_z);
+		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
 
 		  sprintf(my_message,"\r\n");
 		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 10);
 
 		  prev_time = curr_time;
 	  }
-
-
-	  // Testing Photoresistor ADC values
-	  if (adc_conversion_flag == 0){
-		  // Starts the DMA to get ADC values
-		  start_get_adc_values(&photo);
-		  adc_conversion_flag = 1;
-	  }
-	  else if (adc_conversion_flag == 2){
-		  // Waits until the DMA has finished collecting values into the buffer after the interrupt is ran to return values
-		  uint32_t* adc_results = get_adc_values(&photo);
-		  photo1 = adc_results[0];
-		  photo2 = adc_results[1];
-		  photo3 = adc_results[2];
-		  photo4 = adc_results[3];
-		  adc_conversion_flag = 0;
-	  }
-
-	  // Testing Encoder Outputs
-	  int32_t count = read_count(&enc);
+	  */
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -340,7 +475,7 @@ static void MX_ADC1_Init(void)
   }
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
-  */
+
   sConfig.Channel = ADC_CHANNEL_4;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
@@ -350,7 +485,7 @@ static void MX_ADC1_Init(void)
   }
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
-  */
+
   sConfig.Channel = ADC_CHANNEL_5;
   sConfig.Rank = 2;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -359,7 +494,7 @@ static void MX_ADC1_Init(void)
   }
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
-  */
+
   sConfig.Channel = ADC_CHANNEL_6;
   sConfig.Rank = 3;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -368,7 +503,7 @@ static void MX_ADC1_Init(void)
   }
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
-  */
+
   sConfig.Channel = ADC_CHANNEL_7;
   sConfig.Rank = 4;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -378,6 +513,40 @@ static void MX_ADC1_Init(void)
   /* USER CODE BEGIN ADC1_Init 2 */
 
   /* USER CODE END ADC1_Init 2 */
+
+}
+
+/**
+  * @brief I2C1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_I2C1_Init(void)
+{
+
+  /* USER CODE BEGIN I2C1_Init 0 */
+
+  /* USER CODE END I2C1_Init 0 */
+
+  /* USER CODE BEGIN I2C1_Init 1 */
+
+  /* USER CODE END I2C1_Init 1 */
+  hi2c1.Instance = I2C1;
+  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+  hi2c1.Init.OwnAddress1 = 0;
+  hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+  hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+  hi2c1.Init.OwnAddress2 = 0;
+  hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
+  hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
+  if (HAL_I2C_Init(&hi2c1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN I2C1_Init 2 */
+
+  /* USER CODE END I2C1_Init 2 */
 
 }
 
@@ -394,6 +563,8 @@ static void MX_TIM1_Init(void)
   /* USER CODE END TIM1_Init 0 */
 
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_SlaveConfigTypeDef sSlaveConfig = {0};
+  TIM_IC_InitTypeDef sConfigIC = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
 
   /* USER CODE BEGIN TIM1_Init 1 */
@@ -412,6 +583,33 @@ static void MX_TIM1_Init(void)
   }
   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
   if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_IC_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sSlaveConfig.SlaveMode = TIM_SLAVEMODE_RESET;
+  sSlaveConfig.InputTrigger = TIM_TS_TI1FP1;
+  sSlaveConfig.TriggerPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+  sSlaveConfig.TriggerPrescaler = TIM_ICPSC_DIV1;
+  sSlaveConfig.TriggerFilter = 0;
+  if (HAL_TIM_SlaveConfigSynchro(&htim1, &sSlaveConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+  sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+  sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
+  sConfigIC.ICFilter = 0;
+  if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_FALLING;
+  sConfigIC.ICSelection = TIM_ICSELECTION_INDIRECTTI;
+  if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
   }
@@ -514,7 +712,7 @@ static void MX_TIM4_Init(void)
   htim4.Init.Period = 65535;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  sConfig.EncoderMode = TIM_ENCODERMODE_TI1;
+  sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
   sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
   sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
   sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
@@ -632,22 +830,6 @@ static void MX_USART2_UART_Init(void)
 }
 
 /**
-  * Enable DMA controller clock
-  */
-static void MX_DMA_Init(void)
-{
-
-  /* DMA controller clock enable */
-  __HAL_RCC_DMA2_CLK_ENABLE();
-
-  /* DMA interrupt init */
-  /* DMA2_Stream0_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
-
-}
-
-/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -671,25 +853,22 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Alternate = GPIO_AF2_TIM3;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PB8 PB9 */
-  GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9;
-  GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  GPIO_InitStruct.Alternate = GPIO_AF4_I2C1;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
+
 int32_t pulse_to_PWM(RadioReciever_DriverTypeDef* rad)
 {
 	  // Getting radio pulse and setting motor
-	  pulse_rad = get_pulse(rad);
-	  duty_percent = ((pulse_rad-1509)*100)/513;
-	  duty_count = ((pulse_rad-1509)*pulse)/513;
+	  int32_t pulse = 4799;
+	  uint32_t pulse_rad = get_pulse(rad);
+	  if (abs(pulse_rad) < 10){
+		  pulse_rad = 1509;
+	  }
+	  int32_t duty_percent = (int32_t)((pulse_rad-1509)*100)/513;
+	  int32_t duty_count = (int32_t)((pulse_rad-1509)*pulse)/513;
 	  if (duty_percent > 100 || duty_count > 4799){
 		  duty_percent = 100;
 		  duty_count = 4799;
@@ -701,6 +880,7 @@ int32_t pulse_to_PWM(RadioReciever_DriverTypeDef* rad)
 	  return duty_count;
 }
 
+/*
 VectorTypeDef get_reflect_angle(VectorTypeDef* light_source_angle, VectorTypeDef* target_position, VectorTypeDef* heliostat_position)
 {
     // Generating a unit vector from the light source angles
@@ -736,7 +916,7 @@ VectorTypeDef get_reflect_angle(VectorTypeDef* light_source_angle, VectorTypeDef
                                    .z = phi2  };
 
     return reflect_angle;
-}
+}*/
 
 // Callback Functions
 
@@ -744,15 +924,8 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
 	rad_edge_flag = 1;
 	htim_cb = *htim;
-
 }
 
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
-{
-	if(adc_conversion_flag == 1){
-		adc_conversion_flag = 2;
-	}
-}
 /* USER CODE END 4 */
 
 /**

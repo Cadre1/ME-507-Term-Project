@@ -26,7 +26,7 @@ void set_zero(Encoder_DriverTypeDef* enc)
 int32_t read_count(Encoder_DriverTypeDef* enc)
 {
 	enc->curr_count = __HAL_TIM_GET_COUNTER(enc->tim_handle);
-	int32_t dcount = (enc->curr_count)-(enc->prev_count);
+	int32_t dcount = (int32_t)((enc->curr_count)-(enc->prev_count));
 	if(dcount <= -((enc->AR)+1)/2){
 		enc->tot_count += ((enc->AR)+1)+dcount;
 		enc->pos += (((enc->AR)+1)+dcount)/4;

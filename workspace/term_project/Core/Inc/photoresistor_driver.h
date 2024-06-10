@@ -15,11 +15,18 @@
 // Photoresistor_Driver object data structure
 struct{
 	ADC_HandleTypeDef* adc_handle;
-	DMA_HandleTypeDef* dma_handle;
-	uint32_t* adc_results;
+	uint32_t adc_channel1;
+	uint32_t adc_channel2;
+	uint32_t adc_channel3;
+	uint32_t adc_channel4;
+	uint32_t* photo_results;
 } typedef Photoresistor_DriverTypeDef;
 
-void start_get_adc_values(Photoresistor_DriverTypeDef* photo);
-uint32_t* get_adc_values(Photoresistor_DriverTypeDef* photo);
+void ADC_Select_CH1 (Photoresistor_DriverTypeDef* photo);
+void ADC_Select_CH2 (Photoresistor_DriverTypeDef* photo);
+void ADC_Select_CH3 (Photoresistor_DriverTypeDef* photo);
+void ADC_Select_CH4 (Photoresistor_DriverTypeDef* photo);
+uint32_t get_photo_value(Photoresistor_DriverTypeDef* photo, uint8_t num);
+uint32_t get_photo_diff(Photoresistor_DriverTypeDef* photo, uint8_t num1, uint8_t num2);
 
 #endif /* INC_PHOTORESISTOR_DRIVER_H_ */

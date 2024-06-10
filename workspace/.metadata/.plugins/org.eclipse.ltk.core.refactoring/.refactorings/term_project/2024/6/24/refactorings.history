@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;term_project/Core/Inc/interstate_vars.h&apos; to &apos;intertask_vars.h&apos;" description="Rename resource &apos;interstate_vars.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/interstate_vars.h" name="intertask_vars.h" stamp="1717985032943" updateReferences="true"/>
+</session>
