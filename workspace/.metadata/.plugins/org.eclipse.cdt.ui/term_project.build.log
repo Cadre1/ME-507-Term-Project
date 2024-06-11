@@ -1,10 +1,257 @@
-02:18:20 **** Incremental Build of configuration Debug for project term_project ****
+12:40:03 **** Incremental Build of configuration Debug for project term_project ****
 make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:234:27: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  234 |                   sprintf(my_message,"[+] BNO055 init success\r\n");
+      |                           ^~~~~~~~~~
+In file included from ../Core/Inc/motor_driver.h:11,
+                 from ../Core/Src/main.c:24:
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:235:76: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  235 |                   HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      |                                                                            ^~~~~~~~~~
+In file included from ../Core/Src/main.c:38:
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:238:27: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  238 |                   sprintf(my_message,"[!] BNO055 init failed: %s \r\n", bno055_err_str(err));
+      |                           ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:239:76: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  239 |                   HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      |                                                                            ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:247:27: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  247 |                   sprintf(my_message,"[BNO] Failed to set units. Err: %d\r\n", err);
+      |                           ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:248:76: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  248 |                   HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      |                                                                            ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:250:27: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  250 |                   sprintf(my_message,"[BNO] Unit selection success\r\n");
+      |                           ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:251:76: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  251 |                   HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      |                                                                            ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:320:55: warning: initialization of 'float *' from incompatible pointer type 'float (*)[2]' [-Wincompatible-pointer-types]
+  320 |                                   .voltage_dif_list = &voltage_dif_list,
+      |                                                       ^
+../Core/Src/main.c:320:55: note: (near initialization for 'task2.voltage_dif_list')
+../Core/Src/main.c:304:17: warning: missing braces around initializer [-Wmissing-braces]
+  304 |   TASK2 task2 = { .state = 0,
+      |                 ^
+......
+  318 |                                   .reflect_angle = 0,
+      |                                                    {}
+../Core/Src/main.c:374:35: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  374 |                           sprintf(my_message,"Photoresistor 1 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo1*3.3/4095), photo1);
+      |                                   ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:375:84: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  375 |                           HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      |                                                                                    ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:376:35: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  376 |                           sprintf(my_message,"Photoresistor 2 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo2*3.3/4095), photo2);
+      |                                   ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:377:84: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  377 |                           HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      |                                                                                    ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:378:35: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  378 |                           sprintf(my_message,"Photoresistor 3 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo3*3.3/4095), photo3);
+      |                                   ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:379:84: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  379 |                           HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      |                                                                                    ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:380:35: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  380 |                           sprintf(my_message,"Photoresistor 4 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo4*3.3/4095), photo4);
+      |                                   ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:381:84: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  381 |                           HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      |                                                                                    ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:383:35: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  383 |                           sprintf(my_message,"Photoresistor 1-2 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo_dif12*3.3/4095), photo_dif12);
+      |                                   ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:384:84: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  384 |                           HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      |                                                                                    ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:387:35: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  387 |                           sprintf(my_message,"Encoder position is: %ld.\r\n", count);
+      |                                   ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:388:84: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  388 |                           HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      |                                                                                    ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:390:35: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  390 |                           sprintf(my_message,"Gyro X is: %d.\r\n", (int32_t)gyro_angle_x);
+      |                                   ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:390:59: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long int' [-Wformat=]
+  390 |                           sprintf(my_message,"Gyro X is: %d.\r\n", (int32_t)gyro_angle_x);
+      |                                                          ~^        ~~~~~~~~~~~~~~~~~~~~~
+      |                                                           |        |
+      |                                                           int      long int
+      |                                                          %ld
+../Core/Src/main.c:391:84: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  391 |                           HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      |                                                                                    ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:392:35: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  392 |                           sprintf(my_message,"Gyro Y is: %d.\r\n", (int32_t)gyro_angle_y);
+      |                                   ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:392:59: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long int' [-Wformat=]
+  392 |                           sprintf(my_message,"Gyro Y is: %d.\r\n", (int32_t)gyro_angle_y);
+      |                                                          ~^        ~~~~~~~~~~~~~~~~~~~~~
+      |                                                           |        |
+      |                                                           int      long int
+      |                                                          %ld
+../Core/Src/main.c:393:84: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  393 |                           HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      |                                                                                    ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:394:35: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  394 |                           sprintf(my_message,"Gyro Z is: %d.\r\n", (int32_t)gyro_angle_z);
+      |                                   ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:394:59: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long int' [-Wformat=]
+  394 |                           sprintf(my_message,"Gyro Z is: %d.\r\n", (int32_t)gyro_angle_z);
+      |                                                          ~^        ~~~~~~~~~~~~~~~~~~~~~
+      |                                                           |        |
+      |                                                           int      long int
+      |                                                          %ld
+../Core/Src/main.c:395:84: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  395 |                           HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+      |                                                                                    ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:397:35: warning: passing argument 1 of 'sprintf' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  397 |                           sprintf(my_message,"\r\n");
+      |                                   ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'volatile char *'
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:398:84: warning: passing argument 1 of 'strlen' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  398 |                           HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 10);
+      |                                                                                    ^~~~~~~~~~
+C:\ST\STM32CubeIDE_1.15.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'volatile char *'
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:186:36: warning: unused variable 'photo4' [-Wunused-variable]
+  186 |   uint32_t photo1, photo2, photo3, photo4;
+      |                                    ^~~~~~
+../Core/Src/main.c:186:28: warning: unused variable 'photo3' [-Wunused-variable]
+  186 |   uint32_t photo1, photo2, photo3, photo4;
+      |                            ^~~~~~
+../Core/Src/main.c:186:20: warning: unused variable 'photo2' [-Wunused-variable]
+  186 |   uint32_t photo1, photo2, photo3, photo4;
+      |                    ^~~~~~
+../Core/Src/main.c:186:12: warning: unused variable 'photo1' [-Wunused-variable]
+  186 |   uint32_t photo1, photo2, photo3, photo4;
+      |            ^~~~~~
+../Core/Src/main.c:160:12: warning: variable 'CCR' set but not used [-Wunused-but-set-variable]
+  160 |   uint32_t CCR;
+      |            ^~~
+../Core/Src/main.c:159:9: warning: variable 'servo_current_position' set but not used [-Wunused-but-set-variable]
+  159 |   float servo_current_position;
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:144:20: warning: unused variable 'duty_count' [-Wunused-variable]
+  144 |   volatile int32_t duty_count;
+      |                    ^~~~~~~~~~
+../Core/Src/main.c:143:20: warning: unused variable 'duty_percent' [-Wunused-variable]
+  143 |   volatile int32_t duty_percent;
+      |                    ^~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_ADC1_Init':
+../Core/Src/main.c:502:3: warning: "/*" within comment [-Wcomment]
+  502 |   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+      |    
+../Core/Src/main.c:511:3: warning: "/*" within comment [-Wcomment]
+  511 |   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+      |    
+../Core/Src/main.c:520:3: warning: "/*" within comment [-Wcomment]
+  520 |   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+      |    
+../Core/Src/main.c:528:3: warning: "/*" within comment [-Wcomment]
+  528 |   /* USER CODE BEGIN ADC1_Init 2 */
+      |    
+../Core/Src/main.c:467:26: warning: unused variable 'sConfig' [-Wunused-variable]
+  467 |   ADC_ChannelConfTypeDef sConfig = {0};
+      |                          ^~~~~~~
+arm-none-eabi-gcc -o "term_project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cadre\Documents\ME 507\Lab\ME-507-Term-Project\workspace\term_project\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="term_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: term_project.elf
+ 
 arm-none-eabi-size  term_project.elf 
+arm-none-eabi-objdump -h -S term_project.elf  > "term_project.list"
    text	   data	    bss	    dec	    hex	filename
-  49632	    112	   2472	  52216	   cbf8	term_project.elf
+  56288	    112	   2496	  58896	   e610	term_project.elf
 Finished building: default.size.stdout
  
+Finished building: term_project.list
+ 
 
-02:18:21 Build Finished. 0 errors, 0 warnings. (took 297ms)
+12:40:04 Build Finished. 0 errors, 46 warnings. (took 1s.18ms)
 

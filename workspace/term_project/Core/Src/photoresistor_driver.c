@@ -63,9 +63,10 @@ uint32_t get_photo_value(Photoresistor_DriverTypeDef* photo, uint8_t num)
 	}
 	  HAL_ADC_Start(photo->adc_handle);
 	  HAL_ADC_PollForConversion(photo->adc_handle, 1000);
-	  photo->photo_results[(num-1)] = HAL_ADC_GetValue(photo->adc_handle);
+	  uint32_t photo_result = HAL_ADC_GetValue(photo->adc_handle);
+	  photo->photo_results[(num-1)] = photo_result;
 	  HAL_ADC_Stop(photo->adc_handle);
-	  return photo->photo_results[(num-1)];
+	  return photo_result;
 }
 
 uint32_t get_photo_diff(Photoresistor_DriverTypeDef* photo, uint8_t num1, uint8_t num2)

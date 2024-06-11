@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include <math.h>
 #include "stm32f4xx_hal.h"
 #include "motor_driver.h"
 #include "servo_driver.h"
@@ -42,6 +43,10 @@
  *	@param		high_light: A record of the brightest spot during state 2
  *	@param		high_angle: A record of the angle associated with the brightest spot during state 2
  *	@param		reflect_angle: A vector of the angles for the normal vector of the mirror to reflect light to the target
+ *	@param		output: The output of the controller
+ *	@param		*voltage_dif_list: A list of 3 voltage differences between photoresistors to be averaged
+ *	@param		voltage_dif_count: A counter of 3 for the voltage_dif_list
+ *	@param 		voltage_dif_avg: The average of the 3 voltage differences
  */
 struct{
 	uint8_t state;
@@ -59,6 +64,10 @@ struct{
 	uint32_t high_light;
 	float high_angle;
 	VectorTypeDef reflect_angle;
+	float output;
+	float* voltage_dif_list;
+	uint8_t voltage_dif_count;
+	float voltage_dif_avg;
 } typedef TASK2;
 
 /*!

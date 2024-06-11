@@ -1,4 +1,4 @@
 ../Core/Src/controller.c:10:6:reset_controller	16	static
-../Core/Src/controller.c:19:6:set_gains	24	static
-../Core/Src/controller.c:26:6:set_target	16	static
-../Core/Src/controller.c:31:7:get_output	48	static
+../Core/Src/controller.c:22:6:set_gains	24	static
+../Core/Src/controller.c:29:6:set_target	16	static
+../Core/Src/controller.c:34:7:get_output	48	static

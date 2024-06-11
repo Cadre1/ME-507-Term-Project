@@ -3,4 +3,4 @@
 ../Core/Src/photoresistor_driver.c:30:6:ADC_Select_CH3	2
 ../Core/Src/photoresistor_driver.c:40:6:ADC_Select_CH4	2
 ../Core/Src/photoresistor_driver.c:50:10:get_photo_value	5
-../Core/Src/photoresistor_driver.c:71:10:get_photo_diff	1
+../Core/Src/photoresistor_driver.c:72:10:get_photo_diff	1

@@ -135,6 +135,8 @@ int main(void)
   MX_I2C1_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
+  // EDIT: Change to 0 for automated Heliostat mode. Change to 1 for manual trigger controlled debugging.
+  uint8_t manual_control = 0;
 
   // Driver Initializations
 
@@ -148,21 +150,23 @@ int main(void)
   	  	 	  	  	  	  	  .tim_channel3 = TIM_CHANNEL_3,	// Unused
 							  .tim_channel4 = TIM_CHANNEL_4,	// Unused
 							  .pulse = pulse				 };
-  //enable_mot(&mot,1);
-  // Initially setting the PWM to 0 in case they had been previously been set
-  //set_PWM_percent(&mot, 1, 0);
-
+  if (manual_control){
+	  enable_mot(&mot,1);
+	  // Initially setting the PWM to 0 in case they had been previously been set
+	  set_PWM_percent(&mot, 1, 0);
+  }
 
   // Initializing the servo motor driver structure and enabling the servo
   float servo_current_position;
   uint32_t CCR;
-  float servo_angle;
+  float servo_angle = 0;
   Servo_DriverTypeDef servo = { .pwmHandle = &htim5,
 		  	  	  	  	 	 	.timer_ch = TIM_CHANNEL_4,
 								.current_CCR = 0,
 								.timer_ARR = 1919999       };
-  //enable_servo(&servo);
-
+  if (manual_control){
+	  enable_servo(&servo);
+  }
 
   // Initializing the Radio Receiver structure and enabling the channel for inputs
   RadioReciever_DriverTypeDef rad = { .tim_handle = &htim1,
@@ -175,8 +179,9 @@ int main(void)
 									   .tol = 0.1,
 									   .pulse_recieve_flag = 0,
 									   .rise_flag = 0					};
-  //enable_rad(task->rad);
-
+  if (manual_control){
+  	enable_rad(&rad);
+  }
 
   // Initializing the Photoresistors' structure
   uint32_t photo1, photo2, photo3, photo4;
@@ -222,56 +227,54 @@ int main(void)
   bno055_t bno = (bno055_t){ .i2c = &hi2c1,
 	  	  	  	  	  	  	 .addr = 0x28,
 							 .mode = BNO_MODE_IMU };
+  if (manual_control){
+	  // EDIT: uncomment this and the next section to debug the IMU/connections
 
-  // EDIT: uncomment this and the next section to debug the IMU/connections
-  /*
-  HAL_Delay(1000);
+	  HAL_Delay(1000);
+	  if ((err = bno055_init(&bno)) == BNO_OK) {
+		  sprintf(my_message,"[+] BNO055 init success\r\n");
+		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+		  HAL_Delay(100);
+	  } else {
+		  sprintf(my_message,"[!] BNO055 init failed: %s \r\n", bno055_err_str(err));
+		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+		  Error_Handler();
+	  }
 
-  if ((err = bno055_init(&bno)) == BNO_OK) {
-	  sprintf(my_message,"[+] BNO055 init success\r\n");
-	  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
-      HAL_Delay(100);
-  } else {
-	  sprintf(my_message,"[!] BNO055 init failed: %s \r\n", bno055_err_str(err));
-	  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
-      Error_Handler();
+	  HAL_Delay(100);
+	  err = bno055_set_unit(&bno, BNO_TEMP_UNIT_C, BNO_GYR_UNIT_DPS,
+							BNO_ACC_UNITSEL_M_S2, BNO_EUL_UNIT_DEG);
+	  if (err != BNO_OK) {
+		  sprintf(my_message,"[BNO] Failed to set units. Err: %d\r\n", err);
+		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+	  } else {
+		  sprintf(my_message,"[BNO] Unit selection success\r\n");
+		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+	  }
+	  /*
+	  HAL_StatusTypeDef ret;
+	  uint8_t Buffer[25] = {0};
+	  uint8_t Space[] = " - ";
+	  uint8_t StartMSG[] = "Starting I2C Scanning: \r\n";
+	  uint8_t EndMSG[] = "Done! \r\n\r\n";
+
+	  HAL_UART_Transmit(&huart2, StartMSG, sizeof(StartMSG), 10000);
+	  for(uint16_t i=1; i<128; i++)
+	  {
+		  ret = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(i<<1), 3, 5);
+		  if (ret != HAL_OK)
+		  {
+			  HAL_UART_Transmit(&huart2, Space, sizeof(Space), 10000);
+		  }
+		  else if(ret == HAL_OK)
+		  {
+			  sprintf(Buffer, "0x%X", i);
+			  HAL_UART_Transmit(&huart2, Buffer, sizeof(Buffer), 10000);
+		  }
+	  }
+	  HAL_UART_Transmit(&huart2, EndMSG, sizeof(EndMSG), 10000);
+	*/
   }
-
-  HAL_Delay(100);
-  err = bno055_set_unit(&bno, BNO_TEMP_UNIT_C, BNO_GYR_UNIT_DPS,
-                        BNO_ACC_UNITSEL_M_S2, BNO_EUL_UNIT_DEG);
-  if (err != BNO_OK) {
-	  sprintf(my_message,"[BNO] Failed to set units. Err: %d\r\n", err);
-	  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
-  } else {
-	  sprintf(my_message,"[BNO] Unit selection success\r\n");
-	  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
-  }
-  */
-
-  /*
-  HAL_StatusTypeDef ret;
-  uint8_t Buffer[25] = {0};
-  uint8_t Space[] = " - ";
-  uint8_t StartMSG[] = "Starting I2C Scanning: \r\n";
-  uint8_t EndMSG[] = "Done! \r\n\r\n";
-
-  HAL_UART_Transmit(&huart2, StartMSG, sizeof(StartMSG), 10000);
-  for(uint16_t i=1; i<128; i++)
-  {
-      ret = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(i<<1), 3, 5);
-      if (ret != HAL_OK)
-      {
-          HAL_UART_Transmit(&huart2, Space, sizeof(Space), 10000);
-      }
-      else if(ret == HAL_OK)
-      {
-          sprintf(Buffer, "0x%X", i);
-          HAL_UART_Transmit(&huart2, Buffer, sizeof(Buffer), 10000);
-      }
-  }
-  HAL_UART_Transmit(&huart2, EndMSG, sizeof(EndMSG), 10000);
-  */
 
 
   // Controller Initialization
@@ -298,6 +301,7 @@ int main(void)
 				  .enc = &enc,
   	  	  	  	  .gyro = &bno	   };
 
+  float voltage_dif_list[2];
   TASK2 task2 = { .state = 0,
 				  .mot = &mot,
 				  .servo = &servo,
@@ -312,7 +316,11 @@ int main(void)
 				  .end_time = 0,
 				  .high_light = 0,
 				  .high_angle = 0,
-				  .reflect_angle = 0    };
+				  .reflect_angle = 0,
+  	  	  	  	  .output = 0,
+				  .voltage_dif_list = &voltage_dif_list,
+				  .voltage_dif_count = 0,
+  	  	  	  	  .voltage_dif_avg = 0					 };
 
   /* USER CODE END 2 */
 
@@ -321,70 +329,78 @@ int main(void)
   prev_time = HAL_GetTick();
   while (1)
   {
-	  // FSM
-	  main_task1(&task1, &intertask_vars);
-	  main_task2(&task2, &intertask_vars);
-
-	  /*
-	  // Testing Motor
-	  int32_t duty_count = pulse_to_PWM(&rad);
-	  set_PWM(&mot, 1, duty_count);
-
-	  // Testing Servo
-	  servo_set_position(&servo, servo_angle);
-	  CCR = servo.current_CCR;
-	  servo_current_position = servo_get_position(&servo);
-
-	  // Testing Radio Receiver
-	  if (rad_edge_flag){
-		  read_pulse(&rad, &htim_cb);
-		  rad_edge_flag = 0;
+	  if (!manual_control){
+		  // FSM
+		  main_task1(&task1, &intertask_vars);
+		  main_task2(&task2, &intertask_vars);
+		  // Wait 10ms before running again
+		  HAL_Delay(10);
 	  }
+	  else if (manual_control){
+		  // Testing Motor
+		  int32_t duty_count = pulse_to_PWM(&rad);
+		  set_PWM(&mot, 1, duty_count);
 
-	  // Testing Photoresistor ADC values
+		  // Testing Servo
+		  servo_set_position(&servo, servo_angle);
+		  CCR = servo.current_CCR;
+		  servo_current_position = servo_get_position(&servo);
 
-	  uint32_t photo1 = get_photo_value(&photo, 1);
-	  uint32_t photo2 = get_photo_value(&photo, 2);
-	  uint32_t photo3 = get_photo_value(&photo, 3);
-	  uint32_t photo4 = get_photo_value(&photo, 4);
+		  // Testing Radio Receiver
+		  if (rad_edge_flag){
+			  read_pulse(&rad, &htim_cb);
+			  rad_edge_flag = 0;
+		  }
 
-	  // Testing Encoder Outputs
-	  count = read_count(&enc);
+		  // Testing Photoresistor ADC values
 
-	  // Testing I2C Gyroscope
-	  bno055_euler(&bno, &euler);
-	  gyro_angle_x = euler.yaw;
-	  gyro_angle_y = euler.pitch;
-	  gyro_angle_z = euler.roll;
+		  uint32_t photo1 = get_photo_value(&photo, 1);
+		  uint32_t photo2 = get_photo_value(&photo, 2);
+		  uint32_t photo3 = get_photo_value(&photo, 3);
+		  uint32_t photo4 = get_photo_value(&photo, 4);
+		  uint32_t photo_dif12 = get_photo_diff(&photo,1,2);
 
-	  //Printing out values through UART at set times
-	  curr_time = HAL_GetTick();
-	  if (curr_time - prev_time >= 1000){
-		  sprintf(my_message,"Photoresistor 1 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo1*3.3/4095), photo1);
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
-		  sprintf(my_message,"Photoresistor 2 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo2*3.3/4095), photo2);
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
-		  sprintf(my_message,"Photoresistor 3 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo3*3.3/4095), photo3);
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
-		  sprintf(my_message,"Photoresistor 4 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo4*3.3/4095), photo4);
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+		  // Testing Encoder Outputs
+		  count = read_count(&enc);
 
-		  sprintf(my_message,"Encoder position is: %ld.\r\n", count);
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+		  // Testing I2C Gyroscope
+		  bno055_euler(&bno, &euler);
+		  gyro_angle_x = euler.yaw;
+		  gyro_angle_y = euler.pitch;
+		  gyro_angle_z = euler.roll;
 
-		  sprintf(my_message,"Gyro X is: %d.\r\n", (int32_t)gyro_angle_x);
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
-		  sprintf(my_message,"Gyro Y is: %d.\r\n", (int32_t)gyro_angle_y);
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
-		  sprintf(my_message,"Gyro Z is: %d.\r\n", (int32_t)gyro_angle_z);
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+		  //Printing out values through UART at set times
+		  curr_time = HAL_GetTick();
+		  if (curr_time - prev_time >= 1000){
+			  sprintf(my_message,"Photoresistor 1 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo1*3.3/4095), photo1);
+			  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+			  sprintf(my_message,"Photoresistor 2 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo2*3.3/4095), photo2);
+			  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+			  sprintf(my_message,"Photoresistor 3 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo3*3.3/4095), photo3);
+			  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+			  sprintf(my_message,"Photoresistor 4 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo4*3.3/4095), photo4);
+			  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
 
-		  sprintf(my_message,"\r\n");
-		  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 10);
+			  sprintf(my_message,"Photoresistor 1-2 voltage: %ld (V) (or %ld).\r\n", (uint32_t) (photo_dif12*3.3/4095), photo_dif12);
+			  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
 
-		  prev_time = curr_time;
+
+			  sprintf(my_message,"Encoder position is: %ld.\r\n", count);
+			  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+
+			  sprintf(my_message,"Gyro X is: %d.\r\n", (int32_t)gyro_angle_x);
+			  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+			  sprintf(my_message,"Gyro Y is: %d.\r\n", (int32_t)gyro_angle_y);
+			  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+			  sprintf(my_message,"Gyro Z is: %d.\r\n", (int32_t)gyro_angle_z);
+			  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 100);
+
+			  sprintf(my_message,"\r\n");
+			  HAL_UART_Transmit(&huart2, (uint8_t*) my_message, strlen(my_message), 10);
+
+			  prev_time = curr_time;
+		  }
 	  }
-	  */
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -1,0 +1,457 @@
+/*!
+ *  @file task1.c
+ *  @brief Runs the states associated with task 1 as described in its FSM.
+ *
+ *  Created on: Jun 9, 2024
+ */
+
+#include <task2.h>
+
+void main_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if(task->state == 0){
+		state0_task2(task, intertask_vars);
+	}
+	else if(task->state == 1){
+		state1_task2(task, intertask_vars);
+	}
+	else if(task->state == 2){
+		state2_task2(task, intertask_vars);
+	}
+	else if(task->state == 3){
+		state3_task2(task, intertask_vars);
+	}
+	else if(task->state == 4){
+		state4_task2(task, intertask_vars);
+	}
+	else if(task->state == 5){
+		state5_task2(task, intertask_vars);
+	}
+	else if(task->state == 6){
+		state6_task2(task, intertask_vars);
+	}
+	else if(task->state == 7){
+		state7_task2(task, intertask_vars);
+	}
+	else if(task->state == 8){
+		state8_task2(task, intertask_vars);
+	}
+	else if(task->state == 9){
+		state9_task2(task, intertask_vars);
+	}
+}
+
+void state0_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	// Initializing the motor
+	enable_mot(task->mot,1);
+	set_PWM_percent(task->mot, 1, 0);
+
+	// Initializng the servo
+	enable_servo(task->servo);
+	// Setting the servo position to vertical
+	servo_set_position(task->servo, 0);
+
+	// Initializing the photoresistors
+
+	// Initializing the encoder
+	enable_enc(task->enc);
+	set_zero(task->enc);
+
+	// Initializing the IMU gyroscope
+	//bno055_init(task->gyro);
+
+	if (bno055_init(task->gyro) == BNO_OK) {
+
+		HAL_Delay(100);
+	}
+	else {
+	    Error_Handler(); // NOTE: A common reason for this running is a short internally in the IMU. Unplug and replug the Vin or Gnd to reset.
+	}
+	bno055_set_unit(task->gyro, BNO_TEMP_UNIT_C, BNO_GYR_UNIT_DPS, BNO_ACC_UNITSEL_M_S2, BNO_EUL_UNIT_DEG);
+
+	// Initializing the controller
+	reset_controller(task->con);
+
+	task->state = 1;
+}
+
+void state1_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (intertask_vars->rc_trigger_flag){
+		task->state = 2;
+	}
+}
+
+void state2_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+	else{
+		if (task->init_controller){
+			// Sets up the controller the first time for angle-motor control
+			reset_controller(task->con);
+			set_gains(task->con, 25, 4, 1);
+			set_target(task->con, 355);
+			task->init_controller = 0;
+		}
+		else{
+			// Setting the servo position to vertical
+			servo_set_position(task->servo, 90);
+			// Setting the motor position using the angle-motor controller
+			// Read the gyroscope angle (yaw euler angle)
+			bno055_euler(task->gyro, task->euler);
+			float pitch_angle = task->euler->yaw;
+
+			// Returning the controller output
+			task->output = get_output(task->con, pitch_angle);
+
+			// Setting the motor PWM off of the controller output
+			set_PWM(task->mot, 1, task->output);
+
+			// Checking if the motor is at the right position
+			// Checks if the angle is within a 5 degree range from the target angle
+			if (abs((int32_t)(pitch_angle - 350)) < 10){
+				uint32_t curr_time = HAL_GetTick();
+				// Checks if the angle has been within the tolerance for 2.5s
+				if (!task->within_range){
+					task->end_time = curr_time + 2500;
+					task->within_range = 1;
+				}
+				else if (curr_time > task->end_time && task->within_range){
+					task->within_range = 0;
+					set_PWM(task->mot, 1, 0);
+					reset_controller(task->con);
+					task->init_controller = 1;
+					task->state = 3;
+				}
+			}
+			else{
+				task->within_range = 0;
+			}
+
+			// NOTE: this may block the code a little since polling takes time. Hopefully not much because it only polls one ADC, but another task dedicated for the photoresistors could be used.
+			// Recording high values of light and their angles
+			uint32_t curr_light = get_photo_value(task->photo, 1); // NOTE: Use the photoresistor on the top when vertical?
+			if (curr_light > task->high_light){
+				task->high_light = curr_light;
+				task->high_angle = pitch_angle;
+			}
+		}
+	}
+}
+
+void state3_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+	else{
+		if (task->init_controller){
+			// Sets up the controller the first time for angle-motor control
+			reset_controller(task->con);
+			set_gains(task->con, 25, 2, 1);
+			set_target(task->con, task->high_angle);
+			task->init_controller = 0;
+		}
+		else{
+			// Setting the motor position using the angle-motor controller
+			// Read the gyroscope angle (yaw euler angle)
+			bno055_euler(task->gyro, task->euler);
+			float pitch_angle = task->euler->yaw;
+
+			// Returning the controller output
+			float output = get_output(task->con, pitch_angle);
+
+			// Setting the motor PWM off of the controller output
+			set_PWM(task->mot, 1, output);
+
+			// Checking if the motor is at the right position
+			// Checks if the angle is within a 10 degree range from the target angle
+			if (abs((int32_t)(pitch_angle - task->high_angle)) < 10){
+				set_PWM(task->mot, 1, 0);
+				reset_controller(task->con);
+				task->init_controller = 1;
+				task->state = 4;
+			}
+		}
+	}
+}
+
+void state4_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+	else{
+		if (task->init_controller){
+			// Sets up the controller the first time for photoresistor-motor control (ADC voltage difference)
+			reset_controller(task->con);
+			set_gains(task->con, 10, 0, 0);
+			set_target(task->con, 0);
+			task->init_controller = 0;
+		}
+		else{
+			// Setting the motor position using the photoresistor-motor controller // EDIT: WATCH OUT FOR DIRECTION
+			// Read the horizontal ADC voltage difference (photoresistors 1 and 2) EDIT: Test and debug which ones are best
+			float voltage_dif = get_photo_diff(task->photo, 2, 1);
+
+			// Returning the controller output
+			float output = get_output(task->con, voltage_dif);
+
+			// Setting the motor PWM off of the controller output
+			set_PWM(task->mot, 1, output);
+
+			// Checking if the motor is at the right position
+			// Checks if the angle is within a 50 ADC voltage difference
+			if (abs((int32_t)voltage_dif) < 50){
+				uint32_t curr_time = HAL_GetTick();
+				// Checks if the angle has been within the tolerance for 5s
+				if (!task->within_range){
+					task->end_time = curr_time + 5000;
+					task->within_range = 1;
+				}
+				else if (curr_time > task->end_time && task->within_range){
+					task->within_range = 0;
+					set_PWM(task->mot, 1, 0);
+					reset_controller(task->con);
+					task->init_controller = 1;
+					task->state = 5;
+				}
+			}
+			else{
+				task->within_range = 0;
+			}
+		}
+	}
+}
+
+void state5_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+	else{
+		if (task->init_controller){
+			// Sets up the controller the first time for photoresistor-servo control (ADC voltage difference)
+			reset_controller(task->con);
+			set_gains(task->con, 0.1, 0, 0);
+			set_target(task->con, 0);
+			task->init_controller = 0;
+		}
+		else{
+			// Setting the servo position using the photoresistor-servo controller
+			// Read the vertical ADC voltage difference (photoresistors 1 and 3) EDIT: Test and debug which ones are best
+			float voltage_dif = get_photo_diff(task->photo, 1, 3);
+
+			// Returning the controller output
+			float output = get_output(task->con, voltage_dif);
+
+			// Setting the servo position off of the controller output (current position + output)
+			float servo_current_position = servo_get_position(task->servo);
+			servo_set_position(task->servo, servo_current_position+output);
+
+			// Checking if the motor is at the right position
+			// Checks if the angle is within a 50 ADC voltage difference
+			if (abs((int32_t)voltage_dif) < 50){
+				uint32_t curr_time = HAL_GetTick();
+				// Checks if the angle has been within the tolerance for 5s
+				if (!task->within_range){
+					task->end_time = curr_time + 5000;
+					task->within_range = 1;
+				}
+				else if (curr_time > task->end_time && task->within_range){
+					task->within_range = 0;
+					reset_controller(task->con);
+					task->init_controller = 1;
+					task->state = 6;
+				}
+			}
+			else{
+				task->within_range = 0;
+			}
+		}
+	}
+}
+
+void state6_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+	else{
+		/*
+		 * NOTE: It will be useful to place the heliostat so that the initial angle of the gyroscope starts at 0,
+		 * then to set the target relative to that. This will make the direction of 0 as the +x direction and
+		 * upwards as +z direction.
+		 */
+
+		bno055_euler(task->gyro, task->euler);
+		// z is the motor yaw angle, x is the servo pitch angle.
+		VectorTypeDef light_source_angle = { .x = task->euler->pitch,
+											 .y = 0,
+											 .z = task->euler->roll };
+		// x and y are in the horizontal plane, z is vertical
+		// Units don't matter, but they need to be consistent
+		VectorTypeDef target_position = { .x = 10,
+										  .y = 10,
+										  .z = 20  };
+		VectorTypeDef heliostat_position = { .x = 0,
+										  .y = 0,
+										  .z = 10  };
+		// z is the motor yaw angle, x is the servo pitch angle.
+		task->reflect_angle = get_reflect_angle(&light_source_angle, &target_position, &heliostat_position);
+		task->state = 7;
+	}
+}
+
+void state7_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+	else{
+		if (task->init_controller){
+			// Sets up the controller the first time for angle-motor control
+			reset_controller(task->con);
+			set_gains(task->con, 25, 0, 0.5);
+			set_target(task->con, task->reflect_angle.z);
+			task->init_controller = 0;
+		}
+		else{
+			// Setting the servo position
+			servo_set_position(task->servo, task->reflect_angle.x);
+			// Setting the motor position using the angle-motor controller
+			// Read the gyroscope angle (yaw euler angle)
+			bno055_euler(task->gyro, task->euler);
+			float pitch_angle = task->euler->yaw;
+
+			// Returning the controller output
+			float output = get_output(task->con, pitch_angle);
+
+			// Setting the motor PWM off of the controller output
+			set_PWM(task->mot, 1, output);
+
+			// Checking if the motor is at the right position
+			// Checks if the angle is within a 5 degree range from the target angle
+			if (abs((int32_t)(pitch_angle - task->reflect_angle.z)) < 5){
+				uint32_t curr_time = HAL_GetTick();
+				// Checks if the angle has been within the tolerance for 5s
+				if (!task->within_range){
+					task->end_time = curr_time + 5000;
+					task->within_range = 1;
+				}
+				else if (curr_time > task->end_time && task->within_range){
+					task->within_range = 0;
+					set_PWM(task->mot, 1, 0);
+					reset_controller(task->con);
+					task->init_controller = 1;
+					task->state = 7;
+					// End of test if the program makes it here
+				}
+			}
+			else{
+				task->within_range = 0;
+			}
+		}
+	}
+}
+
+void state8_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (intertask_vars->rc_trigger_flag){
+		task->state = 9;
+	}
+	set_PWM(task->mot, 1, 0);
+}
+
+void state9_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
+{
+	if (!intertask_vars->rc_trigger_flag){
+		task->state = 8;
+	}
+	else{
+		if (task->init_controller){
+			// Sets up the controller the first time for angle-motor control
+			reset_controller(task->con);
+			set_gains(task->con, 25, 0, 0.5);
+			set_target(task->con, 10);
+			task->init_controller = 0;
+		}
+		else{
+			// Setting the servo position to vertical
+			servo_set_position(task->servo, 90);
+			// Setting the motor position using the angle-motor controller
+			// Read the gyroscope angle (yaw euler angle)
+			bno055_euler(task->gyro, task->euler);
+			float pitch_angle = task->euler->yaw;
+
+			// Returning the controller output
+			float output = get_output(task->con, pitch_angle);
+
+			// Setting the motor PWM off of the controller output
+			set_PWM(task->mot, 1, output);
+
+			// Checking if the motor is at the right position
+			// Checks if the angle is within a 5 degree range from the target angle
+			if (abs((int32_t)pitch_angle) < 5){
+				uint32_t curr_time = HAL_GetTick();
+				// Checks if the angle has been within the tolerance for 5s
+				if (!task->within_range){
+					task->end_time = curr_time + 5000;
+					task->within_range = 1;
+				}
+				else if (curr_time > task->end_time && task->within_range){
+					task->within_range = 0;
+					set_PWM(task->mot, 1, 0);
+					reset_controller(task->con);
+					task->init_controller = 1;
+					task->state = 1;
+				}
+			}
+			else{
+				task->within_range = 0;
+			}
+		}
+	}
+
+}
+
+VectorTypeDef get_reflect_angle(VectorTypeDef* light_source_angle, VectorTypeDef* target_position, VectorTypeDef* heliostat_position)
+{
+    // Generating a unit vector from the light source angles
+    VectorTypeDef light_source_vector = {.x = cos(light_source_angle->z)*sin(light_source_angle->x),
+                                         .y = sin(light_source_angle->z)*sin(light_source_angle->x),
+                                         .z = cos(light_source_angle->x)                                   };
+    // Generating a unit vector from the target-to-heliostat positions
+    VectorTypeDef target_dif = {.x = (target_position->x)-(heliostat_position->x),
+                                .y = (target_position->y)-(heliostat_position->y),
+                                .z = (target_position->z)-(heliostat_position->z) };
+    float target_vector_mag = get_mag(&target_dif);
+    VectorTypeDef target_vector = {.x = target_dif.x/target_vector_mag,
+                                   .y = target_dif.y/target_vector_mag,
+                                   .z = target_dif.z/target_vector_mag };
+
+    // Calculating the normal vector of the mirror to reflect the light source to the target
+    VectorTypeDef reflect_vector_dir = {.x = light_source_vector.x+target_vector.x,
+                                        .y = light_source_vector.y+target_vector.y,
+                                        .z = light_source_vector.z+target_vector.z };
+    float reflect_vector_dir_mag = get_mag(&reflect_vector_dir);
+    VectorTypeDef reflect_vector = {.x = reflect_vector_dir.x/reflect_vector_dir_mag,
+                                    .y = reflect_vector_dir.y/reflect_vector_dir_mag,
+                                    .z = reflect_vector_dir.z/reflect_vector_dir_mag };
+
+    // Calculating the pitch and yaw angles to produce the mirror normal vector
+    float theta = acos(reflect_vector.z);
+    float phi1 = acos(reflect_vector.x/sin(theta));
+    float phi2 = asin(reflect_vector.y/sin(theta));
+
+    // Generating an angle vector to store phi and theta (phi1 and phi2, with no rounding error, should be the same)
+    VectorTypeDef reflect_angle = {.x = theta,
+                                   .y = phi1,
+                                   .z = phi2  };
+
+    return reflect_angle;
+}
+

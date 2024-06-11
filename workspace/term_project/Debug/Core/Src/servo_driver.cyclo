@@ -1,5 +1,5 @@
 ../Core/Src/servo_driver.c:10:6:enable_servo	1
 ../Core/Src/servo_driver.c:16:6:disable_servo	1
 ../Core/Src/servo_driver.c:22:7:servo_get_position	1
-../Core/Src/servo_driver.c:30:6:servo_set_position	4
-../Core/Src/servo_driver.c:38:6:servo_change_relative_PW	4
+../Core/Src/servo_driver.c:30:6:servo_set_position	6
+../Core/Src/servo_driver.c:46:6:servo_change_relative_PW	4

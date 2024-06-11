@@ -35,7 +35,7 @@ void state1_task1(TASK1* task, INTERTASK_VARS* intertask_vars)
 		*(intertask_vars->rad_edge_flag) = 0;
 	}
 	// Checking if the value is greater than 50% of its max (1750)
-	if (get_pulse_percent(task->rad) > 50){
+	if (abs(get_pulse_percent(task->rad)) > 50){
 		intertask_vars->rc_trigger_flag = 1;
 		task->state = 2;
 	}
@@ -49,7 +49,7 @@ void state2_task1(TASK1* task, INTERTASK_VARS* intertask_vars)
 		*(intertask_vars->rad_edge_flag) = 0;
 	}
 	// Checking if the value is less than 50% of its max (1750)
-	if (get_pulse_percent(task->rad) < 50){
+	if (abs(get_pulse_percent(task->rad)) < 50){
 		intertask_vars->rc_trigger_flag = 0;
 		task->state = 1;
 	}

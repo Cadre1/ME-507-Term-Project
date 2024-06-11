@@ -14,6 +14,9 @@ void reset_controller(ControllerTypeDef* con)
 	con->ki = 0;
 	con->des_val = 0;
 	con->first_time = 1;
+	con->prev_time = 0;
+	con->int_err = 0;
+	con->prev_err = 0;
 }
 
 void set_gains(ControllerTypeDef* con, float kp, float kd, float ki)
@@ -31,7 +34,7 @@ void set_target(ControllerTypeDef* con, float des_val)
 float get_output(ControllerTypeDef* con, float curr_val)
 {
 	float prop_err, der_err;
-	uint32_t diff_time;
+	float diff_time;
 	uint32_t curr_time = HAL_GetTick();
 	if (con->first_time){
 		prop_err = (con->des_val)-curr_val;
@@ -40,7 +43,7 @@ float get_output(ControllerTypeDef* con, float curr_val)
 		con->first_time = 0;
 	}
 	else{
-		diff_time = curr_time-(con->prev_time);
+		diff_time = (float)(curr_time-(con->prev_time))/1000;
 		prop_err = (con->des_val)-curr_val;
 		der_err = (prop_err-(con->prev_err))/diff_time;
 		con->int_err += prop_err*diff_time;

@@ -2,4 +2,4 @@
 ../Core/Src/servo_driver.c:16:6:disable_servo	16	static
 ../Core/Src/servo_driver.c:22:7:servo_get_position	24	static
 ../Core/Src/servo_driver.c:30:6:servo_set_position	24	static
-../Core/Src/servo_driver.c:38:6:servo_change_relative_PW	32	static
+../Core/Src/servo_driver.c:46:6:servo_change_relative_PW	32	static

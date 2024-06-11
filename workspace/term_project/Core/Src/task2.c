@@ -49,6 +49,8 @@ void state0_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 
 	// Initializng the servo
 	enable_servo(task->servo);
+	// Setting the servo position to vertical
+	servo_set_position(task->servo, 0);
 
 	// Initializing the photoresistors
 
@@ -57,13 +59,21 @@ void state0_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 	set_zero(task->enc);
 
 	// Initializing the IMU gyroscope
-	bno055_init(task->gyro);
-	HAL_Delay(100);
+	//bno055_init(task->gyro);
+
+	if (bno055_init(task->gyro) == BNO_OK) {
+
+		HAL_Delay(100);
+	}
+	else {
+	    Error_Handler(); // NOTE: A common reason for this running is a short internally in the IMU. Unplug and replug the Vin or Gnd to reset.
+	}
 	bno055_set_unit(task->gyro, BNO_TEMP_UNIT_C, BNO_GYR_UNIT_DPS, BNO_ACC_UNITSEL_M_S2, BNO_EUL_UNIT_DEG);
-	task->state = 1;
 
 	// Initializing the controller
 	reset_controller(task->con);
+
+	task->state = 1;
 }
 
 void state1_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
@@ -82,36 +92,36 @@ void state2_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 		if (task->init_controller){
 			// Sets up the controller the first time for angle-motor control
 			reset_controller(task->con);
-			set_gains(task->con, 0.1, 0, 0);
+			set_gains(task->con, 25, 15, 0.75);
 			set_target(task->con, 355);
 			task->init_controller = 0;
 		}
 		else{
+			// Setting the servo position to vertical
+			servo_set_position(task->servo, 60);
 			// Setting the motor position using the angle-motor controller
 			// Read the gyroscope angle (yaw euler angle)
 			bno055_euler(task->gyro, task->euler);
 			float pitch_angle = task->euler->yaw;
 
 			// Returning the controller output
-			float output = get_output(task->con, pitch_angle);
+			task->output = get_output(task->con, pitch_angle);
 
 			// Setting the motor PWM off of the controller output
-			set_PWM(task->mot, 1, output);
+			set_PWM(task->mot, 1, task->output);
 
 			// Checking if the motor is at the right position
 			// Checks if the angle is within a 5 degree range from the target angle
-			if (abs(pitch_angle - 355) < 5){
+			if (abs((int32_t)(pitch_angle - 350)) < 15){
 				uint32_t curr_time = HAL_GetTick();
-				// Checks if the angle has been within the tolerance for 100 ms
+				// Checks if the angle has been within the tolerance for 2.5s
 				if (!task->within_range){
-					task->end_time = curr_time + 100;
+					task->end_time = curr_time + 2500;
 					task->within_range = 1;
 				}
 				else if (curr_time > task->end_time && task->within_range){
 					task->within_range = 0;
 					set_PWM(task->mot, 1, 0);
-					// Setting the servo position to vertical
-					servo_set_position(task->servo, 0);
 					reset_controller(task->con);
 					task->init_controller = 1;
 					task->state = 3;
@@ -123,7 +133,7 @@ void state2_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 
 			// NOTE: this may block the code a little since polling takes time. Hopefully not much because it only polls one ADC, but another task dedicated for the photoresistors could be used.
 			// Recording high values of light and their angles
-			uint32_t curr_light = get_photo_value(task->photo, 1); // NOTE: Use the photoresistor on the top when vertical?
+			uint32_t curr_light = get_photo_value(task->photo, 2); // NOTE: Use the photoresistor on the top when vertical?
 			if (curr_light > task->high_light){
 				task->high_light = curr_light;
 				task->high_angle = pitch_angle;
@@ -141,7 +151,7 @@ void state3_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 		if (task->init_controller){
 			// Sets up the controller the first time for angle-motor control
 			reset_controller(task->con);
-			set_gains(task->con, 0.1, 0, 0);
+			set_gains(task->con, 40, 15, 0.75);
 			set_target(task->con, task->high_angle);
 			task->init_controller = 0;
 		}
@@ -152,14 +162,14 @@ void state3_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 			float pitch_angle = task->euler->yaw;
 
 			// Returning the controller output
-			float output = get_output(task->con, pitch_angle);
+			task->output = get_output(task->con, pitch_angle);
 
 			// Setting the motor PWM off of the controller output
-			set_PWM(task->mot, 1, output);
+			set_PWM(task->mot, 1, task->output);
 
 			// Checking if the motor is at the right position
 			// Checks if the angle is within a 10 degree range from the target angle
-			if (abs(pitch_angle - task->high_angle) < 10){
+			if (abs((int32_t)(pitch_angle - task->high_angle)) < 15){
 				set_PWM(task->mot, 1, 0);
 				reset_controller(task->con);
 				task->init_controller = 1;
@@ -178,28 +188,38 @@ void state4_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 		if (task->init_controller){
 			// Sets up the controller the first time for photoresistor-motor control (ADC voltage difference)
 			reset_controller(task->con);
-			set_gains(task->con, 0.1, 0, 0);
-			set_target(task->con, 0);
+			set_gains(task->con, 16, 0, 0);
+			set_target(task->con, 0); // 50 offset from photoresistor imperfections
 			task->init_controller = 0;
 		}
 		else{
 			// Setting the motor position using the photoresistor-motor controller // EDIT: WATCH OUT FOR DIRECTION
 			// Read the horizontal ADC voltage difference (photoresistors 1 and 2) EDIT: Test and debug which ones are best
-			float voltage_dif = get_photo_diff(task->photo, 1, 2);
+			uint32_t voltage1 = get_photo_value(task->photo,1);
+			uint32_t voltage2 = get_photo_value(task->photo,2);
+			float voltage_dif = ((float)voltage2-(float)voltage1);
 
-			// Returning the controller output
-			float output = get_output(task->con, voltage_dif);
+			if (task->voltage_dif_count < 2){
+				task->voltage_dif_list[task->voltage_dif_count] = voltage_dif;
+				task->voltage_dif_count++;
+			}
+			else if (task->voltage_dif_count == 2){
+				task->voltage_dif_avg = (task->voltage_dif_list[0]+task->voltage_dif_list[1])/2;
+				// Returning the controller output
+				task->output = get_output(task->con, task->voltage_dif_avg);
+				task->voltage_dif_count = 0;
+			}
 
 			// Setting the motor PWM off of the controller output
-			set_PWM(task->mot, 1, output);
+			set_PWM(task->mot, 1, task->output);
 
 			// Checking if the motor is at the right position
 			// Checks if the angle is within a 50 ADC voltage difference
-			if (abs(voltage_dif) < 50){
+			if (abs((int32_t)(0-task->voltage_dif_avg)) < 75){
 				uint32_t curr_time = HAL_GetTick();
-				// Checks if the angle has been within the tolerance for 100 ms
+				// Checks if the angle has been within the tolerance for 5s
 				if (!task->within_range){
-					task->end_time = curr_time + 100;
+					task->end_time = curr_time + 5000;
 					task->within_range = 1;
 				}
 				else if (curr_time > task->end_time && task->within_range){
@@ -224,31 +244,43 @@ void state5_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 	}
 	else{
 		if (task->init_controller){
-			// Sets up the controller the first time for photoresistor-motor control (ADC voltage difference)
+			// Sets up the controller the first time for photoresistor-servo control (ADC voltage difference)
 			reset_controller(task->con);
-			set_gains(task->con, 0.01, 0, 0);
+			set_gains(task->con, 0.0005, 0, 0);
 			set_target(task->con, 0);
 			task->init_controller = 0;
 		}
 		else{
 			// Setting the servo position using the photoresistor-servo controller
-			// Read the vertical ADC voltage difference (photoresistors 1 and 3) EDIT: Test and debug which ones are best
-			float voltage_dif = get_photo_diff(task->photo, 1, 3);
-
-			// Returning the controller output
-			float output = get_output(task->con, voltage_dif);
+			// Read the horizontal ADC voltage difference (photoresistors 2 and 4) EDIT: Test and debug which ones are best
+			uint32_t voltage1 = get_photo_value(task->photo,2);
+			uint32_t voltage2 = get_photo_value(task->photo,4);
+			float voltage_dif = ((float)voltage2-(float)voltage1);
+			/*
+			if (task->voltage_dif_count < 3){
+				task->voltage_dif_list[task->voltage_dif_count] = voltage_dif;
+				task->voltage_dif_count++;
+			}
+			else if (task->voltage_dif_count == 3){
+				task->voltage_dif_avg = (task->voltage_dif_list[0]+task->voltage_dif_list[1]+task->voltage_dif_list[2])/3;
+				// Returning the controller output
+				task->output = get_output(task->con, task->voltage_dif_avg);
+				task->voltage_dif_count = 0;
+			}
+			*/
+			task->output = get_output(task->con, voltage_dif);
 
 			// Setting the servo position off of the controller output (current position + output)
 			float servo_current_position = servo_get_position(task->servo);
-			servo_set_position(task->servo, servo_current_position+output);
+			servo_set_position(task->servo, servo_current_position+task->output);
 
 			// Checking if the motor is at the right position
-			// Checks if the angle is within a 50 ADC voltage difference
-			if (abs(voltage_dif) < 50){
+			// Checks if the angle is within a 100 ADC voltage difference
+			if (abs((int32_t)voltage_dif) < 100){
 				uint32_t curr_time = HAL_GetTick();
-				// Checks if the angle has been within the tolerance for 100 ms
+				// Checks if the angle has been within the tolerance for 5s
 				if (!task->within_range){
-					task->end_time = curr_time + 100;
+					task->end_time = curr_time + 5000;
 					task->within_range = 1;
 				}
 				else if (curr_time > task->end_time && task->within_range){
@@ -279,19 +311,22 @@ void state6_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 
 		bno055_euler(task->gyro, task->euler);
 		// z is the motor yaw angle, x is the servo pitch angle.
-		VectorTypeDef light_source_angle = { .x = task->euler->pitch,
+		VectorTypeDef light_source_angle = { .x = task->euler->pitch*M_PI/180,
 											 .y = 0,
-											 .z = task->euler->yaw };
+											 .z = task->euler->roll*M_PI/180 };
 		// x and y are in the horizontal plane, z is vertical
 		// Units don't matter, but they need to be consistent
-		VectorTypeDef target_position = { .x = 10,
-										  .y = 10,
-										  .z = 20  };
+		VectorTypeDef target_position = { .x = -10,
+										  .y = -10,
+										  .z = -20  };
 		VectorTypeDef heliostat_position = { .x = 0,
 										  .y = 0,
-										  .z = 10  };
+										  .z = -10  };
 		// z is the motor yaw angle, x is the servo pitch angle.
 		task->reflect_angle = get_reflect_angle(&light_source_angle, &target_position, &heliostat_position);
+		task->reflect_angle.x = task->reflect_angle.x*180/M_PI;
+		task->reflect_angle.y = task->reflect_angle.y*180/M_PI;
+		task->reflect_angle.z = task->reflect_angle.z*180/M_PI;
 		task->state = 7;
 	}
 }
@@ -305,36 +340,36 @@ void state7_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 		if (task->init_controller){
 			// Sets up the controller the first time for angle-motor control
 			reset_controller(task->con);
-			set_gains(task->con, 0.1, 0, 0);
+			set_gains(task->con, 25, 15, 0.65);
 			set_target(task->con, task->reflect_angle.z);
 			task->init_controller = 0;
 		}
 		else{
+			// Setting the servo position
+			servo_set_position(task->servo, task->reflect_angle.x);
 			// Setting the motor position using the angle-motor controller
 			// Read the gyroscope angle (yaw euler angle)
 			bno055_euler(task->gyro, task->euler);
 			float pitch_angle = task->euler->yaw;
 
 			// Returning the controller output
-			float output = get_output(task->con, pitch_angle);
+			task->output = get_output(task->con, pitch_angle);
 
 			// Setting the motor PWM off of the controller output
-			set_PWM(task->mot, 1, output);
+			set_PWM(task->mot, 1, task->output);
 
 			// Checking if the motor is at the right position
 			// Checks if the angle is within a 5 degree range from the target angle
-			if (abs(pitch_angle - task->reflect_angle.z) < 5){
+			if (abs((int32_t)(pitch_angle - task->reflect_angle.z)) < 2.5){
 				uint32_t curr_time = HAL_GetTick();
-				// Checks if the angle has been within the tolerance for 100 ms
+				// Checks if the angle has been within the tolerance for 5s
 				if (!task->within_range){
-					task->end_time = curr_time + 100;
+					task->end_time = curr_time + 5000;
 					task->within_range = 1;
 				}
 				else if (curr_time > task->end_time && task->within_range){
 					task->within_range = 0;
 					set_PWM(task->mot, 1, 0);
-					// Setting the servo position
-					servo_set_position(task->servo, task->reflect_angle.x);
 					reset_controller(task->con);
 					task->init_controller = 1;
 					task->state = 7;
@@ -353,7 +388,10 @@ void state8_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 	if (intertask_vars->rc_trigger_flag){
 		task->state = 9;
 	}
+	task->within_range = 0;
 	set_PWM(task->mot, 1, 0);
+	reset_controller(task->con);
+	task->init_controller = 1;
 }
 
 void state9_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
@@ -365,36 +403,36 @@ void state9_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 		if (task->init_controller){
 			// Sets up the controller the first time for angle-motor control
 			reset_controller(task->con);
-			set_gains(task->con, 0.1, 0, 0);
-			set_target(task->con, 0);
+			set_gains(task->con, 30, 15, 0.65);
+			set_target(task->con, 5);
 			task->init_controller = 0;
 		}
 		else{
+			// Setting the servo position to vertical
+			servo_set_position(task->servo, 60);
 			// Setting the motor position using the angle-motor controller
 			// Read the gyroscope angle (yaw euler angle)
 			bno055_euler(task->gyro, task->euler);
 			float pitch_angle = task->euler->yaw;
 
 			// Returning the controller output
-			float output = get_output(task->con, pitch_angle);
+			task->output = get_output(task->con, pitch_angle);
 
 			// Setting the motor PWM off of the controller output
-			set_PWM(task->mot, 1, output);
+			set_PWM(task->mot, 1, task->output);
 
 			// Checking if the motor is at the right position
 			// Checks if the angle is within a 5 degree range from the target angle
-			if (abs(pitch_angle) < 5){
+			if (abs((int32_t)(pitch_angle - 10)) < 20){
 				uint32_t curr_time = HAL_GetTick();
-				// Checks if the angle has been within the tolerance for 100 ms
+				// Checks if the angle has been within the tolerance for 2.5s
 				if (!task->within_range){
-					task->end_time = curr_time + 100;
+					task->end_time = curr_time + 2500;
 					task->within_range = 1;
 				}
 				else if (curr_time > task->end_time && task->within_range){
 					task->within_range = 0;
 					set_PWM(task->mot, 1, 0);
-					// Setting the servo position to vertical
-					servo_set_position(task->servo, 0);
 					reset_controller(task->con);
 					task->init_controller = 1;
 					task->state = 1;
@@ -405,7 +443,6 @@ void state9_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 			}
 		}
 	}
-
 }
 
 VectorTypeDef get_reflect_angle(VectorTypeDef* light_source_angle, VectorTypeDef* target_position, VectorTypeDef* heliostat_position)
@@ -413,7 +450,7 @@ VectorTypeDef get_reflect_angle(VectorTypeDef* light_source_angle, VectorTypeDef
     // Generating a unit vector from the light source angles
     VectorTypeDef light_source_vector = {.x = cos(light_source_angle->z)*sin(light_source_angle->x),
                                          .y = sin(light_source_angle->z)*sin(light_source_angle->x),
-                                         .z = cos(light_source_angle->x)                                   };
+                                         .z = -cos(light_source_angle->x)                                   };
     // Generating a unit vector from the target-to-heliostat positions
     VectorTypeDef target_dif = {.x = (target_position->x)-(heliostat_position->x),
                                 .y = (target_position->y)-(heliostat_position->y),
@@ -433,7 +470,7 @@ VectorTypeDef get_reflect_angle(VectorTypeDef* light_source_angle, VectorTypeDef
                                     .z = reflect_vector_dir.z/reflect_vector_dir_mag };
 
     // Calculating the pitch and yaw angles to produce the mirror normal vector
-    float theta = acos(reflect_vector.z);
+    float theta = acos(-reflect_vector.z);
     float phi1 = acos(reflect_vector.x/sin(theta));
     float phi2 = asin(reflect_vector.y/sin(theta));
 
