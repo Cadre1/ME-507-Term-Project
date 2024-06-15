@@ -1,0 +1,33 @@
+\doxysection{servo\+\_\+driver.\+h}
+\hypertarget{servo__driver_8h_source}{}\label{servo__driver_8h_source}\index{workspace/term\_project/Core/Inc/servo\_driver.h@{workspace/term\_project/Core/Inc/servo\_driver.h}}
+\mbox{\hyperlink{servo__driver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ INC\_SERVO\_DRIVER\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ INC\_SERVO\_DRIVER\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00024\ \ \ \ \ TIM\_HandleTypeDef*\ pwmHandle;}
+\DoxyCodeLine{00025\ \ \ \ \ uint32\_t\ timer\_ch;}
+\DoxyCodeLine{00026\ \ \ \ \ uint32\_t\ current\_CCR;}
+\DoxyCodeLine{00027\ \ \ \ \ uint32\_t\ timer\_ARR;}
+\DoxyCodeLine{00028\ \}\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_servo___driver_type_def}{Servo\_DriverTypeDef}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{servo__driver_8h_ab874c9386a1010b815ffdc47144317bb}{enable\_servo}}(\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\_DriverTypeDef}}*\ servo);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{servo__driver_8h_a252358bbe66cc245f33861f846f0d116}{disable\_servo}}(\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\_DriverTypeDef}}*\ servo);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{servo__driver_8h_ab928c893e183cdb9dfa967c6123044dd}{servo\_get\_position}}(\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\_DriverTypeDef}}*\ servo);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{servo__driver_8h_a1589034fda0d21ea827941a326aa0c39}{servo\_set\_position}}(\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\_DriverTypeDef}}*\ servo,\ \textcolor{keywordtype}{float}\ angle);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{servo__driver_8h_a7aada71a61589cd7374f37d76d1f3c2e}{servo\_change\_relative\_PW}}(\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\_DriverTypeDef}}*\ servo,\ \textcolor{keywordtype}{float}\ PW);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_SERVO\_DRIVER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

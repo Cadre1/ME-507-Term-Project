@@ -1,0 +1,118 @@
+\doxysection{workspace/term\+\_\+project/\+Core/\+Src/task1.c File Reference}
+\hypertarget{task1_8c}{}\label{task1_8c}\index{workspace/term\_project/Core/Src/task1.c@{workspace/term\_project/Core/Src/task1.c}}
+
+
+Runs the states associated with task 1 as described in its FSM.  
+
+
+{\ttfamily \#include $<$task1.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{task1_8c_a3bba8a3a3a85e487a87074c2b88a2230}{main\+\_\+task1}} (\mbox{\hyperlink{struct_t_a_s_k1}{TASK1}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Runs the designated state for task 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task1_8c_ade4cd67b8e3c535c3a0cdbc8135d0bf9}{state0\+\_\+task1}} (\mbox{\hyperlink{struct_t_a_s_k1}{TASK1}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Initializes the radio receiver to read values sent by the radio controller trigger. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task1_8c_a9560838fa9080ad8f2cba5539462e676}{state1\+\_\+task1}} (\mbox{\hyperlink{struct_t_a_s_k1}{TASK1}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Checks if the radio controller trigger is more than halfway down and sets the radio trigger flag if it is. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task1_8c_aa8982a8627ab40bcc3130b98b8968454}{state2\+\_\+task1}} (\mbox{\hyperlink{struct_t_a_s_k1}{TASK1}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Checks if the radio controller trigger is less than halfway down and resets the radio trigger flag if it is. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{task1_8c_a1037412c6f2e83b5e648574226e18359}{get\+\_\+pulse\+\_\+percent}} (\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{Radio\+Reciever\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}rad)
+\begin{DoxyCompactList}\small\item\em Calculates the percent that the radio controller trigger is pressed down. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Runs the states associated with task 1 as described in its FSM. 
+
+Created on\+: Jun 5, 2024 \begin{DoxyAuthor}{Author}
+Christopher Ng 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{task1_8c_a1037412c6f2e83b5e648574226e18359}\label{task1_8c_a1037412c6f2e83b5e648574226e18359} 
+\index{task1.c@{task1.c}!get\_pulse\_percent@{get\_pulse\_percent}}
+\index{get\_pulse\_percent@{get\_pulse\_percent}!task1.c@{task1.c}}
+\doxysubsubsection{\texorpdfstring{get\_pulse\_percent()}{get\_pulse\_percent()}}
+{\footnotesize\ttfamily int32\+\_\+t get\+\_\+pulse\+\_\+percent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{Radio\+Reciever\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{rad }\end{DoxyParamCaption})}
+
+
+
+Calculates the percent that the radio controller trigger is pressed down. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}rad} & The radio receiver driver \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A trigger down percent 
+\end{DoxyReturn}
+\Hypertarget{task1_8c_a3bba8a3a3a85e487a87074c2b88a2230}\label{task1_8c_a3bba8a3a3a85e487a87074c2b88a2230} 
+\index{task1.c@{task1.c}!main\_task1@{main\_task1}}
+\index{main\_task1@{main\_task1}!task1.c@{task1.c}}
+\doxysubsubsection{\texorpdfstring{main\_task1()}{main\_task1()}}
+{\footnotesize\ttfamily void main\+\_\+task1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k1}{TASK1}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Runs the designated state for task 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The task\textquotesingle{}s current state \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task1_8c_ade4cd67b8e3c535c3a0cdbc8135d0bf9}\label{task1_8c_ade4cd67b8e3c535c3a0cdbc8135d0bf9} 
+\index{task1.c@{task1.c}!state0\_task1@{state0\_task1}}
+\index{state0\_task1@{state0\_task1}!task1.c@{task1.c}}
+\doxysubsubsection{\texorpdfstring{state0\_task1()}{state0\_task1()}}
+{\footnotesize\ttfamily void state0\+\_\+task1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k1}{TASK1}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Initializes the radio receiver to read values sent by the radio controller trigger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The task\textquotesingle{}s current state \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task1_8c_a9560838fa9080ad8f2cba5539462e676}\label{task1_8c_a9560838fa9080ad8f2cba5539462e676} 
+\index{task1.c@{task1.c}!state1\_task1@{state1\_task1}}
+\index{state1\_task1@{state1\_task1}!task1.c@{task1.c}}
+\doxysubsubsection{\texorpdfstring{state1\_task1()}{state1\_task1()}}
+{\footnotesize\ttfamily void state1\+\_\+task1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k1}{TASK1}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Checks if the radio controller trigger is more than halfway down and sets the radio trigger flag if it is. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The task\textquotesingle{}s current state \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task1_8c_aa8982a8627ab40bcc3130b98b8968454}\label{task1_8c_aa8982a8627ab40bcc3130b98b8968454} 
+\index{task1.c@{task1.c}!state2\_task1@{state2\_task1}}
+\index{state2\_task1@{state2\_task1}!task1.c@{task1.c}}
+\doxysubsubsection{\texorpdfstring{state2\_task1()}{state2\_task1()}}
+{\footnotesize\ttfamily void state2\+\_\+task1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k1}{TASK1}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Checks if the radio controller trigger is less than halfway down and resets the radio trigger flag if it is. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The task\textquotesingle{}s current state \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}

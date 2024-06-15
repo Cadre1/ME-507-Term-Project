@@ -1,0 +1,33 @@
+\doxysection{controller.\+h}
+\hypertarget{controller_8h_source}{}\label{controller_8h_source}\index{workspace/term\_project/Core/Inc/controller.h@{workspace/term\_project/Core/Inc/controller.h}}
+\mbox{\hyperlink{controller_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ INC\_CONTROLLER\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ INC\_CONTROLLER\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{float}\ des\_val;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ kp;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{float}\ kd;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{float}\ ki;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{float}\ int\_err;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{float}\ prev\_err;}
+\DoxyCodeLine{00032\ \ \ \ \ uint32\_t\ prev\_time;}
+\DoxyCodeLine{00033\ \ \ \ \ uint8\_t\ first\_time;}
+\DoxyCodeLine{00034\ \}\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_controller_type_def}{ControllerTypeDef}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{controller_8h_a09e15c2c3333407b51428308179a5730}{reset\_controller}}(\mbox{\hyperlink{struct_controller_type_def}{ControllerTypeDef}}*\ con);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{controller_8h_afa4d7cefc00a1113586b8037a10c9adf}{set\_gains}}(\mbox{\hyperlink{struct_controller_type_def}{ControllerTypeDef}}*\ con,\ \textcolor{keywordtype}{float}\ kp,\ \textcolor{keywordtype}{float}\ kd,\ \textcolor{keywordtype}{float}\ ki);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{controller_8h_a494724c9c3dd3725eb20e0a38acc2f65}{set\_target}}(\mbox{\hyperlink{struct_controller_type_def}{ControllerTypeDef}}*\ con,\ \textcolor{keywordtype}{float}\ des\_val);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{controller_8h_af329fe95d490556210abb40046683dab}{get\_output}}(\mbox{\hyperlink{struct_controller_type_def}{ControllerTypeDef}}*\ con,\ \textcolor{keywordtype}{float}\ curr\_val);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_CONTROLLER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,194 @@
+\doxysection{workspace/term\+\_\+project/\+Core/\+Src/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{workspace/term\_project/Core/Src/main.c@{workspace/term\_project/Core/Src/main.c}}
+
+
+\+: Main program body for debugging and main task operations  
+
+
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include "{}motor\+\_\+driver.\+h"{}}\newline
+{\ttfamily \#include "{}servo\+\_\+driver.\+h"{}}\newline
+{\ttfamily \#include "{}radio\+\_\+reciever\+\_\+driver.\+h"{}}\newline
+{\ttfamily \#include "{}photoresistor\+\_\+driver.\+h"{}}\newline
+{\ttfamily \#include "{}encoder\+\_\+driver.\+h"{}}\newline
+{\ttfamily \#include "{}bno055.\+h"{}}\newline
+{\ttfamily \#include "{}bno\+\_\+config.\+h"{}}\newline
+{\ttfamily \#include "{}vector.\+h"{}}\newline
+{\ttfamily \#include "{}controller.\+h"{}}\newline
+{\ttfamily \#include "{}task1.\+h"{}}\newline
+{\ttfamily \#include "{}task2.\+h"{}}\newline
+{\ttfamily \#include "{}intertask\+\_\+vars.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_a563fdd3e97773f7301a62b3b30f3e3e7}\label{main_8c_a563fdd3e97773f7301a62b3b30f3e3e7} 
+int32\+\_\+t {\bfseries pulse\+\_\+to\+\_\+\+PWM} (\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{Radio\+Reciever\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}rad)
+\item 
+\mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \mbox{\hyperlink{main_8c_a6246573b8ebb570461cee3160f57bb0f}{get\+\_\+reflect\+\_\+angle}} (\mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \texorpdfstring{$\ast$}{*}light\+\_\+source\+\_\+angle, \mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \texorpdfstring{$\ast$}{*}target\+\_\+position, \mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \texorpdfstring{$\ast$}{*}heliostat\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Calculates the angles required to reflect a light source at a given angle to a target given its and the heliostats position. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_a77a2401a35ddd9bd0b8fc28331b81381}\label{main_8c_a77a2401a35ddd9bd0b8fc28331b81381} 
+void {\bfseries HAL\+\_\+\+TIM\+\_\+\+IC\+\_\+\+Capture\+Callback} (TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}htim)
+\item 
+void \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a2532ff72b1a2ff82f65e8c2a5a4dde00}{assert\+\_\+failed}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}file, uint32\+\_\+t line)
+\begin{DoxyCompactList}\small\item\em Reports the name of the source file and the source line number where the assert\+\_\+param error has occurred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8c_a22b804736f5648d52f639b2647d4ed13}\label{main_8c_a22b804736f5648d52f639b2647d4ed13} 
+ADC\+\_\+\+Handle\+Type\+Def {\bfseries hadc1}
+\item 
+\Hypertarget{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}\label{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7} 
+I2\+C\+\_\+\+Handle\+Type\+Def {\bfseries hi2c1}
+\item 
+\Hypertarget{main_8c_a25fc663547539bc49fecc0011bd76ab5}\label{main_8c_a25fc663547539bc49fecc0011bd76ab5} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim1}
+\item 
+\Hypertarget{main_8c_a2c80fd5510e2990a59a5c90d745c716c}\label{main_8c_a2c80fd5510e2990a59a5c90d745c716c} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim2}
+\item 
+\Hypertarget{main_8c_a85788cec5a97ee377e4ee2e74f026484}\label{main_8c_a85788cec5a97ee377e4ee2e74f026484} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim4}
+\item 
+\Hypertarget{main_8c_acefaeaaa3856ddddae7083b2d220fe4b}\label{main_8c_acefaeaaa3856ddddae7083b2d220fe4b} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim5}
+\item 
+\Hypertarget{main_8c_aa9479c261d65eecedd3d9582f7f0f89c}\label{main_8c_aa9479c261d65eecedd3d9582f7f0f89c} 
+UART\+\_\+\+Handle\+Type\+Def {\bfseries huart2}
+\item 
+\Hypertarget{main_8c_a53c8d8d1fabc28502fd546608cc4c4c0}\label{main_8c_a53c8d8d1fabc28502fd546608cc4c4c0} 
+TIM\+\_\+\+Handle\+Type\+Def {\bfseries htim\+\_\+cb}
+\item 
+\Hypertarget{main_8c_a3ea339f124e5fae7576d56c034699cb5}\label{main_8c_a3ea339f124e5fae7576d56c034699cb5} 
+volatile float {\bfseries gyro\+\_\+angle\+\_\+x} = 0
+\item 
+\Hypertarget{main_8c_a66ebdeb16b0b0c1e27d302766155ed41}\label{main_8c_a66ebdeb16b0b0c1e27d302766155ed41} 
+volatile float {\bfseries gyro\+\_\+angle\+\_\+y} = 0
+\item 
+\Hypertarget{main_8c_a6a243f0eca7c07dbb89327b4b0563f17}\label{main_8c_a6a243f0eca7c07dbb89327b4b0563f17} 
+volatile float {\bfseries gyro\+\_\+angle\+\_\+z} = 0
+\item 
+\Hypertarget{main_8c_a585e993c2fce6d26d0803d62ac5a8129}\label{main_8c_a585e993c2fce6d26d0803d62ac5a8129} 
+uint8\+\_\+t {\bfseries rad\+\_\+edge\+\_\+flag} = 0
+\item 
+\Hypertarget{main_8c_ae557aa9c9cd4ab24c96f989f6d172bfe}\label{main_8c_ae557aa9c9cd4ab24c96f989f6d172bfe} 
+uint8\+\_\+t {\bfseries adc\+\_\+conversion\+\_\+flag} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Main program body for debugging and main task operations 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2024 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS.
+
+BNO055 Drivers were sourced from Github user d-\/mironov at\+: \href{https://github.com/d-mironov/Bosch-BNO055-STM32}{\texttt{ https\+://github.\+com/d-\/mironov/\+Bosch-\/\+BNO055-\/\+STM32}} 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a2532ff72b1a2ff82f65e8c2a5a4dde00}\label{main_8c_a2532ff72b1a2ff82f65e8c2a5a4dde00} 
+\index{main.c@{main.c}!assert\_failed@{assert\_failed}}
+\index{assert\_failed@{assert\_failed}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{assert\_failed()}{assert\_failed()}}
+{\footnotesize\ttfamily void assert\+\_\+failed (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{file,  }\item[{uint32\+\_\+t}]{line }\end{DoxyParamCaption})}
+
+
+
+Reports the name of the source file and the source line number where the assert\+\_\+param error has occurred. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & pointer to the source file name \\
+\hline
+{\em line} & assert\+\_\+param error line source number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\label{main_8c_a1730ffe1e560465665eb47d9264826f9} 
+\index{main.c@{main.c}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a6246573b8ebb570461cee3160f57bb0f}\label{main_8c_a6246573b8ebb570461cee3160f57bb0f} 
+\index{main.c@{main.c}!get\_reflect\_angle@{get\_reflect\_angle}}
+\index{get\_reflect\_angle@{get\_reflect\_angle}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{get\_reflect\_angle()}{get\_reflect\_angle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} get\+\_\+reflect\+\_\+angle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{light\+\_\+source\+\_\+angle,  }\item[{\mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{target\+\_\+position,  }\item[{\mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{heliostat\+\_\+position }\end{DoxyParamCaption})}
+
+
+
+Calculates the angles required to reflect a light source at a given angle to a target given its and the heliostats position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}light\+\_\+source\+\_\+angle} & A vector containing the Euler angles of the light source \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}target\+\_\+position} & A vector containing the position of the target \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}heliostat\+\_\+position} & A vector containing the position of the heliostat mirror \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of the required angles of the normal vector of the mirror to reflect to the target 
+\end{DoxyReturn}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The application entry point. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\label{main_8c_a70af21c671abfcc773614a9a4f63d920} 
+\index{main.c@{main.c}!SystemClock\_Config@{SystemClock\_Config}}
+\index{SystemClock\_Config@{SystemClock\_Config}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SystemClock\_Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Configure the main internal regulator output voltage
+
+Initializes the RCC Oscillators according to the specified parameters in the RCC\+\_\+\+Osc\+Init\+Type\+Def structure.
+
+Initializes the CPU, AHB and APB buses clocks

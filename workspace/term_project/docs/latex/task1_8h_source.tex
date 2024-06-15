@@ -1,0 +1,45 @@
+\doxysection{task1.\+h}
+\hypertarget{task1_8h_source}{}\label{task1_8h_source}\index{workspace/term\_project/Core/Inc/task1.h@{workspace/term\_project/Core/Inc/task1.h}}
+\mbox{\hyperlink{task1_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ INC\_TASK1\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ INC\_TASK1\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{motor__driver_8h}{motor\_driver.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{servo__driver_8h}{servo\_driver.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{radio__reciever__driver_8h}{radio\_reciever\_driver.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{photoresistor__driver_8h}{photoresistor\_driver.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}encoder\_driver.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bno055_8h}{bno055.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}bno\_config.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{controller_8h}{controller.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{intertask__vars_8h}{intertask\_vars.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector_8h}{vector.h}}"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00037\ \ \ \ \ uint8\_t\ state;}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{struct_motor___driver_type_def}{Motor\_DriverTypeDef}}*\ mot;}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{struct_servo___driver_type_def}{Servo\_DriverTypeDef}}*\ servo;}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{struct_radio_reciever___driver_type_def}{RadioReciever\_DriverTypeDef}}*\ rad;}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\_DriverTypeDef}}*\ photo;}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\_DriverTypeDef}}*\ enc;}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{struct__bno055__t}{bno055\_t}}*\ gyro;}
+\DoxyCodeLine{00044\ \}\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_t_a_s_k1}{TASK1}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{task1_8h_a3bba8a3a3a85e487a87074c2b88a2230}{main\_task1}}(\mbox{\hyperlink{struct_t_a_s_k1}{TASK1}}*\ task,\ \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\_VARS}}*\ intertask\_vars);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{task1_8h_ade4cd67b8e3c535c3a0cdbc8135d0bf9}{state0\_task1}}(\mbox{\hyperlink{struct_t_a_s_k1}{TASK1}}*\ task,\ \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\_VARS}}*\ intertask\_vars);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{task1_8h_a9560838fa9080ad8f2cba5539462e676}{state1\_task1}}(\mbox{\hyperlink{struct_t_a_s_k1}{TASK1}}*\ task,\ \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\_VARS}}*\ intertask\_vars);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{task1_8h_aa8982a8627ab40bcc3130b98b8968454}{state2\_task1}}(\mbox{\hyperlink{struct_t_a_s_k1}{TASK1}}*\ task,\ \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\_VARS}}*\ intertask\_vars);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ int32\_t\ \mbox{\hyperlink{task1_8h_a1037412c6f2e83b5e648574226e18359}{get\_pulse\_percent}}(\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{RadioReciever\_DriverTypeDef}}*\ rad);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_TASK1\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

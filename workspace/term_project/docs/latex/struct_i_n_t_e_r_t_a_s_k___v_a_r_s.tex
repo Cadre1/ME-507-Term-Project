@@ -1,0 +1,42 @@
+\doxysection{INTERTASK\+\_\+\+VARS Struct Reference}
+\hypertarget{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{}\label{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}\index{INTERTASK\_VARS@{INTERTASK\_VARS}}
+
+
+A structure to contain the intertask variables used by the tasks.  
+
+
+
+
+{\ttfamily \#include $<$intertask\+\_\+vars.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_i_n_t_e_r_t_a_s_k___v_a_r_s_a17616fffc159d0fcdf1e44853d4a72eb}\label{struct_i_n_t_e_r_t_a_s_k___v_a_r_s_a17616fffc159d0fcdf1e44853d4a72eb} 
+uint8\+\_\+t {\bfseries rc\+\_\+trigger\+\_\+flag}
+\item 
+\Hypertarget{struct_i_n_t_e_r_t_a_s_k___v_a_r_s_afdb06fbbc8db8d590475f8760736412e}\label{struct_i_n_t_e_r_t_a_s_k___v_a_r_s_afdb06fbbc8db8d590475f8760736412e} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries rad\+\_\+edge\+\_\+flag}
+\item 
+\Hypertarget{struct_i_n_t_e_r_t_a_s_k___v_a_r_s_a51c78033d754aae6d89b46c1f366488f}\label{struct_i_n_t_e_r_t_a_s_k___v_a_r_s_a51c78033d754aae6d89b46c1f366488f} 
+TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*} {\bfseries htim\+\_\+cb}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A structure to contain the intertask variables used by the tasks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rc\+\_\+trigger\+\_\+flag} & A flag set by task 1 to read the radio controller receiver value \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}rad\+\_\+edge\+\_\+flag} & A flag set by the radio receiver HAL\+\_\+\+TIM\+\_\+\+IC\+\_\+\+Capture\+Callback \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}htim\+\_\+cb} & The timer object from the HAL\+\_\+\+TIM\+\_\+\+IC\+\_\+\+Capture\+Callback \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+workspace/term\+\_\+project/\+Core/\+Inc/\mbox{\hyperlink{intertask__vars_8h}{intertask\+\_\+vars.\+h}}\end{DoxyCompactItemize}

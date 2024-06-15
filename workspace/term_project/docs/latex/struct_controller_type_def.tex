@@ -1,0 +1,65 @@
+\doxysection{Controller\+Type\+Def Struct Reference}
+\hypertarget{struct_controller_type_def}{}\label{struct_controller_type_def}\index{ControllerTypeDef@{ControllerTypeDef}}
+
+
+A structure to contain the variables of controller typedefs.  
+
+
+
+
+{\ttfamily \#include $<$controller.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_controller_type_def_a49e2fbbd9f768359efe1fcc97a411b88}\label{struct_controller_type_def_a49e2fbbd9f768359efe1fcc97a411b88} 
+float {\bfseries des\+\_\+val}
+\item 
+\Hypertarget{struct_controller_type_def_a1f7add0f84d583bc2eceb290d6c4cc06}\label{struct_controller_type_def_a1f7add0f84d583bc2eceb290d6c4cc06} 
+float {\bfseries kp}
+\item 
+\Hypertarget{struct_controller_type_def_ae7a5c6018507bb1361fcca170e069b9c}\label{struct_controller_type_def_ae7a5c6018507bb1361fcca170e069b9c} 
+float {\bfseries kd}
+\item 
+\Hypertarget{struct_controller_type_def_a050993b7ca6c97e62c1020017f716b91}\label{struct_controller_type_def_a050993b7ca6c97e62c1020017f716b91} 
+float {\bfseries ki}
+\item 
+\Hypertarget{struct_controller_type_def_aec2b421edd7cf765d524d3d808ce69c0}\label{struct_controller_type_def_aec2b421edd7cf765d524d3d808ce69c0} 
+float {\bfseries int\+\_\+err}
+\item 
+\Hypertarget{struct_controller_type_def_a368a706003ce2f1745cd18c9fca495f4}\label{struct_controller_type_def_a368a706003ce2f1745cd18c9fca495f4} 
+float {\bfseries prev\+\_\+err}
+\item 
+\Hypertarget{struct_controller_type_def_a7dff167b310b78ffe12f03656aebc01e}\label{struct_controller_type_def_a7dff167b310b78ffe12f03656aebc01e} 
+uint32\+\_\+t {\bfseries prev\+\_\+time}
+\item 
+\Hypertarget{struct_controller_type_def_a5bb6c75693c6f7e960f398a3c6b97bcd}\label{struct_controller_type_def_a5bb6c75693c6f7e960f398a3c6b97bcd} 
+uint8\+\_\+t {\bfseries first\+\_\+time}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A structure to contain the variables of controller typedefs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em des\+\_\+val} & The desired target value \\
+\hline
+{\em kp} & Proportional gain \\
+\hline
+{\em kd} & Derivative gain \\
+\hline
+{\em ki} & Integral gain \\
+\hline
+{\em int\+\_\+err} & The accumulated integral error \\
+\hline
+{\em prev\+\_\+err} & The previous error \\
+\hline
+{\em first\+\_\+time} & A flag used for the first time when returning an output value to ignore derivative and integral values at t=0 \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+workspace/term\+\_\+project/\+Core/\+Inc/\mbox{\hyperlink{controller_8h}{controller.\+h}}\end{DoxyCompactItemize}

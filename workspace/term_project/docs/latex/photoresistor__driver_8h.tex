@@ -1,0 +1,143 @@
+\doxysection{workspace/term\+\_\+project/\+Core/\+Inc/photoresistor\+\_\+driver.h File Reference}
+\hypertarget{photoresistor__driver_8h}{}\label{photoresistor__driver_8h}\index{workspace/term\_project/Core/Inc/photoresistor\_driver.h@{workspace/term\_project/Core/Inc/photoresistor\_driver.h}}
+
+
+Sets up the photoresistor driver structure.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\+\_\+\+Driver\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em A structure to contain the variables of the photoresistor driver typedefs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{photoresistor__driver_8h_ac8005204e86335ec3fa1bf37f0bad59b}{ADC\+\_\+\+Select\+\_\+\+CH1}} (\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}photo)
+\begin{DoxyCompactList}\small\item\em Changes the ADC settings to read photoresistor 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{photoresistor__driver_8h_a73590278e8b65b997bef710f3d220de3}{ADC\+\_\+\+Select\+\_\+\+CH2}} (\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}photo)
+\begin{DoxyCompactList}\small\item\em Changes the ADC settings to read photoresistor 2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{photoresistor__driver_8h_a8911873e0b5f26c88365dd106f5df9e4}{ADC\+\_\+\+Select\+\_\+\+CH3}} (\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}photo)
+\begin{DoxyCompactList}\small\item\em Changes the ADC settings to read photoresistor 3. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{photoresistor__driver_8h_a57fd423982b8928dc44a3d5dae6a1390}{ADC\+\_\+\+Select\+\_\+\+CH4}} (\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}photo)
+\begin{DoxyCompactList}\small\item\em Changes the ADC settings to read photoresistor 4. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{photoresistor__driver_8h_af67c87978d21be201a87c7c3a4d799c4}{get\+\_\+photo\+\_\+value}} (\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}photo, uint8\+\_\+t num)
+\begin{DoxyCompactList}\small\item\em Returns one of the photoresistor values (ranging from 0 to 4095 for 0 to 3v3) \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{photoresistor__driver_8h_aee0d725a2279c6363c98bf8e21f607bc}{get\+\_\+photo\+\_\+diff}} (\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}photo, uint8\+\_\+t num1, uint8\+\_\+t num2)
+\begin{DoxyCompactList}\small\item\em Returns the difference between two of the photoresistor values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sets up the photoresistor driver structure. 
+
+Created on\+: Jun 2, 2024 \begin{DoxyAuthor}{Author}
+Christopher Ng 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{photoresistor__driver_8h_ac8005204e86335ec3fa1bf37f0bad59b}\label{photoresistor__driver_8h_ac8005204e86335ec3fa1bf37f0bad59b} 
+\index{photoresistor\_driver.h@{photoresistor\_driver.h}!ADC\_Select\_CH1@{ADC\_Select\_CH1}}
+\index{ADC\_Select\_CH1@{ADC\_Select\_CH1}!photoresistor\_driver.h@{photoresistor\_driver.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_Select\_CH1()}{ADC\_Select\_CH1()}}
+{\footnotesize\ttfamily void ADC\+\_\+\+Select\+\_\+\+CH1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{photo }\end{DoxyParamCaption})}
+
+
+
+Changes the ADC settings to read photoresistor 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}photo} & The structure for the photoresistor driver \\
+\hline
+\end{DoxyParams}
+\Hypertarget{photoresistor__driver_8h_a73590278e8b65b997bef710f3d220de3}\label{photoresistor__driver_8h_a73590278e8b65b997bef710f3d220de3} 
+\index{photoresistor\_driver.h@{photoresistor\_driver.h}!ADC\_Select\_CH2@{ADC\_Select\_CH2}}
+\index{ADC\_Select\_CH2@{ADC\_Select\_CH2}!photoresistor\_driver.h@{photoresistor\_driver.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_Select\_CH2()}{ADC\_Select\_CH2()}}
+{\footnotesize\ttfamily void ADC\+\_\+\+Select\+\_\+\+CH2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{photo }\end{DoxyParamCaption})}
+
+
+
+Changes the ADC settings to read photoresistor 2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}photo} & The structure for the photoresistor driver \\
+\hline
+\end{DoxyParams}
+\Hypertarget{photoresistor__driver_8h_a8911873e0b5f26c88365dd106f5df9e4}\label{photoresistor__driver_8h_a8911873e0b5f26c88365dd106f5df9e4} 
+\index{photoresistor\_driver.h@{photoresistor\_driver.h}!ADC\_Select\_CH3@{ADC\_Select\_CH3}}
+\index{ADC\_Select\_CH3@{ADC\_Select\_CH3}!photoresistor\_driver.h@{photoresistor\_driver.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_Select\_CH3()}{ADC\_Select\_CH3()}}
+{\footnotesize\ttfamily void ADC\+\_\+\+Select\+\_\+\+CH3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{photo }\end{DoxyParamCaption})}
+
+
+
+Changes the ADC settings to read photoresistor 3. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}photo} & The structure for the photoresistor driver \\
+\hline
+\end{DoxyParams}
+\Hypertarget{photoresistor__driver_8h_a57fd423982b8928dc44a3d5dae6a1390}\label{photoresistor__driver_8h_a57fd423982b8928dc44a3d5dae6a1390} 
+\index{photoresistor\_driver.h@{photoresistor\_driver.h}!ADC\_Select\_CH4@{ADC\_Select\_CH4}}
+\index{ADC\_Select\_CH4@{ADC\_Select\_CH4}!photoresistor\_driver.h@{photoresistor\_driver.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_Select\_CH4()}{ADC\_Select\_CH4()}}
+{\footnotesize\ttfamily void ADC\+\_\+\+Select\+\_\+\+CH4 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{photo }\end{DoxyParamCaption})}
+
+
+
+Changes the ADC settings to read photoresistor 4. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}photo} & The structure for the photoresistor driver \\
+\hline
+\end{DoxyParams}
+\Hypertarget{photoresistor__driver_8h_aee0d725a2279c6363c98bf8e21f607bc}\label{photoresistor__driver_8h_aee0d725a2279c6363c98bf8e21f607bc} 
+\index{photoresistor\_driver.h@{photoresistor\_driver.h}!get\_photo\_diff@{get\_photo\_diff}}
+\index{get\_photo\_diff@{get\_photo\_diff}!photoresistor\_driver.h@{photoresistor\_driver.h}}
+\doxysubsubsection{\texorpdfstring{get\_photo\_diff()}{get\_photo\_diff()}}
+{\footnotesize\ttfamily uint32\+\_\+t get\+\_\+photo\+\_\+diff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{photo,  }\item[{uint8\+\_\+t}]{num1,  }\item[{uint8\+\_\+t}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Returns the difference between two of the photoresistor values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}photo} & The structure for the photoresistor driver \\
+\hline
+{\em num1} & The 1st photoresistor number to read \\
+\hline
+{\em num2} & The 2nd photoresistor number to read and compare to the first \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The difference between two photoresistor values 
+\end{DoxyReturn}
+\Hypertarget{photoresistor__driver_8h_af67c87978d21be201a87c7c3a4d799c4}\label{photoresistor__driver_8h_af67c87978d21be201a87c7c3a4d799c4} 
+\index{photoresistor\_driver.h@{photoresistor\_driver.h}!get\_photo\_value@{get\_photo\_value}}
+\index{get\_photo\_value@{get\_photo\_value}!photoresistor\_driver.h@{photoresistor\_driver.h}}
+\doxysubsubsection{\texorpdfstring{get\_photo\_value()}{get\_photo\_value()}}
+{\footnotesize\ttfamily uint32\+\_\+t get\+\_\+photo\+\_\+value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{photo,  }\item[{uint8\+\_\+t}]{num }\end{DoxyParamCaption})}
+
+
+
+Returns one of the photoresistor values (ranging from 0 to 4095 for 0 to 3v3) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}photo} & The structure for the photoresistor driver \\
+\hline
+{\em num} & The photoresistor number to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The input photoresistor value 
+\end{DoxyReturn}

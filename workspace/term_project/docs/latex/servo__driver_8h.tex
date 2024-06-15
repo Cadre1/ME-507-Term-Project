@@ -1,0 +1,121 @@
+\doxysection{workspace/term\+\_\+project/\+Core/\+Inc/servo\+\_\+driver.h File Reference}
+\hypertarget{servo__driver_8h}{}\label{servo__driver_8h}\index{workspace/term\_project/Core/Inc/servo\_driver.h@{workspace/term\_project/Core/Inc/servo\_driver.h}}
+
+
+Sets up the servo driver structure.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_servo___driver_type_def}{Servo\+\_\+\+Driver\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em A structure to contain the variables of the servo driver typedefs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{servo__driver_8h_ab874c9386a1010b815ffdc47144317bb}{enable\+\_\+servo}} (\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}servo)
+\begin{DoxyCompactList}\small\item\em Enables the servo motor timer channel for PWM output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{servo__driver_8h_a252358bbe66cc245f33861f846f0d116}{disable\+\_\+servo}} (\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}servo)
+\begin{DoxyCompactList}\small\item\em Disables the servo motor timer channel for PWM output. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{servo__driver_8h_ab928c893e183cdb9dfa967c6123044dd}{servo\+\_\+get\+\_\+position}} (\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}servo)
+\begin{DoxyCompactList}\small\item\em Returns the positon of the servo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{servo__driver_8h_a1589034fda0d21ea827941a326aa0c39}{servo\+\_\+set\+\_\+position}} (\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}servo, float angle)
+\begin{DoxyCompactList}\small\item\em Sets the servo position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{servo__driver_8h_a7aada71a61589cd7374f37d76d1f3c2e}{servo\+\_\+change\+\_\+relative\+\_\+\+PW}} (\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}servo, float PW)
+\begin{DoxyCompactList}\small\item\em Sets the servo position relative to the last position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sets up the servo driver structure. 
+
+Created on\+: May 30, 2024 \begin{DoxyAuthor}{Author}
+Evan Anthony 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{servo__driver_8h_a252358bbe66cc245f33861f846f0d116}\label{servo__driver_8h_a252358bbe66cc245f33861f846f0d116} 
+\index{servo\_driver.h@{servo\_driver.h}!disable\_servo@{disable\_servo}}
+\index{disable\_servo@{disable\_servo}!servo\_driver.h@{servo\_driver.h}}
+\doxysubsubsection{\texorpdfstring{disable\_servo()}{disable\_servo()}}
+{\footnotesize\ttfamily void disable\+\_\+servo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{servo }\end{DoxyParamCaption})}
+
+
+
+Disables the servo motor timer channel for PWM output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}servo} & The structure for the servo driver \\
+\hline
+\end{DoxyParams}
+\Hypertarget{servo__driver_8h_ab874c9386a1010b815ffdc47144317bb}\label{servo__driver_8h_ab874c9386a1010b815ffdc47144317bb} 
+\index{servo\_driver.h@{servo\_driver.h}!enable\_servo@{enable\_servo}}
+\index{enable\_servo@{enable\_servo}!servo\_driver.h@{servo\_driver.h}}
+\doxysubsubsection{\texorpdfstring{enable\_servo()}{enable\_servo()}}
+{\footnotesize\ttfamily void enable\+\_\+servo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{servo }\end{DoxyParamCaption})}
+
+
+
+Enables the servo motor timer channel for PWM output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}servo} & The structure for the servo driver \\
+\hline
+\end{DoxyParams}
+\Hypertarget{servo__driver_8h_a7aada71a61589cd7374f37d76d1f3c2e}\label{servo__driver_8h_a7aada71a61589cd7374f37d76d1f3c2e} 
+\index{servo\_driver.h@{servo\_driver.h}!servo\_change\_relative\_PW@{servo\_change\_relative\_PW}}
+\index{servo\_change\_relative\_PW@{servo\_change\_relative\_PW}!servo\_driver.h@{servo\_driver.h}}
+\doxysubsubsection{\texorpdfstring{servo\_change\_relative\_PW()}{servo\_change\_relative\_PW()}}
+{\footnotesize\ttfamily void servo\+\_\+change\+\_\+relative\+\_\+\+PW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{servo,  }\item[{float}]{PW }\end{DoxyParamCaption})}
+
+
+
+Sets the servo position relative to the last position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}servo} & The structure for the servo driver \\
+\hline
+{\em PW} & The change in pulse width \\
+\hline
+\end{DoxyParams}
+\Hypertarget{servo__driver_8h_ab928c893e183cdb9dfa967c6123044dd}\label{servo__driver_8h_ab928c893e183cdb9dfa967c6123044dd} 
+\index{servo\_driver.h@{servo\_driver.h}!servo\_get\_position@{servo\_get\_position}}
+\index{servo\_get\_position@{servo\_get\_position}!servo\_driver.h@{servo\_driver.h}}
+\doxysubsubsection{\texorpdfstring{servo\_get\_position()}{servo\_get\_position()}}
+{\footnotesize\ttfamily float servo\+\_\+get\+\_\+position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{servo }\end{DoxyParamCaption})}
+
+
+
+Returns the positon of the servo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}servo} & The structure for the servo driver \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The servo position (degrees) 
+\end{DoxyReturn}
+\Hypertarget{servo__driver_8h_a1589034fda0d21ea827941a326aa0c39}\label{servo__driver_8h_a1589034fda0d21ea827941a326aa0c39} 
+\index{servo\_driver.h@{servo\_driver.h}!servo\_set\_position@{servo\_set\_position}}
+\index{servo\_set\_position@{servo\_set\_position}!servo\_driver.h@{servo\_driver.h}}
+\doxysubsubsection{\texorpdfstring{servo\_set\_position()}{servo\_set\_position()}}
+{\footnotesize\ttfamily void servo\+\_\+set\+\_\+position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_servo___driver_type_def}{Servo\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{servo,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Sets the servo position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}servo} & The structure for the servo driver \\
+\hline
+{\em angle} & The desired servo angle (degrees) \\
+\hline
+\end{DoxyParams}

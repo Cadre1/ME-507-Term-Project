@@ -1,0 +1,81 @@
+\doxysection{workspace/term\+\_\+project/\+Core/\+Src/radio\+\_\+reciever\+\_\+driver.c File Reference}
+\hypertarget{radio__reciever__driver_8c}{}\label{radio__reciever__driver_8c}\index{workspace/term\_project/Core/Src/radio\_reciever\_driver.c@{workspace/term\_project/Core/Src/radio\_reciever\_driver.c}}
+
+
+Driver for radio receiver application.  
+
+
+{\ttfamily \#include $<$radio\+\_\+reciever\+\_\+driver.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{radio__reciever__driver_8c_aa4ceb5b25053a8984ee607a35d994854}{enable\+\_\+rad}} (\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{Radio\+Reciever\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}rad)
+\begin{DoxyCompactList}\small\item\em Enables the radio receiver timer channels for PWM inputs. \end{DoxyCompactList}\item 
+\Hypertarget{radio__reciever__driver_8c_ac2e1cfacd09ff406e728e5ef95f752cd}\label{radio__reciever__driver_8c_ac2e1cfacd09ff406e728e5ef95f752cd} 
+void {\bfseries disable\+\_\+rad} (\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{Radio\+Reciever\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}rad)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{radio__reciever__driver_8c_a7f7999dd6cbd66f1391543c9fd1fd6d1}{get\+\_\+pulse}} (\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{Radio\+Reciever\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}rad)
+\begin{DoxyCompactList}\small\item\em Returns the pulse width of the radio receiver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{radio__reciever__driver_8c_a082f5d170f29f6e92c3e3586d8264c36}{read\+\_\+pulse}} (\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{Radio\+Reciever\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}rad, TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}htim)
+\begin{DoxyCompactList}\small\item\em Reads the pulse width of the radio receiver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver for radio receiver application. 
+
+Created on\+: May 17, 2024 \begin{DoxyAuthor}{Author}
+Christopher Ng 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{radio__reciever__driver_8c_aa4ceb5b25053a8984ee607a35d994854}\label{radio__reciever__driver_8c_aa4ceb5b25053a8984ee607a35d994854} 
+\index{radio\_reciever\_driver.c@{radio\_reciever\_driver.c}!enable\_rad@{enable\_rad}}
+\index{enable\_rad@{enable\_rad}!radio\_reciever\_driver.c@{radio\_reciever\_driver.c}}
+\doxysubsubsection{\texorpdfstring{enable\_rad()}{enable\_rad()}}
+{\footnotesize\ttfamily void enable\+\_\+rad (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{Radio\+Reciever\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{rad }\end{DoxyParamCaption})}
+
+
+
+Enables the radio receiver timer channels for PWM inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}rad} & The structure for the radio receiver driver \\
+\hline
+\end{DoxyParams}
+\Hypertarget{radio__reciever__driver_8c_a7f7999dd6cbd66f1391543c9fd1fd6d1}\label{radio__reciever__driver_8c_a7f7999dd6cbd66f1391543c9fd1fd6d1} 
+\index{radio\_reciever\_driver.c@{radio\_reciever\_driver.c}!get\_pulse@{get\_pulse}}
+\index{get\_pulse@{get\_pulse}!radio\_reciever\_driver.c@{radio\_reciever\_driver.c}}
+\doxysubsubsection{\texorpdfstring{get\_pulse()}{get\_pulse()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+\_\+pulse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{Radio\+Reciever\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{rad }\end{DoxyParamCaption})}
+
+
+
+Returns the pulse width of the radio receiver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}rad} & The structure for the radio receiver driver \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pulse width of the radio receiver (us) 
+\end{DoxyReturn}
+\Hypertarget{radio__reciever__driver_8c_a082f5d170f29f6e92c3e3586d8264c36}\label{radio__reciever__driver_8c_a082f5d170f29f6e92c3e3586d8264c36} 
+\index{radio\_reciever\_driver.c@{radio\_reciever\_driver.c}!read\_pulse@{read\_pulse}}
+\index{read\_pulse@{read\_pulse}!radio\_reciever\_driver.c@{radio\_reciever\_driver.c}}
+\doxysubsubsection{\texorpdfstring{read\_pulse()}{read\_pulse()}}
+{\footnotesize\ttfamily void read\+\_\+pulse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{Radio\+Reciever\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{rad,  }\item[{TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{htim }\end{DoxyParamCaption})}
+
+
+
+Reads the pulse width of the radio receiver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}rad} & The structure for the radio receiver driver \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}htim} & The timer that had a pulse read from (used for two channel applications) \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,433 @@
+\doxysection{workspace/term\+\_\+project/\+Core/\+Src/bno055.c File Reference}
+\hypertarget{bno055_8c}{}\label{bno055_8c}\index{workspace/term\_project/Core/Src/bno055.c@{workspace/term\_project/Core/Src/bno055.c}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stm32f4xx.\+h$>$}\newline
+{\ttfamily \#include "{}bno055.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+def.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+i2c.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{bno055_8c_ac3902c928629a867086fb52b855f72a7}\label{bno055_8c_ac3902c928629a867086fb52b855f72a7} 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} {\bfseries bno055\+\_\+init} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a1f7fa51a263f2f646aafce9ea8963a0f}{bno055\+\_\+temperature}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, s8 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a33aca281175b733d2e11eb1f85f4238a}{bno055\+\_\+acc\+\_\+x}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a06e02fcf9441ba78fb92c867fb7d2564}{bno055\+\_\+acc\+\_\+y}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a4d5bf1a0252fa02c8811fb3c2fb35574}{bno055\+\_\+acc\+\_\+z}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a0faccbf94162d4bb0bc96b50dcea1fbe}{bno055\+\_\+acc}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, \mbox{\hyperlink{structbno055__vec3}{bno055\+\_\+vec3\+\_\+t}} \texorpdfstring{$\ast$}{*}xyz)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_aad6ea5f4478c1d6dbd32525e01d6d4dd}{bno055\+\_\+linear\+\_\+acc\+\_\+x}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_af3de643f4d9641377cba9d95ebf2e737}{bno055\+\_\+linear\+\_\+acc\+\_\+y}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a1fd78409ae6afda23ab8b07f02ddccad}{bno055\+\_\+linear\+\_\+acc\+\_\+z}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a35be19ea1a6ce360a6e8b47182db6341}{bno055\+\_\+linear\+\_\+acc}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, \mbox{\hyperlink{structbno055__vec3}{bno055\+\_\+vec3\+\_\+t}} \texorpdfstring{$\ast$}{*}xyz)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a39f86fcb8799b0c5e0c317e3edea8742}{bno055\+\_\+gyro\+\_\+x}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_ae1c237183b71cfc0d87fd7b21f9a0a57}{bno055\+\_\+gyro\+\_\+y}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a76efefc2fa9506c43baf40d49a5dafc9}{bno055\+\_\+gyro\+\_\+z}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a3051735781dba4cf21c0137e8e726b94}{bno055\+\_\+gyro}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, \mbox{\hyperlink{structbno055__vec3}{bno055\+\_\+vec3\+\_\+t}} \texorpdfstring{$\ast$}{*}xyz)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_ab30f75a35b4398cfdd6bc2f1c0144d3d}{bno055\+\_\+mag\+\_\+x}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a8a8b60f386dbbe44e36c5c05fff510d1}{bno055\+\_\+mag\+\_\+y}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a9b940c7b05ae94fbce0e1414e3ce06e7}{bno055\+\_\+mag\+\_\+z}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_af469ffe2f2605303e85950e7584b4137}{bno055\+\_\+mag}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, \mbox{\hyperlink{structbno055__vec3}{bno055\+\_\+vec3\+\_\+t}} \texorpdfstring{$\ast$}{*}xyz)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a6cf3c00c02ffd84bceb89eab4cd9258c}{bno055\+\_\+gravity\+\_\+x}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_ad7fd4054bf25cd367a54790277c41544}{bno055\+\_\+gravity\+\_\+y}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a96d6081a2837894b1ccc20cf220f4bd6}{bno055\+\_\+gravity\+\_\+z}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a181bb7ce573dba7731dfa3ae84e79ae7}{bno055\+\_\+gravity}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, \mbox{\hyperlink{structbno055__vec3}{bno055\+\_\+vec3\+\_\+t}} \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a990a8b36723ff68f5005f89aca057e83}{bno055\+\_\+euler\+\_\+yaw}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_afb701c9c275bbb2278df9fc6c824dc95}{bno055\+\_\+euler\+\_\+roll}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a572811e7397f52a16346415fcb292e53}{bno055\+\_\+euler\+\_\+pitch}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a310f93c3ebac7667aafda9232828be29}{bno055\+\_\+euler}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, bno055\+\_\+euler\+\_\+t \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a662fbc791b3a932f12a6e90daf9a8b03}{bno055\+\_\+quaternion\+\_\+w}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a71c5dba36b55d550c668e2e7c45961db}{bno055\+\_\+quaternion\+\_\+x}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a418982aa340d30b135779bfd3b66705a}{bno055\+\_\+quaternion\+\_\+y}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a381e2d3076a934fadf3238ca6ef02772}{bno055\+\_\+quaternion\+\_\+z}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, f32 \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} \mbox{\hyperlink{bno055_8c_a5b7d5cec2790627f40d5a8ea31d55a79}{bno055\+\_\+quaternion}} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, \mbox{\hyperlink{structbno055__vec4}{bno055\+\_\+vec4\+\_\+t}} \texorpdfstring{$\ast$}{*}buf)
+\item 
+\Hypertarget{bno055_8c_a61112f19f51fcef3aba63ab4fca4a8f2}\label{bno055_8c_a61112f19f51fcef3aba63ab4fca4a8f2} 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} {\bfseries bno055\+\_\+acc\+\_\+conf} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}bno, const bno055\+\_\+acc\+\_\+range\+\_\+t range, const bno055\+\_\+acc\+\_\+band\+\_\+t bandwidth, const bno055\+\_\+acc\+\_\+mode\+\_\+t mode)
+\item 
+\Hypertarget{bno055_8c_a79e5f9cbac679e390da14c69580cc6b3}\label{bno055_8c_a79e5f9cbac679e390da14c69580cc6b3} 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} {\bfseries bno055\+\_\+gyr\+\_\+conf} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}bno, const bno055\+\_\+gyr\+\_\+range\+\_\+t range, const bno055\+\_\+gyr\+\_\+band\+\_\+t bandwidth, const bno055\+\_\+gyr\+\_\+mode\+\_\+t mode)
+\item 
+\Hypertarget{bno055_8c_a554e75025421c6245e4607b25d4efbf2}\label{bno055_8c_a554e75025421c6245e4607b25d4efbf2} 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} {\bfseries bno055\+\_\+mag\+\_\+conf} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}bno, const bno055\+\_\+mag\+\_\+rate\+\_\+t out\+\_\+rate, const bno055\+\_\+mag\+\_\+pwr\+\_\+t pwr\+\_\+mode, const bno055\+\_\+mag\+\_\+mode\+\_\+t mode)
+\item 
+\Hypertarget{bno055_8c_abdd1a80ef4c8c39e87be2739b41b5b6e}\label{bno055_8c_abdd1a80ef4c8c39e87be2739b41b5b6e} 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} {\bfseries bno055\+\_\+set\+\_\+opmode} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, const bno055\+\_\+opmode\+\_\+t opmode)
+\item 
+\Hypertarget{bno055_8c_a2b348ca3baa8d78d62a2a98e978c1d42}\label{bno055_8c_a2b348ca3baa8d78d62a2a98e978c1d42} 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} {\bfseries bno055\+\_\+set\+\_\+unit} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}bno, const bno055\+\_\+temp\+\_\+unitsel\+\_\+t t\+\_\+unit, const bno055\+\_\+gyr\+\_\+unitsel\+\_\+t g\+\_\+unit, const bno055\+\_\+acc\+\_\+unitsel\+\_\+t a\+\_\+unit, const bno055\+\_\+eul\+\_\+unitsel\+\_\+t e\+\_\+unit)
+\item 
+\Hypertarget{bno055_8c_a02cf1664d2dc894191b1115e21bcdefd}\label{bno055_8c_a02cf1664d2dc894191b1115e21bcdefd} 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} {\bfseries bno055\+\_\+set\+\_\+pwr\+\_\+mode} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, bno055\+\_\+pwr\+\_\+t pwr\+\_\+mode)
+\item 
+\Hypertarget{bno055_8c_a051ce426c8c0aceb81c4c3f306bb5a22}\label{bno055_8c_a051ce426c8c0aceb81c4c3f306bb5a22} 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} {\bfseries bno055\+\_\+reset} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu)
+\item 
+\Hypertarget{bno055_8c_af800f757b1702a4d9ed726b61f12c043}\label{bno055_8c_af800f757b1702a4d9ed726b61f12c043} 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} {\bfseries bno055\+\_\+on} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu)
+\item 
+\Hypertarget{bno055_8c_a111a725216d631807a74cf96e26f9e76}\label{bno055_8c_a111a725216d631807a74cf96e26f9e76} 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} {\bfseries bno055\+\_\+read\+\_\+regs} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} imu, u8 addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}buf, uint32\+\_\+t buf\+\_\+size)
+\item 
+\Hypertarget{bno055_8c_a2a64a6596f9272c59802dc6356be63e6}\label{bno055_8c_a2a64a6596f9272c59802dc6356be63e6} 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} {\bfseries bno055\+\_\+write\+\_\+regs} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} imu, uint32\+\_\+t addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}buf, uint32\+\_\+t buf\+\_\+size)
+\item 
+\Hypertarget{bno055_8c_a2e46147c7a89320c6a06019eee0ab333}\label{bno055_8c_a2e46147c7a89320c6a06019eee0ab333} 
+\mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} {\bfseries bno055\+\_\+set\+\_\+page} (\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}imu, const bno055\+\_\+page\+\_\+t page)
+\item 
+\Hypertarget{bno055_8c_a5c927c83665184a768289a5bf44b7234}\label{bno055_8c_a5c927c83665184a768289a5bf44b7234} 
+char \texorpdfstring{$\ast$}{*} {\bfseries bno055\+\_\+err\+\_\+str} (const \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} err)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{bno055_8c_autotoc_md1}{}\doxysubsubsection{\texorpdfstring{Initialize the Bosch BNO055 Sensor}{Initialize the Bosch BNO055 Sensor}}\label{bno055_8c_autotoc_md1}
+Initializes the Bosch BNO055 Sensor with \hypertarget{bno055_8c_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{the specified operation mode.}{the specified operation mode.}}\label{bno055_8c_autotoc_md2}
+Args\+: \begin{quote}
+{\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: pointer to the structure to initialize \end{quote}
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+Return\+: \begin{quote}
+{\ttfamily bool}\+: {\ttfamily true} if none of the init steps fail, {\ttfamily false} else \end{quote}
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bno055_8c_a0faccbf94162d4bb0bc96b50dcea1fbe}\label{bno055_8c_a0faccbf94162d4bb0bc96b50dcea1fbe} 
+\index{bno055.c@{bno055.c}!bno055\_acc@{bno055\_acc}}
+\index{bno055\_acc@{bno055\_acc}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_acc()}{bno055\_acc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+acc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{\mbox{\hyperlink{structbno055__vec3}{bno055\+\_\+vec3\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{xyz }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read acceleration data on all axis}{Bosch BNO055 read acceleration data on all axis}}\label{bno055_8c_autotoc_md19}
+Reads the acceleration data and stores the value in the specified vector buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: \hypertarget{bno055_8c_autotoc_md20}{}\doxysubsubsection{\texorpdfstring{m/s\texorpdfstring{$^\wedge$}{\string^}2)}{m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md20}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md21}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+vec3\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+vec3\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md21}
+Return\+: \hypertarget{bno055_8c_autotoc_md22}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md22}
+\Hypertarget{bno055_8c_a33aca281175b733d2e11eb1f85f4238a}\label{bno055_8c_a33aca281175b733d2e11eb1f85f4238a} 
+\index{bno055.c@{bno055.c}!bno055\_acc\_x@{bno055\_acc\_x}}
+\index{bno055\_acc\_x@{bno055\_acc\_x}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_acc\_x()}{bno055\_acc\_x()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+acc\+\_\+x (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read accelerometer data on X-\/axis}{Bosch BNO055 read accelerometer data on X-\/axis}}\label{bno055_8c_autotoc_md7}
+Reads the accelerometer data and stores the value in the specified buffer. \hypertarget{bno055_8c_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}{Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md8}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md9}
+Return\+: \hypertarget{bno055_8c_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md10}
+\Hypertarget{bno055_8c_a06e02fcf9441ba78fb92c867fb7d2564}\label{bno055_8c_a06e02fcf9441ba78fb92c867fb7d2564} 
+\index{bno055.c@{bno055.c}!bno055\_acc\_y@{bno055\_acc\_y}}
+\index{bno055\_acc\_y@{bno055\_acc\_y}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_acc\_y()}{bno055\_acc\_y()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+acc\+\_\+y (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read accelerometer data on Y-\/axis}{Bosch BNO055 read accelerometer data on Y-\/axis}}\label{bno055_8c_autotoc_md11}
+Reads the accelerometer data and stores the value in the specified buffer. \hypertarget{bno055_8c_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}{Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md12}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md13}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md13}
+Return\+: \hypertarget{bno055_8c_autotoc_md14}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md14}
+\Hypertarget{bno055_8c_a4d5bf1a0252fa02c8811fb3c2fb35574}\label{bno055_8c_a4d5bf1a0252fa02c8811fb3c2fb35574} 
+\index{bno055.c@{bno055.c}!bno055\_acc\_z@{bno055\_acc\_z}}
+\index{bno055\_acc\_z@{bno055\_acc\_z}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_acc\_z()}{bno055\_acc\_z()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+acc\+\_\+z (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md15}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read accelerometer data on Z-\/axis}{Bosch BNO055 read accelerometer data on Z-\/axis}}\label{bno055_8c_autotoc_md15}
+Reads the accelerometer data and stores the value in the specified buffer. \hypertarget{bno055_8c_autotoc_md16}{}\doxysubsubsection{\texorpdfstring{Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}{Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md16}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md17}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md17}
+Return\+: \hypertarget{bno055_8c_autotoc_md18}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md18}
+\Hypertarget{bno055_8c_a310f93c3ebac7667aafda9232828be29}\label{bno055_8c_a310f93c3ebac7667aafda9232828be29} 
+\index{bno055.c@{bno055.c}!bno055\_euler@{bno055\_euler}}
+\index{bno055\_euler@{bno055\_euler}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_euler()}{bno055\_euler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+euler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{bno055\+\_\+euler\+\_\+t \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md99}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read euler data on all axis}{Bosch BNO055 read euler data on all axis}}\label{bno055_8c_autotoc_md99}
+Reads the euler data and stores the value in the specified vector buffer. Unit can be selected with {\ttfamily bno055\+\_\+set\+\_\+unit(...)} (default\+: \hypertarget{bno055_8c_autotoc_md100}{}\doxysubsubsection{\texorpdfstring{deg).}{deg).}}\label{bno055_8c_autotoc_md100}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md101}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+euler\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+euler\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md101}
+Return\+: \hypertarget{bno055_8c_autotoc_md102}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md102}
+\Hypertarget{bno055_8c_a572811e7397f52a16346415fcb292e53}\label{bno055_8c_a572811e7397f52a16346415fcb292e53} 
+\index{bno055.c@{bno055.c}!bno055\_euler\_pitch@{bno055\_euler\_pitch}}
+\index{bno055\_euler\_pitch@{bno055\_euler\_pitch}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_euler\_pitch()}{bno055\_euler\_pitch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+euler\+\_\+pitch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md95}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read euler pitch data}{Bosch BNO055 read euler pitch data}}\label{bno055_8c_autotoc_md95}
+Reads the pitch data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md96}{}\doxysubsubsection{\texorpdfstring{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: deg)}{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: deg)}}\label{bno055_8c_autotoc_md96}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md97}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md97}
+Return\+: \hypertarget{bno055_8c_autotoc_md98}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md98}
+\Hypertarget{bno055_8c_afb701c9c275bbb2278df9fc6c824dc95}\label{bno055_8c_afb701c9c275bbb2278df9fc6c824dc95} 
+\index{bno055.c@{bno055.c}!bno055\_euler\_roll@{bno055\_euler\_roll}}
+\index{bno055\_euler\_roll@{bno055\_euler\_roll}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_euler\_roll()}{bno055\_euler\_roll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+euler\+\_\+roll (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md91}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read euler roll data}{Bosch BNO055 read euler roll data}}\label{bno055_8c_autotoc_md91}
+Reads the roll data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md92}{}\doxysubsubsection{\texorpdfstring{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: deg)}{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: deg)}}\label{bno055_8c_autotoc_md92}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md93}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md93}
+Return\+: \hypertarget{bno055_8c_autotoc_md94}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md94}
+\Hypertarget{bno055_8c_a990a8b36723ff68f5005f89aca057e83}\label{bno055_8c_a990a8b36723ff68f5005f89aca057e83} 
+\index{bno055.c@{bno055.c}!bno055\_euler\_yaw@{bno055\_euler\_yaw}}
+\index{bno055\_euler\_yaw@{bno055\_euler\_yaw}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_euler\_yaw()}{bno055\_euler\_yaw()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+euler\+\_\+yaw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md87}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read euler yaw data}{Bosch BNO055 read euler yaw data}}\label{bno055_8c_autotoc_md87}
+Reads the yaw data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md88}{}\doxysubsubsection{\texorpdfstring{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: deg)}{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: deg)}}\label{bno055_8c_autotoc_md88}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md89}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md89}
+Return\+: \hypertarget{bno055_8c_autotoc_md90}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md90}
+\Hypertarget{bno055_8c_a181bb7ce573dba7731dfa3ae84e79ae7}\label{bno055_8c_a181bb7ce573dba7731dfa3ae84e79ae7} 
+\index{bno055.c@{bno055.c}!bno055\_gravity@{bno055\_gravity}}
+\index{bno055\_gravity@{bno055\_gravity}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_gravity()}{bno055\_gravity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+gravity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{\mbox{\hyperlink{structbno055__vec3}{bno055\+\_\+vec3\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md83}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read gravity data on all axis}{Bosch BNO055 read gravity data on all axis}}\label{bno055_8c_autotoc_md83}
+Reads the gravity data and stores the value in the specified vector buffer. Unit can be selected with {\ttfamily bno055\+\_\+set\+\_\+unit(...)} (default\+: \hypertarget{bno055_8c_autotoc_md84}{}\doxysubsubsection{\texorpdfstring{m/s\texorpdfstring{$^\wedge$}{\string^}2).}{m/s\texorpdfstring{$^\wedge$}{\string^}2).}}\label{bno055_8c_autotoc_md84}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md85}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+vec3\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+vec3\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md85}
+Return\+: \hypertarget{bno055_8c_autotoc_md86}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md86}
+\Hypertarget{bno055_8c_a6cf3c00c02ffd84bceb89eab4cd9258c}\label{bno055_8c_a6cf3c00c02ffd84bceb89eab4cd9258c} 
+\index{bno055.c@{bno055.c}!bno055\_gravity\_x@{bno055\_gravity\_x}}
+\index{bno055\_gravity\_x@{bno055\_gravity\_x}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_gravity\_x()}{bno055\_gravity\_x()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+gravity\+\_\+x (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md71}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read gravity data on X-\/axis}{Bosch BNO055 read gravity data on X-\/axis}}\label{bno055_8c_autotoc_md71}
+Reads the gravity data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md72}{}\doxysubsubsection{\texorpdfstring{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md72}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md73}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md73}
+Return\+: \hypertarget{bno055_8c_autotoc_md74}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md74}
+\Hypertarget{bno055_8c_ad7fd4054bf25cd367a54790277c41544}\label{bno055_8c_ad7fd4054bf25cd367a54790277c41544} 
+\index{bno055.c@{bno055.c}!bno055\_gravity\_y@{bno055\_gravity\_y}}
+\index{bno055\_gravity\_y@{bno055\_gravity\_y}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_gravity\_y()}{bno055\_gravity\_y()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+gravity\+\_\+y (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md75}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read gravity data on Y-\/axis}{Bosch BNO055 read gravity data on Y-\/axis}}\label{bno055_8c_autotoc_md75}
+Reads the gravity data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md76}{}\doxysubsubsection{\texorpdfstring{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md76}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md77}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md77}
+Return\+: \hypertarget{bno055_8c_autotoc_md78}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md78}
+\Hypertarget{bno055_8c_a96d6081a2837894b1ccc20cf220f4bd6}\label{bno055_8c_a96d6081a2837894b1ccc20cf220f4bd6} 
+\index{bno055.c@{bno055.c}!bno055\_gravity\_z@{bno055\_gravity\_z}}
+\index{bno055\_gravity\_z@{bno055\_gravity\_z}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_gravity\_z()}{bno055\_gravity\_z()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+gravity\+\_\+z (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md79}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read gravity data on Z-\/axis}{Bosch BNO055 read gravity data on Z-\/axis}}\label{bno055_8c_autotoc_md79}
+Reads the gravity data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md80}{}\doxysubsubsection{\texorpdfstring{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md80}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md81}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md81}
+Return\+: \hypertarget{bno055_8c_autotoc_md82}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md82}
+\Hypertarget{bno055_8c_a3051735781dba4cf21c0137e8e726b94}\label{bno055_8c_a3051735781dba4cf21c0137e8e726b94} 
+\index{bno055.c@{bno055.c}!bno055\_gyro@{bno055\_gyro}}
+\index{bno055\_gyro@{bno055\_gyro}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_gyro()}{bno055\_gyro()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+gyro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{\mbox{\hyperlink{structbno055__vec3}{bno055\+\_\+vec3\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{xyz }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md51}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read gyroscope data on all axis}{Bosch BNO055 read gyroscope data on all axis}}\label{bno055_8c_autotoc_md51}
+Reads the gyroscope data and stores the value in the specified vector buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)\hypertarget{bno055_8c_autotoc_md52}{}\doxysubsubsection{\texorpdfstring{FIX\+: MCU restart when moving}{FIX\+: MCU restart when moving}}\label{bno055_8c_autotoc_md52}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md53}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+vec3\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+vec3\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md53}
+Return\+: \hypertarget{bno055_8c_autotoc_md54}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md54}
+\Hypertarget{bno055_8c_a39f86fcb8799b0c5e0c317e3edea8742}\label{bno055_8c_a39f86fcb8799b0c5e0c317e3edea8742} 
+\index{bno055.c@{bno055.c}!bno055\_gyro\_x@{bno055\_gyro\_x}}
+\index{bno055\_gyro\_x@{bno055\_gyro\_x}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_gyro\_x()}{bno055\_gyro\_x()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+gyro\+\_\+x (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md39}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read gyroscope data on X-\/axis}{Bosch BNO055 read gyroscope data on X-\/axis}}\label{bno055_8c_autotoc_md39}
+Reads the gyroscope data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md40}{}\doxysubsubsection{\texorpdfstring{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md40}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md41}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md41}
+Return\+: \hypertarget{bno055_8c_autotoc_md42}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md42}
+\Hypertarget{bno055_8c_ae1c237183b71cfc0d87fd7b21f9a0a57}\label{bno055_8c_ae1c237183b71cfc0d87fd7b21f9a0a57} 
+\index{bno055.c@{bno055.c}!bno055\_gyro\_y@{bno055\_gyro\_y}}
+\index{bno055\_gyro\_y@{bno055\_gyro\_y}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_gyro\_y()}{bno055\_gyro\_y()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+gyro\+\_\+y (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md43}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read gyroscope data on Y-\/axis}{Bosch BNO055 read gyroscope data on Y-\/axis}}\label{bno055_8c_autotoc_md43}
+Reads the gyroscope data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md44}{}\doxysubsubsection{\texorpdfstring{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md44}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md45}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md45}
+Return\+: \hypertarget{bno055_8c_autotoc_md46}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md46}
+\Hypertarget{bno055_8c_a76efefc2fa9506c43baf40d49a5dafc9}\label{bno055_8c_a76efefc2fa9506c43baf40d49a5dafc9} 
+\index{bno055.c@{bno055.c}!bno055\_gyro\_z@{bno055\_gyro\_z}}
+\index{bno055\_gyro\_z@{bno055\_gyro\_z}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_gyro\_z()}{bno055\_gyro\_z()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+gyro\+\_\+z (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md47}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read gyroscope data on Z-\/axis}{Bosch BNO055 read gyroscope data on Z-\/axis}}\label{bno055_8c_autotoc_md47}
+Reads the gyroscope data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md48}{}\doxysubsubsection{\texorpdfstring{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md48}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md49}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md49}
+Return\+: \hypertarget{bno055_8c_autotoc_md50}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md50}
+\Hypertarget{bno055_8c_a35be19ea1a6ce360a6e8b47182db6341}\label{bno055_8c_a35be19ea1a6ce360a6e8b47182db6341} 
+\index{bno055.c@{bno055.c}!bno055\_linear\_acc@{bno055\_linear\_acc}}
+\index{bno055\_linear\_acc@{bno055\_linear\_acc}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_linear\_acc()}{bno055\_linear\_acc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+linear\+\_\+acc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{\mbox{\hyperlink{structbno055__vec3}{bno055\+\_\+vec3\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{xyz }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md35}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read linear acceleration data on all axis}{Bosch BNO055 read linear acceleration data on all axis}}\label{bno055_8c_autotoc_md35}
+Reads the linear acceleration data and stores the value in the specified vector buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: \hypertarget{bno055_8c_autotoc_md36}{}\doxysubsubsection{\texorpdfstring{m/s\texorpdfstring{$^\wedge$}{\string^}2)}{m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md36}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md37}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+vec3\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+vec3\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md37}
+Return\+: \hypertarget{bno055_8c_autotoc_md38}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md38}
+\Hypertarget{bno055_8c_aad6ea5f4478c1d6dbd32525e01d6d4dd}\label{bno055_8c_aad6ea5f4478c1d6dbd32525e01d6d4dd} 
+\index{bno055.c@{bno055.c}!bno055\_linear\_acc\_x@{bno055\_linear\_acc\_x}}
+\index{bno055\_linear\_acc\_x@{bno055\_linear\_acc\_x}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_linear\_acc\_x()}{bno055\_linear\_acc\_x()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+linear\+\_\+acc\+\_\+x (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md23}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read linear acceleration data on X-\/axis}{Bosch BNO055 read linear acceleration data on X-\/axis}}\label{bno055_8c_autotoc_md23}
+Reads the linear acceleration data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md24}{}\doxysubsubsection{\texorpdfstring{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md24}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md25}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md25}
+Return\+: \hypertarget{bno055_8c_autotoc_md26}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md26}
+\Hypertarget{bno055_8c_af3de643f4d9641377cba9d95ebf2e737}\label{bno055_8c_af3de643f4d9641377cba9d95ebf2e737} 
+\index{bno055.c@{bno055.c}!bno055\_linear\_acc\_y@{bno055\_linear\_acc\_y}}
+\index{bno055\_linear\_acc\_y@{bno055\_linear\_acc\_y}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_linear\_acc\_y()}{bno055\_linear\_acc\_y()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+linear\+\_\+acc\+\_\+y (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md27}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read linear acceleration data on Y-\/axis}{Bosch BNO055 read linear acceleration data on Y-\/axis}}\label{bno055_8c_autotoc_md27}
+Reads the linear acceleration data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md28}{}\doxysubsubsection{\texorpdfstring{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md28}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md29}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md29}
+Return\+: \hypertarget{bno055_8c_autotoc_md30}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md30}
+\Hypertarget{bno055_8c_a1fd78409ae6afda23ab8b07f02ddccad}\label{bno055_8c_a1fd78409ae6afda23ab8b07f02ddccad} 
+\index{bno055.c@{bno055.c}!bno055\_linear\_acc\_z@{bno055\_linear\_acc\_z}}
+\index{bno055\_linear\_acc\_z@{bno055\_linear\_acc\_z}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_linear\_acc\_z()}{bno055\_linear\_acc\_z()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+linear\+\_\+acc\+\_\+z (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md31}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read linear acceleration data on Z-\/axis}{Bosch BNO055 read linear acceleration data on Z-\/axis}}\label{bno055_8c_autotoc_md31}
+Reads the linear acceleration data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md32}{}\doxysubsubsection{\texorpdfstring{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}{buffer. Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: m/s\texorpdfstring{$^\wedge$}{\string^}2)}}\label{bno055_8c_autotoc_md32}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md33}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md33}
+Return\+: \hypertarget{bno055_8c_autotoc_md34}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md34}
+\Hypertarget{bno055_8c_af469ffe2f2605303e85950e7584b4137}\label{bno055_8c_af469ffe2f2605303e85950e7584b4137} 
+\index{bno055.c@{bno055.c}!bno055\_mag@{bno055\_mag}}
+\index{bno055\_mag@{bno055\_mag}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_mag()}{bno055\_mag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+mag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{\mbox{\hyperlink{structbno055__vec3}{bno055\+\_\+vec3\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{xyz }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md67}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read magnetometer data on all axis}{Bosch BNO055 read magnetometer data on all axis}}\label{bno055_8c_autotoc_md67}
+Reads the magnetometer data and stores the value in the specified vector \hypertarget{bno055_8c_autotoc_md68}{}\doxysubsubsection{\texorpdfstring{buffer. Unit is {\ttfamily \mbox{[}uT\mbox{]}}.}{buffer. Unit is {\ttfamily \mbox{[}uT\mbox{]}}.}}\label{bno055_8c_autotoc_md68}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md69}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+vec3\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+vec3\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md69}
+Return\+: \hypertarget{bno055_8c_autotoc_md70}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md70}
+\Hypertarget{bno055_8c_ab30f75a35b4398cfdd6bc2f1c0144d3d}\label{bno055_8c_ab30f75a35b4398cfdd6bc2f1c0144d3d} 
+\index{bno055.c@{bno055.c}!bno055\_mag\_x@{bno055\_mag\_x}}
+\index{bno055\_mag\_x@{bno055\_mag\_x}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_mag\_x()}{bno055\_mag\_x()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+mag\+\_\+x (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md55}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read magnetometer data on X-\/axis}{Bosch BNO055 read magnetometer data on X-\/axis}}\label{bno055_8c_autotoc_md55}
+Reads the magnetometer data and stores the value in the specified buffer. Unit is {\ttfamily \mbox{[}uT\mbox{]}}.
+
+\DoxyHorRuler{0}
+
+
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md57}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md57}
+Return\+: \hypertarget{bno055_8c_autotoc_md58}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md58}
+\Hypertarget{bno055_8c_a8a8b60f386dbbe44e36c5c05fff510d1}\label{bno055_8c_a8a8b60f386dbbe44e36c5c05fff510d1} 
+\index{bno055.c@{bno055.c}!bno055\_mag\_y@{bno055\_mag\_y}}
+\index{bno055\_mag\_y@{bno055\_mag\_y}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_mag\_y()}{bno055\_mag\_y()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+mag\+\_\+y (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md59}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read magnetometer data on Y-\/axis}{Bosch BNO055 read magnetometer data on Y-\/axis}}\label{bno055_8c_autotoc_md59}
+Reads the magnetometer data and stores the value in the specified buffer. Unit is {\ttfamily \mbox{[}uT\mbox{]}}.
+
+\DoxyHorRuler{0}
+
+
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md61}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md61}
+Return\+: \hypertarget{bno055_8c_autotoc_md62}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md62}
+\Hypertarget{bno055_8c_a9b940c7b05ae94fbce0e1414e3ce06e7}\label{bno055_8c_a9b940c7b05ae94fbce0e1414e3ce06e7} 
+\index{bno055.c@{bno055.c}!bno055\_mag\_z@{bno055\_mag\_z}}
+\index{bno055\_mag\_z@{bno055\_mag\_z}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_mag\_z()}{bno055\_mag\_z()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+mag\+\_\+z (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md63}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read magnetometer data on Z-\/axis}{Bosch BNO055 read magnetometer data on Z-\/axis}}\label{bno055_8c_autotoc_md63}
+Reads the magnetometer data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md64}{}\doxysubsubsection{\texorpdfstring{buffer. Unit is {\ttfamily \mbox{[}uT\mbox{]}}.}{buffer. Unit is {\ttfamily \mbox{[}uT\mbox{]}}.}}\label{bno055_8c_autotoc_md64}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md65}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md65}
+Return\+: \hypertarget{bno055_8c_autotoc_md66}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md66}
+\Hypertarget{bno055_8c_a5b7d5cec2790627f40d5a8ea31d55a79}\label{bno055_8c_a5b7d5cec2790627f40d5a8ea31d55a79} 
+\index{bno055.c@{bno055.c}!bno055\_quaternion@{bno055\_quaternion}}
+\index{bno055\_quaternion@{bno055\_quaternion}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_quaternion()}{bno055\_quaternion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+quaternion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{\mbox{\hyperlink{structbno055__vec4}{bno055\+\_\+vec4\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md119}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read quaternion data on all axis}{Bosch BNO055 read quaternion data on all axis}}\label{bno055_8c_autotoc_md119}
+Reads the euler data and stores the value in the specified vector buffer. Unit can be selected with {\ttfamily bno055\+\_\+set\+\_\+unit(...)} (default\+: \hypertarget{bno055_8c_autotoc_md120}{}\doxysubsubsection{\texorpdfstring{deg).}{deg).}}\label{bno055_8c_autotoc_md120}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md121}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+euler\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}bno055\+\_\+euler\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md121}
+Return\+: \hypertarget{bno055_8c_autotoc_md122}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md122}
+\Hypertarget{bno055_8c_a662fbc791b3a932f12a6e90daf9a8b03}\label{bno055_8c_a662fbc791b3a932f12a6e90daf9a8b03} 
+\index{bno055.c@{bno055.c}!bno055\_quaternion\_w@{bno055\_quaternion\_w}}
+\index{bno055\_quaternion\_w@{bno055\_quaternion\_w}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_quaternion\_w()}{bno055\_quaternion\_w()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+quaternion\+\_\+w (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md103}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read quaternion W-\/axis data}{Bosch BNO055 read quaternion W-\/axis data}}\label{bno055_8c_autotoc_md103}
+Reads the quaternion data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md104}{}\doxysubsubsection{\texorpdfstring{buffer.}{buffer.}}\label{bno055_8c_autotoc_md104}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md105}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md105}
+Return\+: \hypertarget{bno055_8c_autotoc_md106}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md106}
+\Hypertarget{bno055_8c_a71c5dba36b55d550c668e2e7c45961db}\label{bno055_8c_a71c5dba36b55d550c668e2e7c45961db} 
+\index{bno055.c@{bno055.c}!bno055\_quaternion\_x@{bno055\_quaternion\_x}}
+\index{bno055\_quaternion\_x@{bno055\_quaternion\_x}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_quaternion\_x()}{bno055\_quaternion\_x()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+quaternion\+\_\+x (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md107}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read quaternion X-\/axis data}{Bosch BNO055 read quaternion X-\/axis data}}\label{bno055_8c_autotoc_md107}
+Reads the quaternion data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md108}{}\doxysubsubsection{\texorpdfstring{buffer.}{buffer.}}\label{bno055_8c_autotoc_md108}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md109}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md109}
+Return\+: \hypertarget{bno055_8c_autotoc_md110}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md110}
+\Hypertarget{bno055_8c_a418982aa340d30b135779bfd3b66705a}\label{bno055_8c_a418982aa340d30b135779bfd3b66705a} 
+\index{bno055.c@{bno055.c}!bno055\_quaternion\_y@{bno055\_quaternion\_y}}
+\index{bno055\_quaternion\_y@{bno055\_quaternion\_y}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_quaternion\_y()}{bno055\_quaternion\_y()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+quaternion\+\_\+y (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md111}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read quaternion Y-\/axis data}{Bosch BNO055 read quaternion Y-\/axis data}}\label{bno055_8c_autotoc_md111}
+Reads the quaternion data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md112}{}\doxysubsubsection{\texorpdfstring{buffer.}{buffer.}}\label{bno055_8c_autotoc_md112}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md113}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md113}
+Return\+: \hypertarget{bno055_8c_autotoc_md114}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md114}
+\Hypertarget{bno055_8c_a381e2d3076a934fadf3238ca6ef02772}\label{bno055_8c_a381e2d3076a934fadf3238ca6ef02772} 
+\index{bno055.c@{bno055.c}!bno055\_quaternion\_z@{bno055\_quaternion\_z}}
+\index{bno055\_quaternion\_z@{bno055\_quaternion\_z}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_quaternion\_z()}{bno055\_quaternion\_z()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+quaternion\+\_\+z (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{f32 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md115}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read quaternion Z-\/axis data}{Bosch BNO055 read quaternion Z-\/axis data}}\label{bno055_8c_autotoc_md115}
+Reads the quaternion data and stores the value in the specified \hypertarget{bno055_8c_autotoc_md116}{}\doxysubsubsection{\texorpdfstring{buffer.}{buffer.}}\label{bno055_8c_autotoc_md116}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the data from \hypertarget{bno055_8c_autotoc_md117}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}f32\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md117}
+Return\+: \hypertarget{bno055_8c_autotoc_md118}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, errorcode else.}}\label{bno055_8c_autotoc_md118}
+\Hypertarget{bno055_8c_a1f7fa51a263f2f646aafce9ea8963a0f}\label{bno055_8c_a1f7fa51a263f2f646aafce9ea8963a0f} 
+\index{bno055.c@{bno055.c}!bno055\_temperature@{bno055\_temperature}}
+\index{bno055\_temperature@{bno055\_temperature}!bno055.c@{bno055.c}}
+\doxysubsubsection{\texorpdfstring{bno055\_temperature()}{bno055\_temperature()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bno055_8h_a2081add470d60b9581e942331c34eb8c}{error\+\_\+bno}} bno055\+\_\+temperature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__bno055__t}{bno055\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{imu,  }\item[{s8 \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\hypertarget{bno055_8c_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{Bosch BNO055 read temperature function}{Bosch BNO055 read temperature function}}\label{bno055_8c_autotoc_md3}
+Read the temperature of the Bosch BNO055 Sensor and store it in a specified buffer. \hypertarget{bno055_8c_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: Celsius)}{Unit can be specified with {\ttfamily bno055\+\_\+set\+\_\+unit(...)}. (Default\+: Celsius)}}\label{bno055_8c_autotoc_md4}
+Args\+: \texorpdfstring{$>$}{>} {\ttfamily imu\mbox{[}bno055\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: BNO055 to read the temperature from \hypertarget{bno055_8c_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}s8\texorpdfstring{$\ast$}{*}\texorpdfstring{$\vert$}{|}int8\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}{\texorpdfstring{$>$}{>} {\ttfamily buf\mbox{[}s8\texorpdfstring{$\ast$}{*}\texorpdfstring{$\vert$}{|}int8\+\_\+t\texorpdfstring{$\ast$}{*}\mbox{]}}\+: Buffer to store the read value in}}\label{bno055_8c_autotoc_md5}
+Return\+: \hypertarget{bno055_8c_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, {\ttfamily BNO\+\_\+\+ERR\+\_\+X} else.}{\texorpdfstring{$>$}{>} {\ttfamily error\+\_\+bno}\+: {\ttfamily BNO\+\_\+\+OK} on success, {\ttfamily BNO\+\_\+\+ERR\+\_\+X} else.}}\label{bno055_8c_autotoc_md6}

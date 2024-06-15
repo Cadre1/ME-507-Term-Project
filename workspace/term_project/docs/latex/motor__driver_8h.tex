@@ -1,0 +1,105 @@
+\doxysection{workspace/term\+\_\+project/\+Core/\+Inc/motor\+\_\+driver.h File Reference}
+\hypertarget{motor__driver_8h}{}\label{motor__driver_8h}\index{workspace/term\_project/Core/Inc/motor\_driver.h@{workspace/term\_project/Core/Inc/motor\_driver.h}}
+
+
+Sets up the motor driver structure.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_motor___driver_type_def}{Motor\+\_\+\+Driver\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em A structure to contain the variables of the motor driver typedefs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{motor__driver_8h_a2dcb2ee9e5cfc3ba9edab3ed74489777}{enable\+\_\+mot}} (\mbox{\hyperlink{struct_motor___driver_type_def}{Motor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}mot, uint32\+\_\+t motor\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Enables the desired motor timer channels for PWM outputs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{motor__driver_8h_ab8f61518c05b329b8e2bbb8ece5c68b0}{disable\+\_\+mot}} (\mbox{\hyperlink{struct_motor___driver_type_def}{Motor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}mot, uint32\+\_\+t motor\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Disables the desired motor timer channels for PWM outputs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{motor__driver_8h_a711a8a03431defe3359e52358d664176}{set\+\_\+\+PWM\+\_\+percent}} (\mbox{\hyperlink{struct_motor___driver_type_def}{Motor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}mot, uint32\+\_\+t motor\+\_\+num, int32\+\_\+t duty\+\_\+cycle)
+\begin{DoxyCompactList}\small\item\em Sets the PWM output using a percent input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{motor__driver_8h_a8045a15c65c9269be5fb1a45ff813e9e}{set\+\_\+\+PWM}} (\mbox{\hyperlink{struct_motor___driver_type_def}{Motor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}mot, uint32\+\_\+t motor\+\_\+num, int32\+\_\+t duty\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Sets the PWM output using a count input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sets up the motor driver structure. 
+
+Created on\+: Apr 23, 2024 \begin{DoxyAuthor}{Author}
+Christopher Ng 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{motor__driver_8h_ab8f61518c05b329b8e2bbb8ece5c68b0}\label{motor__driver_8h_ab8f61518c05b329b8e2bbb8ece5c68b0} 
+\index{motor\_driver.h@{motor\_driver.h}!disable\_mot@{disable\_mot}}
+\index{disable\_mot@{disable\_mot}!motor\_driver.h@{motor\_driver.h}}
+\doxysubsubsection{\texorpdfstring{disable\_mot()}{disable\_mot()}}
+{\footnotesize\ttfamily void disable\+\_\+mot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_motor___driver_type_def}{Motor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{mot,  }\item[{uint32\+\_\+t}]{motor\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Disables the desired motor timer channels for PWM outputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}mot} & The structure for the motor driver \\
+\hline
+\end{DoxyParams}
+\Hypertarget{motor__driver_8h_a2dcb2ee9e5cfc3ba9edab3ed74489777}\label{motor__driver_8h_a2dcb2ee9e5cfc3ba9edab3ed74489777} 
+\index{motor\_driver.h@{motor\_driver.h}!enable\_mot@{enable\_mot}}
+\index{enable\_mot@{enable\_mot}!motor\_driver.h@{motor\_driver.h}}
+\doxysubsubsection{\texorpdfstring{enable\_mot()}{enable\_mot()}}
+{\footnotesize\ttfamily void enable\+\_\+mot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_motor___driver_type_def}{Motor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{mot,  }\item[{uint32\+\_\+t}]{motor\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Enables the desired motor timer channels for PWM outputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}mot} & The structure for the motor driver \\
+\hline
+\end{DoxyParams}
+\Hypertarget{motor__driver_8h_a8045a15c65c9269be5fb1a45ff813e9e}\label{motor__driver_8h_a8045a15c65c9269be5fb1a45ff813e9e} 
+\index{motor\_driver.h@{motor\_driver.h}!set\_PWM@{set\_PWM}}
+\index{set\_PWM@{set\_PWM}!motor\_driver.h@{motor\_driver.h}}
+\doxysubsubsection{\texorpdfstring{set\_PWM()}{set\_PWM()}}
+{\footnotesize\ttfamily void set\+\_\+\+PWM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_motor___driver_type_def}{Motor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{mot,  }\item[{uint32\+\_\+t}]{motor\+\_\+num,  }\item[{int32\+\_\+t}]{duty\+\_\+count }\end{DoxyParamCaption})}
+
+
+
+Sets the PWM output using a count input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}mot} & The structure for the motor driver \\
+\hline
+{\em motor\+\_\+num} & The motor to set its PWM \\
+\hline
+{\em duty\+\_\+cycle} & The count duty cycle of the PWM output \\
+\hline
+\end{DoxyParams}
+\Hypertarget{motor__driver_8h_a711a8a03431defe3359e52358d664176}\label{motor__driver_8h_a711a8a03431defe3359e52358d664176} 
+\index{motor\_driver.h@{motor\_driver.h}!set\_PWM\_percent@{set\_PWM\_percent}}
+\index{set\_PWM\_percent@{set\_PWM\_percent}!motor\_driver.h@{motor\_driver.h}}
+\doxysubsubsection{\texorpdfstring{set\_PWM\_percent()}{set\_PWM\_percent()}}
+{\footnotesize\ttfamily void set\+\_\+\+PWM\+\_\+percent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_motor___driver_type_def}{Motor\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{mot,  }\item[{uint32\+\_\+t}]{motor\+\_\+num,  }\item[{int32\+\_\+t}]{duty\+\_\+cycle }\end{DoxyParamCaption})}
+
+
+
+Sets the PWM output using a percent input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}mot} & The structure for the motor driver \\
+\hline
+{\em motor\+\_\+num} & The motor to set its PWM \\
+\hline
+{\em duty\+\_\+cycle} & The percentage duty cycle of the PWM output \\
+\hline
+\end{DoxyParams}
