@@ -1,0 +1,36 @@
+\doxysection{radio\+\_\+reciever\+\_\+driver.\+h}
+\hypertarget{radio__reciever__driver_8h_source}{}\label{radio__reciever__driver_8h_source}\index{workspace/term\_project/Core/Inc/radio\_reciever\_driver.h@{workspace/term\_project/Core/Inc/radio\_reciever\_driver.h}}
+\mbox{\hyperlink{radio__reciever__driver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ INC\_RADIO\_RECIEVER\_DRIVER\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ INC\_RADIO\_RECIEVER\_DRIVER\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }rad\_struct\{}
+\DoxyCodeLine{00030\ \ \ \ \ TIM\_HandleTypeDef*\ tim\_handle;}
+\DoxyCodeLine{00031\ \ \ \ \ uint32\_t\ tim\_channel1;}
+\DoxyCodeLine{00032\ \ \ \ \ uint32\_t\ tim\_channel2;}
+\DoxyCodeLine{00033\ \ \ \ \ uint16\_t\ IC\_Rise;}
+\DoxyCodeLine{00034\ \ \ \ \ uint16\_t\ IC\_Fall;}
+\DoxyCodeLine{00035\ \ \ \ \ uint16\_t\ IC\_Diff;}
+\DoxyCodeLine{00036\ \ \ \ \ uint16\_t\ pulse\_width;}
+\DoxyCodeLine{00037\ \ \ \ \ uint16\_t\ tol;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ pulse\_recieve\_flag;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ rise\_flag;}
+\DoxyCodeLine{00040\ \}\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_radio_reciever___driver_type_def}{RadioReciever\_DriverTypeDef}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{radio__reciever__driver_8h_aa4ceb5b25053a8984ee607a35d994854}{enable\_rad}}(\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{RadioReciever\_DriverTypeDef}}*\ rad);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ disable\_rad(\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{RadioReciever\_DriverTypeDef}}*\ rad);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ uint16\_t\ \mbox{\hyperlink{radio__reciever__driver_8h_a7f7999dd6cbd66f1391543c9fd1fd6d1}{get\_pulse}}(\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{RadioReciever\_DriverTypeDef}}*\ rad);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{radio__reciever__driver_8h_a082f5d170f29f6e92c3e3586d8264c36}{read\_pulse}}(\mbox{\hyperlink{struct_radio_reciever___driver_type_def}{RadioReciever\_DriverTypeDef}}*\ rad,\ TIM\_HandleTypeDef*\ htim);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_RADIO\_RECIEVER\_DRIVER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

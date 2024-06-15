@@ -1,0 +1,35 @@
+/*
+ * @file intertask_vars.h
+ * @brief Sets up the intertask variable structure
+ *
+ *  Created on: Jun 9, 2024
+ *  @author Christopher Ng
+ */
+
+#ifndef INC_INTERTASK_VARS_H_
+#define INC_INTERTASK_VARS_H_
+
+#include <stdio.h>
+#include <stdint.h>
+
+/*!
+ *  @struct 	Encoder Driver
+ *	@typedef 	Encoder_DriverTypeDef
+ *  @brief 		A structure to contain the variables of the encoder driver typedefs
+ *	@param 		*tim_handle: The encoder timer handle
+ *	@param 		tim_channel1: The designated timer channel 1
+ *	@param 		tim_channel2: The designated timer channel 2
+ *	@param 		curr_count: The current encoder count/position value
+ *	@param 		prev_count: The previous encoder count/position value
+ *	@param 		tot_count: The absolute encoder count/position
+ *	@param 		pos: The position of the quad encoder
+ *	@param 		AR: The autoreload/max timer count
+ */
+struct{
+	uint8_t rc_trigger_flag;
+	uint8_t* rad_edge_flag;
+	TIM_HandleTypeDef* htim_cb;
+} typedef INTERTASK_VARS;
+
+
+#endif /* INC_INTERTASK_VARS_H_ */

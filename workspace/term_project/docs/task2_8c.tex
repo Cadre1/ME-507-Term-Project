@@ -1,0 +1,255 @@
+\doxysection{workspace/term\+\_\+project/\+Core/\+Src/task2.c File Reference}
+\hypertarget{task2_8c}{}\label{task2_8c}\index{workspace/term\_project/Core/Src/task2.c@{workspace/term\_project/Core/Src/task2.c}}
+
+
+Runs the states associated with task 2 as described in its FSM.  
+
+
+{\ttfamily \#include $<$task2.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{task2_8c_ac14d13475a3c415df026ec819d2c297a}{main\+\_\+task2}} (\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Runs the designated state for task 2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task2_8c_ac6b12d667d9280a0289841d863330b26}{state0\+\_\+task2}} (\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Initializes the IMU gyroscope I2C communication, photoresistor ADCs, motor PWM output, servo PWM output, and encoder channels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task2_8c_ad68d740108d16be19f3d59807d5ef9e1}{state1\+\_\+task2}} (\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Waits until the radio receiver receives a valid output to start through the radio receiver flag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task2_8c_aedc0e70b3986c11763f118d3eb934673}{state2\+\_\+task2}} (\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Sets the servo so that the mirror is vertical and makes one full revolution to find and record the high photoresistor values and angles to start at. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task2_8c_aceb26f91fe10595547cd68bf73ea10e2}{state3\+\_\+task2}} (\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Sets the initial motor position to one of the recorded high values through angle-\/motor control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task2_8c_a4a347c2f9a9b69948d0f78e313813b02}{state4\+\_\+task2}} (\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Finds the brightest horizontal direction using photoresistor-\/motor control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task2_8c_aa68889e337f75895bd737239f36a5bd6}{state5\+\_\+task2}} (\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Finds the brightest vertical direction using photoresistor-\/servo control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task2_8c_a9d8b1763ba8fcefd9d551e4862152bd4}{state6\+\_\+task2}} (\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Collects the bright spot angle using the gyroscope, then calculates the reflection angle that it needs to turn to. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task2_8c_a5a992e113cc3db454336d69529a71e77}{state7\+\_\+task2}} (\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Pans to the reflection angle using gyroscope-\/motor control and sets the servo angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task2_8c_ac97d1381ac662c6256c606c54b30a9b3}{state8\+\_\+task2}} (\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Stops the motor if the radio receiver receives an invalid output through the radio receiver flag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task2_8c_a633db12c7c5f6acf77118d6b31664ad0}{state9\+\_\+task2}} (\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}task, \mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}intertask\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Returns to the home position using gyroscope-\/motor control and servo angle setting if the radio receiver receives a valid output through the radio receiver flag to restart. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \mbox{\hyperlink{task2_8c_a6246573b8ebb570461cee3160f57bb0f}{get\+\_\+reflect\+\_\+angle}} (\mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \texorpdfstring{$\ast$}{*}light\+\_\+source\+\_\+angle, \mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \texorpdfstring{$\ast$}{*}target\+\_\+position, \mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \texorpdfstring{$\ast$}{*}heliostat\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Calculates the angles required to reflect a light source at a given angle to a target given its and the heliostats position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Runs the states associated with task 2 as described in its FSM. 
+
+Created on\+: Jun 9, 2024 \begin{DoxyAuthor}{Author}
+Christopher Ng 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{task2_8c_a6246573b8ebb570461cee3160f57bb0f}\label{task2_8c_a6246573b8ebb570461cee3160f57bb0f} 
+\index{task2.c@{task2.c}!get\_reflect\_angle@{get\_reflect\_angle}}
+\index{get\_reflect\_angle@{get\_reflect\_angle}!task2.c@{task2.c}}
+\doxysubsubsection{\texorpdfstring{get\_reflect\_angle()}{get\_reflect\_angle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} get\+\_\+reflect\+\_\+angle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{light\+\_\+source\+\_\+angle,  }\item[{\mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{target\+\_\+position,  }\item[{\mbox{\hyperlink{struct_vector_type_def}{Vector\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{heliostat\+\_\+position }\end{DoxyParamCaption})}
+
+
+
+Calculates the angles required to reflect a light source at a given angle to a target given its and the heliostats position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}light\+\_\+source\+\_\+angle} & A vector containing the Euler angles of the light source \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}target\+\_\+position} & A vector containing the position of the target \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}heliostat\+\_\+position} & A vector containing the position of the heliostat mirror \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of the required angles of the normal vector of the mirror to reflect to the target 
+\end{DoxyReturn}
+\Hypertarget{task2_8c_ac14d13475a3c415df026ec819d2c297a}\label{task2_8c_ac14d13475a3c415df026ec819d2c297a} 
+\index{task2.c@{task2.c}!main\_task2@{main\_task2}}
+\index{main\_task2@{main\_task2}!task2.c@{task2.c}}
+\doxysubsubsection{\texorpdfstring{main\_task2()}{main\_task2()}}
+{\footnotesize\ttfamily void main\+\_\+task2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Runs the designated state for task 2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The structure for the task \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task2_8c_ac6b12d667d9280a0289841d863330b26}\label{task2_8c_ac6b12d667d9280a0289841d863330b26} 
+\index{task2.c@{task2.c}!state0\_task2@{state0\_task2}}
+\index{state0\_task2@{state0\_task2}!task2.c@{task2.c}}
+\doxysubsubsection{\texorpdfstring{state0\_task2()}{state0\_task2()}}
+{\footnotesize\ttfamily void state0\+\_\+task2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Initializes the IMU gyroscope I2C communication, photoresistor ADCs, motor PWM output, servo PWM output, and encoder channels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The structure for the task \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task2_8c_ad68d740108d16be19f3d59807d5ef9e1}\label{task2_8c_ad68d740108d16be19f3d59807d5ef9e1} 
+\index{task2.c@{task2.c}!state1\_task2@{state1\_task2}}
+\index{state1\_task2@{state1\_task2}!task2.c@{task2.c}}
+\doxysubsubsection{\texorpdfstring{state1\_task2()}{state1\_task2()}}
+{\footnotesize\ttfamily void state1\+\_\+task2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Waits until the radio receiver receives a valid output to start through the radio receiver flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The structure for the task \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task2_8c_aedc0e70b3986c11763f118d3eb934673}\label{task2_8c_aedc0e70b3986c11763f118d3eb934673} 
+\index{task2.c@{task2.c}!state2\_task2@{state2\_task2}}
+\index{state2\_task2@{state2\_task2}!task2.c@{task2.c}}
+\doxysubsubsection{\texorpdfstring{state2\_task2()}{state2\_task2()}}
+{\footnotesize\ttfamily void state2\+\_\+task2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Sets the servo so that the mirror is vertical and makes one full revolution to find and record the high photoresistor values and angles to start at. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The structure for the task \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task2_8c_aceb26f91fe10595547cd68bf73ea10e2}\label{task2_8c_aceb26f91fe10595547cd68bf73ea10e2} 
+\index{task2.c@{task2.c}!state3\_task2@{state3\_task2}}
+\index{state3\_task2@{state3\_task2}!task2.c@{task2.c}}
+\doxysubsubsection{\texorpdfstring{state3\_task2()}{state3\_task2()}}
+{\footnotesize\ttfamily void state3\+\_\+task2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Sets the initial motor position to one of the recorded high values through angle-\/motor control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The structure for the task \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task2_8c_a4a347c2f9a9b69948d0f78e313813b02}\label{task2_8c_a4a347c2f9a9b69948d0f78e313813b02} 
+\index{task2.c@{task2.c}!state4\_task2@{state4\_task2}}
+\index{state4\_task2@{state4\_task2}!task2.c@{task2.c}}
+\doxysubsubsection{\texorpdfstring{state4\_task2()}{state4\_task2()}}
+{\footnotesize\ttfamily void state4\+\_\+task2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Finds the brightest horizontal direction using photoresistor-\/motor control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The structure for the task \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task2_8c_aa68889e337f75895bd737239f36a5bd6}\label{task2_8c_aa68889e337f75895bd737239f36a5bd6} 
+\index{task2.c@{task2.c}!state5\_task2@{state5\_task2}}
+\index{state5\_task2@{state5\_task2}!task2.c@{task2.c}}
+\doxysubsubsection{\texorpdfstring{state5\_task2()}{state5\_task2()}}
+{\footnotesize\ttfamily void state5\+\_\+task2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Finds the brightest vertical direction using photoresistor-\/servo control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The structure for the task \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task2_8c_a9d8b1763ba8fcefd9d551e4862152bd4}\label{task2_8c_a9d8b1763ba8fcefd9d551e4862152bd4} 
+\index{task2.c@{task2.c}!state6\_task2@{state6\_task2}}
+\index{state6\_task2@{state6\_task2}!task2.c@{task2.c}}
+\doxysubsubsection{\texorpdfstring{state6\_task2()}{state6\_task2()}}
+{\footnotesize\ttfamily void state6\+\_\+task2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Collects the bright spot angle using the gyroscope, then calculates the reflection angle that it needs to turn to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The structure for the task \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task2_8c_a5a992e113cc3db454336d69529a71e77}\label{task2_8c_a5a992e113cc3db454336d69529a71e77} 
+\index{task2.c@{task2.c}!state7\_task2@{state7\_task2}}
+\index{state7\_task2@{state7\_task2}!task2.c@{task2.c}}
+\doxysubsubsection{\texorpdfstring{state7\_task2()}{state7\_task2()}}
+{\footnotesize\ttfamily void state7\+\_\+task2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Pans to the reflection angle using gyroscope-\/motor control and sets the servo angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The structure for the task \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task2_8c_ac97d1381ac662c6256c606c54b30a9b3}\label{task2_8c_ac97d1381ac662c6256c606c54b30a9b3} 
+\index{task2.c@{task2.c}!state8\_task2@{state8\_task2}}
+\index{state8\_task2@{state8\_task2}!task2.c@{task2.c}}
+\doxysubsubsection{\texorpdfstring{state8\_task2()}{state8\_task2()}}
+{\footnotesize\ttfamily void state8\+\_\+task2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Stops the motor if the radio receiver receives an invalid output through the radio receiver flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The structure for the task \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task2_8c_a633db12c7c5f6acf77118d6b31664ad0}\label{task2_8c_a633db12c7c5f6acf77118d6b31664ad0} 
+\index{task2.c@{task2.c}!state9\_task2@{state9\_task2}}
+\index{state9\_task2@{state9\_task2}!task2.c@{task2.c}}
+\doxysubsubsection{\texorpdfstring{state9\_task2()}{state9\_task2()}}
+{\footnotesize\ttfamily void state9\+\_\+task2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_a_s_k2}{TASK2}} \texorpdfstring{$\ast$}{*}}]{task,  }\item[{\mbox{\hyperlink{struct_i_n_t_e_r_t_a_s_k___v_a_r_s}{INTERTASK\+\_\+\+VARS}} \texorpdfstring{$\ast$}{*}}]{intertask\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Returns to the home position using gyroscope-\/motor control and servo angle setting if the radio receiver receives a valid output through the radio receiver flag to restart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}task} & The structure for the task \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}intertask\+\_\+vars} & The intertask variables used by other tasks \\
+\hline
+\end{DoxyParams}

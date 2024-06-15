@@ -1,0 +1,36 @@
+\doxysection{photoresistor\+\_\+driver.\+h}
+\hypertarget{photoresistor__driver_8h_source}{}\label{photoresistor__driver_8h_source}\index{workspace/term\_project/Core/Inc/photoresistor\_driver.h@{workspace/term\_project/Core/Inc/photoresistor\_driver.h}}
+\mbox{\hyperlink{photoresistor__driver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ INC\_PHOTORESISTOR\_DRIVER\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ INC\_PHOTORESISTOR\_DRIVER\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00026\ \ \ \ \ ADC\_HandleTypeDef*\ adc\_handle;}
+\DoxyCodeLine{00027\ \ \ \ \ uint32\_t\ adc\_channel1;}
+\DoxyCodeLine{00028\ \ \ \ \ uint32\_t\ adc\_channel2;}
+\DoxyCodeLine{00029\ \ \ \ \ uint32\_t\ adc\_channel3;}
+\DoxyCodeLine{00030\ \ \ \ \ uint32\_t\ adc\_channel4;}
+\DoxyCodeLine{00031\ \ \ \ \ uint32\_t*\ photo\_results;}
+\DoxyCodeLine{00032\ \}\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\_DriverTypeDef}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{photoresistor__driver_8h_ac8005204e86335ec3fa1bf37f0bad59b}{ADC\_Select\_CH1}}\ (\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\_DriverTypeDef}}*\ photo);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{photoresistor__driver_8h_a73590278e8b65b997bef710f3d220de3}{ADC\_Select\_CH2}}\ (\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\_DriverTypeDef}}*\ photo);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{photoresistor__driver_8h_a8911873e0b5f26c88365dd106f5df9e4}{ADC\_Select\_CH3}}\ (\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\_DriverTypeDef}}*\ photo);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{photoresistor__driver_8h_a57fd423982b8928dc44a3d5dae6a1390}{ADC\_Select\_CH4}}\ (\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\_DriverTypeDef}}*\ photo);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00064\ uint32\_t\ \mbox{\hyperlink{photoresistor__driver_8h_af67c87978d21be201a87c7c3a4d799c4}{get\_photo\_value}}(\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\_DriverTypeDef}}*\ photo,\ uint8\_t\ num);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00073\ uint32\_t\ \mbox{\hyperlink{photoresistor__driver_8h_aee0d725a2279c6363c98bf8e21f607bc}{get\_photo\_diff}}(\mbox{\hyperlink{struct_photoresistor___driver_type_def}{Photoresistor\_DriverTypeDef}}*\ photo,\ uint8\_t\ num1,\ uint8\_t\ num2);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_PHOTORESISTOR\_DRIVER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

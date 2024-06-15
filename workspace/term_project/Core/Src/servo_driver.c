@@ -1,8 +1,9 @@
-/*
- * servo_driver.c
+/**
+ *  @file servo_driver.c
+ *  @brief Driver for servo motor application
  *
  *  Created on: May 30, 2024
- *      Author: evananthony
+ *  @author Evan Anthony
  */
 
 #include "servo_driver.h"

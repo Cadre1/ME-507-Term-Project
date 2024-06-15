@@ -1,8 +1,9 @@
-/*!
- *  @file task1.c
- *  @brief Runs the states associated with task 1 as described in its FSM.
+/**
+ *  @file task2.c
+ *  @brief Runs the states associated with task 2 as described in its FSM.
  *
  *  Created on: Jun 9, 2024
+ *  @author Christopher Ng
  */
 
 #include <task2.h>
@@ -311,17 +312,17 @@ void state6_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 
 		bno055_euler(task->gyro, task->euler);
 		// z is the motor yaw angle, x is the servo pitch angle.
-		VectorTypeDef light_source_angle = { .x = task->euler->pitch*M_PI/180,
+		VectorTypeDef light_source_angle = { .x = task->euler->roll*M_PI/180,
 											 .y = 0,
-											 .z = task->euler->roll*M_PI/180 };
+											 .z = -task->euler->pitch*M_PI/180 };
 		// x and y are in the horizontal plane, z is vertical
 		// Units don't matter, but they need to be consistent
-		VectorTypeDef target_position = { .x = -10,
-										  .y = -10,
-										  .z = -20  };
+		VectorTypeDef target_position = { .x = 10,
+										  .y = 10,
+										  .z = 20  };
 		VectorTypeDef heliostat_position = { .x = 0,
 										  .y = 0,
-										  .z = -10  };
+										  .z = 10  };	// EDIT: The sign on these are likely wrong
 		// z is the motor yaw angle, x is the servo pitch angle.
 		task->reflect_angle = get_reflect_angle(&light_source_angle, &target_position, &heliostat_position);
 		task->reflect_angle.x = task->reflect_angle.x*180/M_PI;
@@ -341,7 +342,7 @@ void state7_task2(TASK2* task, INTERTASK_VARS* intertask_vars)
 			// Sets up the controller the first time for angle-motor control
 			reset_controller(task->con);
 			set_gains(task->con, 25, 15, 0.65);
-			set_target(task->con, task->reflect_angle.z);
+			set_target(task->con, 360-(task->reflect_angle.z));
 			task->init_controller = 0;
 		}
 		else{
@@ -470,7 +471,7 @@ VectorTypeDef get_reflect_angle(VectorTypeDef* light_source_angle, VectorTypeDef
                                     .z = reflect_vector_dir.z/reflect_vector_dir_mag };
 
     // Calculating the pitch and yaw angles to produce the mirror normal vector
-    float theta = acos(-reflect_vector.z);
+    float theta = acos(reflect_vector.z);
     float phi1 = acos(reflect_vector.x/sin(theta));
     float phi2 = asin(reflect_vector.y/sin(theta));
 

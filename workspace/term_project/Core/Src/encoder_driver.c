@@ -1,8 +1,9 @@
-/*
- * encoder.c
+/**
+ *  @file encoder_driver.c
+ *  @brief Driver for general quad encoder application
  *
  *  Created on: Jun 3, 2024
- *      Author: cadre
+ *  @author Christopher Ng
  */
 
 #include <encoder_driver.h>

@@ -1,8 +1,9 @@
-/*
- * controller.c
+/**
+ *  @file controller.c
+ *  @brief Manages PID closed-loop control
  *
  *  Created on: May 30, 2024
- *      Author: cadre
+ *  @author Christopher Ng
  */
 
 #include "controller.h"

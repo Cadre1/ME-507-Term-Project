@@ -1,0 +1,36 @@
+\doxysection{encoder\+\_\+driver.\+h}
+\hypertarget{encoder__driver_8h_source}{}\label{encoder__driver_8h_source}\index{workspace/term\_project/Core/Inc/encoder\_driver.h@{workspace/term\_project/Core/Inc/encoder\_driver.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ INC\_ENCODER\_DRIVER\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ INC\_ENCODER\_DRIVER\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00028\ \ \ \ \ TIM\_HandleTypeDef*\ tim\_handle;}
+\DoxyCodeLine{00029\ \ \ \ \ uint32\_t\ tim\_channel1;}
+\DoxyCodeLine{00030\ \ \ \ \ uint32\_t\ tim\_channel2;}
+\DoxyCodeLine{00031\ \ \ \ \ uint32\_t\ curr\_count;}
+\DoxyCodeLine{00032\ \ \ \ \ uint32\_t\ prev\_count;}
+\DoxyCodeLine{00033\ \ \ \ \ int32\_t\ tot\_count;}
+\DoxyCodeLine{00034\ \ \ \ \ int32\_t\ pos;}
+\DoxyCodeLine{00035\ \ \ \ \ int32\_t\ AR;}
+\DoxyCodeLine{00036\ \}\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\_DriverTypeDef}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ enable\_enc(\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\_DriverTypeDef}}*\ enc);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ disable\_enc(\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\_DriverTypeDef}}*\ enc);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ set\_zero(\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\_DriverTypeDef}}*\ enc);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ int32\_t\ read\_count(\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\_DriverTypeDef}}*\ enc);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ int32\_t\ read\_position(\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\_DriverTypeDef}}*\ enc);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_ENCODER\_DRIVER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

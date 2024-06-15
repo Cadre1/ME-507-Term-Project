@@ -1,0 +1,46 @@
+/*!
+ * @file encoder.h
+ * @brief Sets up the encoder driver structure
+ *
+ *  Created on: Jun 3, 2024
+ *  @author Christopher Ng
+ */
+
+#ifndef INC_ENCODER_DRIVER_H_
+#define INC_ENCODER_DRIVER_H_
+
+#include <stdio.h>
+#include <stdint.h>
+#include "stm32f4xx_hal.h"
+
+
+/*!
+ *  @struct 	encoder driver
+ *	@typedef 	ControllerTypeDef
+ *  @brief 		A structure to contain the variables of controller typedefs
+ *	@param 		des_val: The desired target value
+ *	@param 		kp: Proportional gain
+ *	@param 		kd: Derivative gain
+ *	@param 		ki: Integral gain
+ *	@param 		int_err: The accumulated integral error
+ *	@param 		prev_err: The previous error
+ *	@param		first_time: A flag used for the first time when returning an output value to ignore derivative and integral values at t=0
+ */
+struct{
+	TIM_HandleTypeDef* tim_handle;
+	uint32_t tim_channel1;
+	uint32_t tim_channel2;
+	uint32_t curr_count;
+	uint32_t prev_count;
+	int32_t tot_count;
+	int32_t pos;
+	int32_t AR;
+} typedef Encoder_DriverTypeDef;
+
+void enable_enc(Encoder_DriverTypeDef* enc);
+void disable_enc(Encoder_DriverTypeDef* enc);
+void set_zero(Encoder_DriverTypeDef* enc);
+int32_t read_count(Encoder_DriverTypeDef* enc);
+int32_t read_position(Encoder_DriverTypeDef* enc);
+
+#endif /* INC_ENCODER_DRIVER_H_ */

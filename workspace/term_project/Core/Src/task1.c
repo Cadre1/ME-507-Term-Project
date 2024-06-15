@@ -1,8 +1,9 @@
-/*!
+/**
  *  @file task1.c
  *  @brief Runs the states associated with task 1 as described in its FSM.
  *
  *  Created on: Jun 5, 2024
+ *  @author Christopher Ng
  */
 
 #include <task1.h>

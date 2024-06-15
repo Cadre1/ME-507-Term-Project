@@ -1,0 +1,26 @@
+\doxysection{Finite State Machines}
+\hypertarget{finite_state_machine_page}{}\label{finite_state_machine_page}\index{Finite State Machines@{Finite State Machines}}
+The \doxylink{main_8c}{main.\+c} program provided in this documentation contains two tasks, Radio Receiving and Main Control, that follow the two finite state machines as seen below.
+
+The Radio Receiving task is used to start the Main Control program and is also used as a deadman\textquotesingle{}s switch for an E-\/stop. The states are as follows\+:
+\begin{DoxyItemize}
+\item S0 Init\+: Initializes the required pins and flags used for the radio receiver.
+\item S1 Off\+: Waits for an input from the radio receiver and determines if the trigger is greater than 50\% pressed down to start the Main Control program.
+\item S2 On\+: Waits for another input from the radio receiver and determines if the trigger is less than 50\% pressed down to stop the Main Control Program.
+\end{DoxyItemize}
+
+The Main Control task manages the turning, light source detecting, and retargeting of the heliostat and is constantly checking the Radio Receiving task flag for changes in trigger outputs. The states are as follows\+:
+\begin{DoxyItemize}
+\item S0 Init Power\+: Initializes the required pins, timers, I2C channels, ADCs, drivers, controller variables, and miscellaneous setting variables for the panning motor, encoder, photoresistors, IMU, and servo.
+\item S1 Wait For Start\+: Waits until the radio receiver receives a valid output to start.
+\item S2 Setup 1\+: Sets the position of the servo to 60 degrees from vertical and makes one full revolution using gyroscope-\/motor position control and records initial high voltage values and angles to get a general position of the light source.
+\item S3 Setup 2\+: Sets the initial motor position to one of the high light source positions using gyroscope-\/motor position control.
+\item S4 Pan To Bright Spot\+: Determines where the brightest spot is using horizontal photoresistors voltage difference for photoresistor-\/motor position control.
+\item S5 Pitch To Bright Spot\+: Determines where the brightest spot is using vertical photoresistors voltage difference for photoresistor-\/servo position control.
+\item S6 Collect Angle\+: Stops and calculates the Euler angles of the bright spot using the bright spot angle and location of the reflection target.
+\item S7 Go To Reflection Angles\+: Pans to the reflection angle using gyroscope-\/motor position control and setting the servo angle.
+\item S8 Stop\+: Stops the operation when the radio receiver has an invalid input.
+\item S9 Return\+: Pans and pitches back to the home angle using gyroscope-\/motor position control.
+\end{DoxyItemize}
+
+  

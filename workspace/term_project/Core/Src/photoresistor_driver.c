@@ -1,8 +1,9 @@
-/*
- * photoresistor_driver.c
+/**
+ *  @file photoresistor_driver.c
+ *  @brief Driver for four photoresistors ADC application
  *
  *  Created on: Jun 2, 2024
- *      Author: cadre
+ *  @author Christopher Ng
  */
 
 #include "photoresistor_driver.h"

@@ -1,8 +1,9 @@
-/*
- * radio_driver.c
+/**
+ *  @file radio_reciever_driver.c
+ *  @brief Driver for radio receiver application
  *
  *  Created on: May 17, 2024
- *      Author: cadre
+ *  @author Christopher Ng
  */
 
 #include <radio_reciever_driver.h>

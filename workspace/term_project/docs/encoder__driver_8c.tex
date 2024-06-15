@@ -1,0 +1,113 @@
+\doxysection{workspace/term\+\_\+project/\+Core/\+Src/encoder\+\_\+driver.c File Reference}
+\hypertarget{encoder__driver_8c}{}\label{encoder__driver_8c}\index{workspace/term\_project/Core/Src/encoder\_driver.c@{workspace/term\_project/Core/Src/encoder\_driver.c}}
+
+
+Driver for general quad encoder application.  
+
+
+{\ttfamily \#include $<$encoder\+\_\+driver.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{encoder__driver_8c_a581489c20389a4097c0f0d80d2608e19}{enable\+\_\+enc}} (\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}enc)
+\begin{DoxyCompactList}\small\item\em Enables the encoder timer channels for PWM inputs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{encoder__driver_8c_ad1e86e1a62c8033f6df3f7813de705d8}{disable\+\_\+enc}} (\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}enc)
+\begin{DoxyCompactList}\small\item\em Disables the encoder timer channels for PWM outputs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{encoder__driver_8c_aa986b9568831934316d57aca86664697}{set\+\_\+zero}} (\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}enc)
+\begin{DoxyCompactList}\small\item\em Sets the zero for positions. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{encoder__driver_8c_aa923a18955eaff4d6b08b9bd6c6ac19f}{read\+\_\+count}} (\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}enc)
+\begin{DoxyCompactList}\small\item\em Reads the current count of the encoder timer channel. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{encoder__driver_8c_a29ae8d8247ad018f97ed2eb75a501820}{read\+\_\+position}} (\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}enc)
+\begin{DoxyCompactList}\small\item\em Reads the current position of the motor encoder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver for general quad encoder application. 
+
+Created on\+: Jun 3, 2024 \begin{DoxyAuthor}{Author}
+Christopher Ng 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{encoder__driver_8c_ad1e86e1a62c8033f6df3f7813de705d8}\label{encoder__driver_8c_ad1e86e1a62c8033f6df3f7813de705d8} 
+\index{encoder\_driver.c@{encoder\_driver.c}!disable\_enc@{disable\_enc}}
+\index{disable\_enc@{disable\_enc}!encoder\_driver.c@{encoder\_driver.c}}
+\doxysubsubsection{\texorpdfstring{disable\_enc()}{disable\_enc()}}
+{\footnotesize\ttfamily void disable\+\_\+enc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{enc }\end{DoxyParamCaption})}
+
+
+
+Disables the encoder timer channels for PWM outputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}enc} & The structure for the encoder \\
+\hline
+\end{DoxyParams}
+\Hypertarget{encoder__driver_8c_a581489c20389a4097c0f0d80d2608e19}\label{encoder__driver_8c_a581489c20389a4097c0f0d80d2608e19} 
+\index{encoder\_driver.c@{encoder\_driver.c}!enable\_enc@{enable\_enc}}
+\index{enable\_enc@{enable\_enc}!encoder\_driver.c@{encoder\_driver.c}}
+\doxysubsubsection{\texorpdfstring{enable\_enc()}{enable\_enc()}}
+{\footnotesize\ttfamily void enable\+\_\+enc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{enc }\end{DoxyParamCaption})}
+
+
+
+Enables the encoder timer channels for PWM inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}enc} & The structure for the encoder \\
+\hline
+\end{DoxyParams}
+\Hypertarget{encoder__driver_8c_aa923a18955eaff4d6b08b9bd6c6ac19f}\label{encoder__driver_8c_aa923a18955eaff4d6b08b9bd6c6ac19f} 
+\index{encoder\_driver.c@{encoder\_driver.c}!read\_count@{read\_count}}
+\index{read\_count@{read\_count}!encoder\_driver.c@{encoder\_driver.c}}
+\doxysubsubsection{\texorpdfstring{read\_count()}{read\_count()}}
+{\footnotesize\ttfamily int32\+\_\+t read\+\_\+count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{enc }\end{DoxyParamCaption})}
+
+
+
+Reads the current count of the encoder timer channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}enc} & The structure for the encoder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current count position 
+\end{DoxyReturn}
+\Hypertarget{encoder__driver_8c_a29ae8d8247ad018f97ed2eb75a501820}\label{encoder__driver_8c_a29ae8d8247ad018f97ed2eb75a501820} 
+\index{encoder\_driver.c@{encoder\_driver.c}!read\_position@{read\_position}}
+\index{read\_position@{read\_position}!encoder\_driver.c@{encoder\_driver.c}}
+\doxysubsubsection{\texorpdfstring{read\_position()}{read\_position()}}
+{\footnotesize\ttfamily int32\+\_\+t read\+\_\+position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{enc }\end{DoxyParamCaption})}
+
+
+
+Reads the current position of the motor encoder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}enc} & The structure for the encoder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current position 
+\end{DoxyReturn}
+\Hypertarget{encoder__driver_8c_aa986b9568831934316d57aca86664697}\label{encoder__driver_8c_aa986b9568831934316d57aca86664697} 
+\index{encoder\_driver.c@{encoder\_driver.c}!set\_zero@{set\_zero}}
+\index{set\_zero@{set\_zero}!encoder\_driver.c@{encoder\_driver.c}}
+\doxysubsubsection{\texorpdfstring{set\_zero()}{set\_zero()}}
+{\footnotesize\ttfamily void set\+\_\+zero (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_encoder___driver_type_def}{Encoder\+\_\+\+Driver\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{enc }\end{DoxyParamCaption})}
+
+
+
+Sets the zero for positions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}enc} & The structure for the encoder \\
+\hline
+\end{DoxyParams}

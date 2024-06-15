@@ -1,0 +1,103 @@
+\doxysection{workspace/term\+\_\+project/\+Core/\+Src/controller.c File Reference}
+\hypertarget{controller_8c}{}\label{controller_8c}\index{workspace/term\_project/Core/Src/controller.c@{workspace/term\_project/Core/Src/controller.c}}
+
+
+Manages PID closed-\/loop control.  
+
+
+{\ttfamily \#include "{}controller.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{controller_8c_a09e15c2c3333407b51428308179a5730}{reset\+\_\+controller}} (\mbox{\hyperlink{struct_controller_type_def}{Controller\+Type\+Def}} \texorpdfstring{$\ast$}{*}con)
+\begin{DoxyCompactList}\small\item\em Resets the setup variables for a different closed-\/loop control system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8c_afa4d7cefc00a1113586b8037a10c9adf}{set\+\_\+gains}} (\mbox{\hyperlink{struct_controller_type_def}{Controller\+Type\+Def}} \texorpdfstring{$\ast$}{*}con, float kp, float kd, float ki)
+\begin{DoxyCompactList}\small\item\em Sets the controller gain after reseting the controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8c_a494724c9c3dd3725eb20e0a38acc2f65}{set\+\_\+target}} (\mbox{\hyperlink{struct_controller_type_def}{Controller\+Type\+Def}} \texorpdfstring{$\ast$}{*}con, float des\+\_\+val)
+\begin{DoxyCompactList}\small\item\em Sets the controller target after reseting the controller. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{controller_8c_af329fe95d490556210abb40046683dab}{get\+\_\+output}} (\mbox{\hyperlink{struct_controller_type_def}{Controller\+Type\+Def}} \texorpdfstring{$\ast$}{*}con, float curr\+\_\+val)
+\begin{DoxyCompactList}\small\item\em Resets the setup variables for a different closed-\/loop control system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages PID closed-\/loop control. 
+
+Created on\+: May 30, 2024 \begin{DoxyAuthor}{Author}
+Christopher Ng 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{controller_8c_af329fe95d490556210abb40046683dab}\label{controller_8c_af329fe95d490556210abb40046683dab} 
+\index{controller.c@{controller.c}!get\_output@{get\_output}}
+\index{get\_output@{get\_output}!controller.c@{controller.c}}
+\doxysubsubsection{\texorpdfstring{get\_output()}{get\_output()}}
+{\footnotesize\ttfamily float get\+\_\+output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_controller_type_def}{Controller\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{con,  }\item[{float}]{curr\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+Resets the setup variables for a different closed-\/loop control system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}con} & The structure for the controller \\
+\hline
+{\em des\+\_\+val} & The current input value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An output for the controller 
+\end{DoxyReturn}
+\Hypertarget{controller_8c_a09e15c2c3333407b51428308179a5730}\label{controller_8c_a09e15c2c3333407b51428308179a5730} 
+\index{controller.c@{controller.c}!reset\_controller@{reset\_controller}}
+\index{reset\_controller@{reset\_controller}!controller.c@{controller.c}}
+\doxysubsubsection{\texorpdfstring{reset\_controller()}{reset\_controller()}}
+{\footnotesize\ttfamily void reset\+\_\+controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_controller_type_def}{Controller\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{con }\end{DoxyParamCaption})}
+
+
+
+Resets the setup variables for a different closed-\/loop control system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}con} & The structure for the controller \\
+\hline
+\end{DoxyParams}
+\Hypertarget{controller_8c_afa4d7cefc00a1113586b8037a10c9adf}\label{controller_8c_afa4d7cefc00a1113586b8037a10c9adf} 
+\index{controller.c@{controller.c}!set\_gains@{set\_gains}}
+\index{set\_gains@{set\_gains}!controller.c@{controller.c}}
+\doxysubsubsection{\texorpdfstring{set\_gains()}{set\_gains()}}
+{\footnotesize\ttfamily void set\+\_\+gains (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_controller_type_def}{Controller\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{con,  }\item[{float}]{kp,  }\item[{float}]{kd,  }\item[{float}]{ki }\end{DoxyParamCaption})}
+
+
+
+Sets the controller gain after reseting the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}con} & The structure for the controller \\
+\hline
+{\em kp} & The desired proportional gain \\
+\hline
+{\em kd} & The desired derivative gain \\
+\hline
+{\em ki} & The desired integral gain \\
+\hline
+\end{DoxyParams}
+\Hypertarget{controller_8c_a494724c9c3dd3725eb20e0a38acc2f65}\label{controller_8c_a494724c9c3dd3725eb20e0a38acc2f65} 
+\index{controller.c@{controller.c}!set\_target@{set\_target}}
+\index{set\_target@{set\_target}!controller.c@{controller.c}}
+\doxysubsubsection{\texorpdfstring{set\_target()}{set\_target()}}
+{\footnotesize\ttfamily void set\+\_\+target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_controller_type_def}{Controller\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{con,  }\item[{float}]{des\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+Sets the controller target after reseting the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}con} & The structure for the controller \\
+\hline
+{\em des\+\_\+val} & The target value \\
+\hline
+\end{DoxyParams}

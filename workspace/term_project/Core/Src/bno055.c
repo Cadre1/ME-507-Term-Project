@@ -8,6 +8,7 @@
 #include "stm32f4xx_hal_i2c.h"
 
 /**
+ * @file bno055.c
  * Initialize the Bosch BNO055 Sensor
  * ---------------------------------------------------------------
  *

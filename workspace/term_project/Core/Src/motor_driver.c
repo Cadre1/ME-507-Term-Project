@@ -1,10 +1,10 @@
-/*
- * motor_driver.c
+/**
+ *  @file motor_driver.c
+ *  @brief Driver for two general brushed DC motor application
  *
  *  Created on: Apr 23, 2024
- *      Author: cadre
+ *  @author Christopher Ng
  */
-
 
 #include "motor_driver.h"
 

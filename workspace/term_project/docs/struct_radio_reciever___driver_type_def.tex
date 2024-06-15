@@ -1,0 +1,77 @@
+\doxysection{Radio\+Reciever\+\_\+\+Driver\+Type\+Def Struct Reference}
+\hypertarget{struct_radio_reciever___driver_type_def}{}\label{struct_radio_reciever___driver_type_def}\index{RadioReciever\_DriverTypeDef@{RadioReciever\_DriverTypeDef}}
+
+
+A structure to contain the variables of the radio receiver driver typedefs.  
+
+
+
+
+{\ttfamily \#include $<$radio\+\_\+reciever\+\_\+driver.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_radio_reciever___driver_type_def_a8cbc24e3f33393c40d0a60445ecbca2d}\label{struct_radio_reciever___driver_type_def_a8cbc24e3f33393c40d0a60445ecbca2d} 
+TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*} {\bfseries tim\+\_\+handle}
+\item 
+\Hypertarget{struct_radio_reciever___driver_type_def_a7f91a18e2d0d789eed59f3fec2754f98}\label{struct_radio_reciever___driver_type_def_a7f91a18e2d0d789eed59f3fec2754f98} 
+uint32\+\_\+t {\bfseries tim\+\_\+channel1}
+\item 
+\Hypertarget{struct_radio_reciever___driver_type_def_ae24d4e3458992b358e8d92b520ddfb78}\label{struct_radio_reciever___driver_type_def_ae24d4e3458992b358e8d92b520ddfb78} 
+uint32\+\_\+t {\bfseries tim\+\_\+channel2}
+\item 
+\Hypertarget{struct_radio_reciever___driver_type_def_a93afb3d907802a6398cc3fc65cb13cb2}\label{struct_radio_reciever___driver_type_def_a93afb3d907802a6398cc3fc65cb13cb2} 
+uint16\+\_\+t {\bfseries IC\+\_\+\+Rise}
+\item 
+\Hypertarget{struct_radio_reciever___driver_type_def_ae10ae324445d59b67ff13ea4e87631e1}\label{struct_radio_reciever___driver_type_def_ae10ae324445d59b67ff13ea4e87631e1} 
+uint16\+\_\+t {\bfseries IC\+\_\+\+Fall}
+\item 
+\Hypertarget{struct_radio_reciever___driver_type_def_a30bb60098ef40e92635f47d8fb8855bc}\label{struct_radio_reciever___driver_type_def_a30bb60098ef40e92635f47d8fb8855bc} 
+uint16\+\_\+t {\bfseries IC\+\_\+\+Diff}
+\item 
+\Hypertarget{struct_radio_reciever___driver_type_def_a0ba2e8db178d974c138fdbec7ddc10d5}\label{struct_radio_reciever___driver_type_def_a0ba2e8db178d974c138fdbec7ddc10d5} 
+uint16\+\_\+t {\bfseries pulse\+\_\+width}
+\item 
+\Hypertarget{struct_radio_reciever___driver_type_def_af1ad5d5d0ac35623312f65a46c9aa1a7}\label{struct_radio_reciever___driver_type_def_af1ad5d5d0ac35623312f65a46c9aa1a7} 
+uint16\+\_\+t {\bfseries tol}
+\item 
+\Hypertarget{struct_radio_reciever___driver_type_def_a996afd2dd49c5c799803ecbcf1318c38}\label{struct_radio_reciever___driver_type_def_a996afd2dd49c5c799803ecbcf1318c38} 
+int {\bfseries pulse\+\_\+recieve\+\_\+flag}
+\item 
+\Hypertarget{struct_radio_reciever___driver_type_def_a07a2ea3301de8942c8141febd26aa7d5}\label{struct_radio_reciever___driver_type_def_a07a2ea3301de8942c8141febd26aa7d5} 
+int {\bfseries rise\+\_\+flag}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A structure to contain the variables of the radio receiver driver typedefs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}tim\+\_\+handle} & The PWM output timer handle \\
+\hline
+{\em tim\+\_\+channel1} & The designated timer channel 1 for channel signal 1 \\
+\hline
+{\em tim\+\_\+channel2} & The designated timer channel 2 for channel signal 2 \\
+\hline
+{\em IC\+\_\+\+Rise} & The rising edge timer value (us) \\
+\hline
+{\em IC\+\_\+\+Fall} & The falling edge timer value (us) \\
+\hline
+{\em IC\+\_\+\+Diff} & The difference between rising and falling edge timer values (us) \\
+\hline
+{\em pulse\+\_\+width} & The pulse width accounting for overflow \\
+\hline
+{\em tol} & The tolerance of IC values before an error output is detected \\
+\hline
+{\em pulse\+\_\+reciever\+\_\+flag} & A flag called for a change in pulse amplitude from HAL\+\_\+\+TIM\+\_\+\+IC\+\_\+\+Capture\+Callback \\
+\hline
+{\em rise\+\_\+flag} & A flag for the rising edge \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+workspace/term\+\_\+project/\+Core/\+Inc/\mbox{\hyperlink{radio__reciever__driver_8h}{radio\+\_\+reciever\+\_\+driver.\+h}}\end{DoxyCompactItemize}

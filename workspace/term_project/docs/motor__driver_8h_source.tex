@@ -1,0 +1,32 @@
+\doxysection{motor\+\_\+driver.\+h}
+\hypertarget{motor__driver_8h_source}{}\label{motor__driver_8h_source}\index{workspace/term\_project/Core/Inc/motor\_driver.h@{workspace/term\_project/Core/Inc/motor\_driver.h}}
+\mbox{\hyperlink{motor__driver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ INC\_MOTOR\_DRIVER\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ INC\_MOTOR\_DRIVER\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00026\ \ \ \ \ TIM\_HandleTypeDef*\ tim\_handle;}
+\DoxyCodeLine{00027\ \ \ \ \ uint32\_t\ tim\_channel1;}
+\DoxyCodeLine{00028\ \ \ \ \ uint32\_t\ tim\_channel2;}
+\DoxyCodeLine{00029\ \ \ \ \ uint32\_t\ tim\_channel3;}
+\DoxyCodeLine{00030\ \ \ \ \ uint32\_t\ tim\_channel4;}
+\DoxyCodeLine{00031\ \ \ \ \ uint32\_t\ pulse;}
+\DoxyCodeLine{00032\ \}\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_motor___driver_type_def}{Motor\_DriverTypeDef}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{motor__driver_8h_a2dcb2ee9e5cfc3ba9edab3ed74489777}{enable\_mot}}(\mbox{\hyperlink{struct_motor___driver_type_def}{Motor\_DriverTypeDef}}*\ mot,\ uint32\_t\ motor\_num);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{motor__driver_8h_ab8f61518c05b329b8e2bbb8ece5c68b0}{disable\_mot}}(\mbox{\hyperlink{struct_motor___driver_type_def}{Motor\_DriverTypeDef}}*\ mot,\ uint32\_t\ motor\_num);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{motor__driver_8h_a711a8a03431defe3359e52358d664176}{set\_PWM\_percent}}(\mbox{\hyperlink{struct_motor___driver_type_def}{Motor\_DriverTypeDef}}*\ mot,\ uint32\_t\ motor\_num,\ int32\_t\ duty\_cycle);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{motor__driver_8h_a8045a15c65c9269be5fb1a45ff813e9e}{set\_PWM}}(\mbox{\hyperlink{struct_motor___driver_type_def}{Motor\_DriverTypeDef}}*\ mot,\ uint32\_t\ motor\_num,\ int32\_t\ duty\_count);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_MOTOR\_DRIVER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,8 +1,9 @@
-/*!
+/**
  *  @file task2.h
  *  @brief Sets up the task2 structure.
  *
  *  Created on: Jun 9, 2024
+ *  @author Christopher Ng
  */
 
 #ifndef INC_TASK2_H_
@@ -23,9 +24,7 @@
 #include "intertask_vars.h"
 #include "vector.h"
 
-/*!
- *  @struct 	TASK2
- *	@typedef 	TASK2
+/**
  *  @brief 		A structure to contain the variables of TASK2 typedefs
  *	@param 		state: The task's current state
  *	@param 		*mot: The initialized motor driver structure to operate panning motion
@@ -70,95 +69,84 @@ struct{
 	float voltage_dif_avg;
 } typedef TASK2;
 
-/*!
+/**
  *  @brief 		Runs the designated state for task 2
- *	@param 		*task: The task's current state
+ *	@param 		*task: The structure for the task
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void main_task2(TASK2* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			state0_task2: Init Power
+/**
  *  @brief 		Initializes the IMU gyroscope I2C communication, photoresistor ADCs, motor PWM output, servo PWM output, and encoder channels
- *	@param 		*task: The task's current state
+ *	@param 		*task: The structure for the task
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void state0_task2(TASK2* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			state1_task2: Wait For Start
+/**
  *  @brief 		Waits until the radio receiver receives a valid output to start through the radio receiver flag
- *	@param 		*task: The task's current state
+ *	@param 		*task: The structure for the task
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void state1_task2(TASK2* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			state2_task2: Setup 1
+/**
  *  @brief 		Sets the servo so that the mirror is vertical and makes one full revolution to find and record the high photoresistor values and angles to start at
- *	@param 		*task: The task's current state
+ *	@param 		*task: The structure for the task
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void state2_task2(TASK2* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			state3_task2: Setup 2
+/**
  *  @brief 		Sets the initial motor position to one of the recorded high values through angle-motor control
- *	@param 		*task: The task's current state
+ *	@param 		*task: The structure for the task
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void state3_task2(TASK2* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			state4_task2: Pan To Bright Spot
+/**
  *  @brief 		Finds the brightest horizontal direction using photoresistor-motor control
- *	@param 		*task: The task's current state
+ *	@param 		*task: The structure for the task
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void state4_task2(TASK2* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			state5_task2: Pitch To Bright Spot
+/**
  *  @brief 		Finds the brightest vertical direction using photoresistor-servo control
- *	@param 		*task: The task's current state
+ *	@param 		*task: The structure for the task
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void state5_task2(TASK2* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			state6_task2: Collect Angle
+/**
  *  @brief 		Collects the bright spot angle using the gyroscope, then calculates the reflection angle that it needs to turn to
- *	@param 		*task: The task's current state
+ *	@param 		*task: The structure for the task
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void state6_task2(TASK2* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			state7_task2: Go To Reflection Angles
+/**
  *  @brief 		Pans to the reflection angle using gyroscope-motor control and sets the servo angle
- *	@param 		*task: The task's current state
+ *	@param 		*task: The structure for the task
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void state7_task2(TASK2* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			state8_task2: Stop
+/**
  *  @brief 		Stops the motor if the radio receiver receives an invalid output through the radio receiver flag
- *	@param 		*task: The task's current state
+ *	@param 		*task: The structure for the task
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void state8_task2(TASK2* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			state9_task2: Return
+/**
  *  @brief 		Returns to the home position using gyroscope-motor control and servo angle setting if the radio receiver receives a valid output through the radio receiver flag to restart
- *	@param 		*task: The task's current state
+ *	@param 		*task: The structure for the task
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void state9_task2(TASK2* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			get_reflect_angle
+/**
  *  @brief 		Calculates the angles required to reflect a light source at a given angle to a target given its and the heliostats position
  *	@param 		*light_source_angle: A vector containing the Euler angles of the light source
  *	@param 		*target_position: A vector containing the position of the target

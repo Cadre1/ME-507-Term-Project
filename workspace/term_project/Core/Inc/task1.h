@@ -1,8 +1,9 @@
-/*!
+/**
  *  @file task1.h
  *  @brief Sets up the task1 structure.
  *
  *  Created on: Jun 5, 2024
+ *  @author Christopher Ng
  */
 
 #ifndef INC_TASK1_H_
@@ -22,9 +23,7 @@
 #include "intertask_vars.h"
 #include "vector.h"
 
-/*!
- *  @struct 	TASK1
- *	@typedef 	TASK1
+/**
  *  @brief 		A structure to contain the variables of TASK1 typedefs
  *	@param 		state: The task's current state
  *	@param 		*mot: The initialized motor driver structure to operate panning motion
@@ -44,39 +43,35 @@ struct{
 	bno055_t* gyro;
 } typedef TASK1;
 
-/*!
+/**
  *  @brief 		Runs the designated state for task 1
  *	@param 		*task: The task's current state
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void main_task1(TASK1* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			state0_task1: Init
+/**
  *  @brief 		Initializes the radio receiver to read values sent by the radio controller trigger
  *	@param 		*task: The task's current state
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void state0_task1(TASK1* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			state1_task1: Off
+/**
  *  @brief 		Checks if the radio controller trigger is more than halfway down and sets the radio trigger flag if it is
  *	@param 		*task: The task's current state
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void state1_task1(TASK1* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			state1_task1: On
+/**
  *  @brief 		Checks if the radio controller trigger is less than halfway down and resets the radio trigger flag if it is
  *	@param 		*task: The task's current state
  *	@param 		*intertask_vars: The intertask variables used by other tasks
  */
 void state2_task1(TASK1* task, INTERTASK_VARS* intertask_vars);
 
-/*!
- * 	@fn			get_pulse_percent
+/**
  *  @brief 		Calculates the percent that the radio controller trigger is pressed down
  *	@param 		*rad: The radio receiver driver
  *	@return 	A trigger down percent

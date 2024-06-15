@@ -1,0 +1,46 @@
+/*!
+ * @file radio_driver.h
+ * @brief Sets up the radio receiver driver structure
+ *
+ *  Created on: May 17, 2024
+ *  @author Christopher Ng
+ */
+
+#ifndef INC_RADIO_RECIEVER_DRIVER_H_
+#define INC_RADIO_RECIEVER_DRIVER_H_
+
+#include <stdio.h>
+#include <stdint.h>
+#include "stm32f4xx_hal.h"
+
+/*!
+ *  @struct 	Radio Receiver Driver (misspelled)
+ *	@typedef 	RadioReciever_DriverTypeDef
+ *  @brief 		A structure to contain the variables of the radio receiver driver typedefs
+ *	@param 		*adc_handle: The ADC handle
+ *	@param 		adc_channel1: The ADC channel 1 for photoresistor 1
+ *	@param 		adc_channel2: The ADC channel 2 for photoresistor 2
+ *	@param 		adc_channel3: The ADC channel 3 for photoresistor 3
+ *	@param 		adc_channel4: The ADC channel 4 for photoresistor 4
+ *	@param 		*photo_results: A list of the four photoresistor values
+ */
+struct rad_struct{
+	TIM_HandleTypeDef* tim_handle;
+	uint32_t tim_channel1;
+	uint32_t tim_channel2;
+	uint16_t IC_Rise;
+	uint16_t IC_Fall;
+	uint16_t IC_Diff;
+	uint16_t pulse_width;
+	uint16_t tol;
+	int pulse_recieve_flag;
+	int rise_flag;
+} typedef RadioReciever_DriverTypeDef;
+
+
+void enable_rad(RadioReciever_DriverTypeDef* rad);
+void disable_rad(RadioReciever_DriverTypeDef* rad);
+uint16_t get_pulse(RadioReciever_DriverTypeDef* rad);
+void read_pulse(RadioReciever_DriverTypeDef* rad, TIM_HandleTypeDef* htim);
+
+#endif /* INC_RADIO_RECIEVER_DRIVER_H_ */
